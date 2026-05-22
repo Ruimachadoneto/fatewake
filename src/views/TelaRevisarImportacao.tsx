@@ -5,7 +5,7 @@ import { gerarUUID } from '@/lib/uuid';
 import { CLASSES, CARTAS, getNomesAncestralidades, getNomesComunidades } from '@/data';
 import { novoPersonagem } from '@/types/personagem';
 import type { Personagem, NomeClasse, Alcance, Atributo } from '@/types/personagem';
-import type { FichaPDF, ArmaRaw } from '@/lib/pdf-import';
+import type { FichaPDF, ArmaRaw } from '@/lib/pdf-parse';
 
 interface Props {
   fichaPDF: FichaPDF;
