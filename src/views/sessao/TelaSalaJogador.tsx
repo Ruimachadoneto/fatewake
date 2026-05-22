@@ -9,6 +9,7 @@ import { ChevronLeft, Users, Shield, Package, Scroll, X, MapPin, Target, Image, 
 import type { PersonagemSala, ImagemRevelada } from '@/types/supabase';
 import type { Personagem, ItemInventario } from '@/types/personagem';
 import { CANAL_REVELA, type RevelacaoPayload, type Contagem } from './FerramentasGM';
+import { FlashDramatico } from '@/components/ui/FlashDramatico';
 
 interface RevelacaoRecebida extends RevelacaoPayload {
   id: string;
@@ -65,6 +66,14 @@ export function TelaSalaJogador() {
   const { personagemAtivo, atualizarFn } = useApp();
   const [aba, setAba] = useState<'sala' | 'diario' | 'ficha'>('sala');
   const [medo, setMedo] = useState(campanha?.medo ?? 0);
+  const [flashMedo, setFlashMedo] = useState(0);
+  const medoAnteriorRef = useRef(campanha?.medo ?? 0);
+
+  // Pulso dramático sincronizado quando o GM SOBE o Medo (tensão escala com o nível)
+  useEffect(() => {
+    if (medo > medoAnteriorRef.current) setFlashMedo(g => g + 1);
+    medoAnteriorRef.current = medo;
+  }, [medo]);
   const [revelacoes, setRevelacoes] = useState<RevelacaoRecebida[]>([]);
   const [contagensAtivas, setContagensAtivas] = useState<Contagem[]>([]);
   const [registros, setRegistros] = useState<RegistroEvento[]>([]);
@@ -262,6 +271,9 @@ export function TelaSalaJogador() {
 
   return (
     <div className="min-h-dvh flex flex-col bg-bg">
+
+      {/* Pulso de Medo sincronizado — intensidade escala com o tracker (0..12) */}
+      <FlashDramatico gatilho={flashMedo} tipo="medo" intensidade={Math.min(1, 0.35 + (medo / 12) * 0.65)} />
 
       {/* Header — apenas título + sair */}
       <header className="sticky top-0 z-20 bg-bg-card/95 backdrop-blur-md border-b border-border/30">

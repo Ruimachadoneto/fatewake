@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Camera, User } from 'lucide-react';
 import { useApp } from '@/store/app';
+import { comprimirImagem } from '@/lib/imagem';
 
 const PRONOMES = ['ele/dele', 'ela/dela', 'elu/delu', 'they/them'];
 
@@ -17,27 +18,6 @@ const NOMES_SUGERIDOS: Record<string, string[]> = {
   'Serafim':      ['Caelum', 'Selene', 'Ardis', 'Lumen', 'Isiel', 'Vera'],
 };
 const NOMES_GENERICOS = ['Rowan', 'Ash', 'Soren', 'Lyra', 'Vex', 'Cael', 'Thorn', 'Mira', 'Drake', 'Sage'];
-
-function comprimirImagem(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.onload = () => {
-      const MAX = 400;
-      const ratio = Math.min(MAX / img.width, MAX / img.height);
-      const w = Math.round(img.width * ratio);
-      const h = Math.round(img.height * ratio);
-      const canvas = document.createElement('canvas');
-      canvas.width = w;
-      canvas.height = h;
-      canvas.getContext('2d')!.drawImage(img, 0, 0, w, h);
-      URL.revokeObjectURL(url);
-      resolve(canvas.toDataURL('image/jpeg', 0.75));
-    };
-    img.onerror = reject;
-    img.src = url;
-  });
-}
 
 export function PassoIdentidade() {
   const { personagemAtivo, atualizar } = useApp();

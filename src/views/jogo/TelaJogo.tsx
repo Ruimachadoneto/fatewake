@@ -1,9 +1,11 @@
-﻿import { useState } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gerarUUID } from '@/lib/uuid';
 import { useApp } from '@/store/app';
 import { CLASSES, SUBCLASSES, ANCESTRALIDADES, COMUNIDADES, getCarta } from '@/data';
 import { DOMINIO_CORES } from '@/data/dominiosCores';
+import { comprimirImagem } from '@/lib/imagem';
+import { FlashDramatico, type EfeitoTipo } from '@/components/ui/FlashDramatico';
 import { FileText, TrendingUp, ChevronDown, Loader, Trash2, Plus, Camera, Zap, Flame, Crosshair, Eye, Sparkles, BookOpen, Lock } from 'lucide-react';
 import type { Atributo, NomeClasse, ItemInventario } from '@/types/personagem';
 import { PainelTrackerClasse } from './PainelTrackerClasse';
@@ -438,8 +440,28 @@ export function TelaJogo() {
   const [mostraDescanso, setMostraDescanso] = useState<null | 'curto' | 'longo'>(null);
   const [contagemMoves, setContagemMoves] = useState<Record<string, number>>({});
   const [comAliados, setComAliados] = useState(false);
-  const [danoFlash, setDanoFlash] = useState<'menor' | 'maior' | 'grave' | null>(null);
+  const [efeito, setEfeito] = useState<{ tipo: EfeitoTipo; n: number }>({ tipo: 'dano-menor', n: 0 });
+  const fotoInputRef = useRef<HTMLInputElement>(null);
+  const espAnteriorRef = useRef(personagemAtivo?.esperanca ?? 0);
+
+  // Shimmer dourado ao ganhar Esperança (qualquer origem: descanso, habilidade, etc.)
+  useEffect(() => {
+    if (!personagemAtivo) return;
+    if (personagemAtivo.esperanca > espAnteriorRef.current) {
+      setEfeito(e => ({ tipo: 'esperanca', n: e.n + 1 }));
+    }
+    espAnteriorRef.current = personagemAtivo.esperanca;
+  }, [personagemAtivo?.esperanca]);
+
   if (!personagemAtivo) return null;
+
+  async function handleFotoDashboard(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const base64 = await comprimirImagem(file);
+    atualizar({ foto_url: base64 });
+    e.target.value = '';
+  }
 
   const p = personagemAtivo;
   const classeData = p.classe ? CLASSES[p.classe as NomeClasse] : null;
@@ -467,9 +489,8 @@ export function TelaJogo() {
 
   function receberDano(marks: number) {
     atualizar({ pv_marcados: Math.min(p.pv_max, p.pv_marcados + marks) });
-    const tipo = marks === 1 ? 'menor' : marks === 2 ? 'maior' : 'grave';
-    setDanoFlash(tipo);
-    setTimeout(() => setDanoFlash(null), 700);
+    const tipo: EfeitoTipo = marks === 3 ? 'dano-grave' : marks === 2 ? 'dano-maior' : 'dano-menor';
+    setEfeito(e => ({ tipo, n: e.n + 1 }));
   }
 
   function abrirDescanso(tipo: 'curto' | 'longo') {
@@ -536,19 +557,8 @@ export function TelaJogo() {
   return (
     <div style={{ '--fw-accent': accentRGB } as React.CSSProperties}>
 
-    {/* Flash de dano — overlay na tela toda */}
-    <AnimatePresence>
-      {danoFlash && (
-        <motion.div
-          key="dano-flash"
-          initial={{ opacity: danoFlash === 'grave' ? 0.55 : danoFlash === 'maior' ? 0.3 : 0.15 }}
-          animate={{ opacity: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="fixed inset-0 pointer-events-none z-[200] bg-blood"
-        />
-      )}
-    </AnimatePresence>
+    {/* Efeitos dramáticos — dano (vinheta vermelha) e Esperança (shimmer dourado) */}
+    <FlashDramatico gatilho={efeito.n} tipo={efeito.tipo} />
 
     <StickyResourceBar />
     <div className="max-w-2xl mx-auto px-3 pt-4 pb-14" style={{
@@ -563,10 +573,11 @@ export function TelaJogo() {
 
         {/* Retrato + Identidade */}
         <div className="relative flex gap-4 mb-4">
-          {/* Retrato com cantos decorativos */}
-          <div className="flex-shrink-0 relative" onClick={() => setModo('criacao')}>
+          {/* Retrato com cantos decorativos — toque troca a foto */}
+          <div className="flex-shrink-0 relative group/foto" onClick={() => fotoInputRef.current?.click()}>
+            <input ref={fotoInputRef} type="file" accept="image/*" className="hidden" onChange={handleFotoDashboard} />
             <div
-              className="w-[88px] h-[110px] rounded-xl overflow-hidden cursor-pointer"
+              className="w-[88px] h-[110px] rounded-xl overflow-hidden cursor-pointer relative"
               style={{ boxShadow: `0 0 24px rgba(${accentRGB}, 0.2)` }}
             >
               {p.foto_url ? (
@@ -575,6 +586,12 @@ export function TelaJogo() {
                 <div className="w-full h-full bg-bg-inset flex flex-col items-center justify-center gap-1.5">
                   <Camera size={20} style={{ color: `rgba(${accentRGB},0.35)` }} />
                   <span style={{ fontSize: '8px', color: `rgba(${accentRGB},0.3)` }} className="uppercase tracking-widest">foto</span>
+                </div>
+              )}
+              {/* Overlay de troca no hover/tap */}
+              {p.foto_url && (
+                <div className="absolute inset-0 bg-bg/55 opacity-0 group-hover/foto:opacity-100 transition-opacity flex items-center justify-center">
+                  <Camera size={18} className="text-gold" />
                 </div>
               )}
             </div>
