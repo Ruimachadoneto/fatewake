@@ -4,7 +4,7 @@ import { useApp } from '@/store/app';
 import { importarPersonagemArquivo, exportarTodos } from '@/lib/storage';
 import { parsearFichaPDF } from '@/lib/pdf-import';
 import { TelaRevisarImportacao } from '@/views/TelaRevisarImportacao';
-import { Plus, Upload, Download, User, Sparkles, FileText, Loader2 } from 'lucide-react';
+import { Plus, Upload, Download, User, Sparkles, FileText, Loader2, Trash2 } from 'lucide-react';
 import type { FichaPDF } from '@/lib/pdf-import';
 import type { Personagem } from '@/types/personagem';
 
@@ -21,12 +21,13 @@ const CLASSE_ACCENT: Record<string, string> = {
 };
 
 export function TelaSelecionarPersonagem() {
-  const { personagens, criarNovo, selecionar, importarPersonagem, carregarTudo } = useApp();
+  const { personagens, criarNovo, selecionar, importarPersonagem, remover, carregarTudo } = useApp();
   const inputRef = useRef<HTMLInputElement>(null);
   const pdfInputRef = useRef<HTMLInputElement>(null);
   const [fichaPDF, setFichaPDF] = useState<FichaPDF | null>(null);
   const [carregandoPDF, setCarregandoPDF] = useState(false);
   const [erroPDF, setErroPDF] = useState('');
+  const [confirmandoDelete, setConfirmandoDelete] = useState<string | null>(null);
 
   const handleImport = async (file: File) => {
     try {
@@ -118,103 +119,128 @@ export function TelaSelecionarPersonagem() {
               const pvPct = p.pv_max > 0 ? (p.pv_max - p.pv_marcados) / p.pv_max : 1;
               const temClasse = Boolean(p.classe);
 
+              const confirmando = confirmandoDelete === p.id;
+
               return (
-                <motion.button
+                <motion.div
                   key={p.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.07, type: 'spring', stiffness: 340, damping: 30 }}
-                  whileHover={{ x: 3, transition: { duration: 0.15 } }}
-                  whileTap={{ scale: 0.985, transition: { duration: 0.1 } }}
-                  onClick={() => selecionar(p.id)}
-                  className="w-full card text-left group relative overflow-hidden"
-                  style={{ borderLeftWidth: '3px', borderLeftColor: `rgba(${accent}, 0.65)` }}
+                  className="card text-left group relative overflow-hidden"
+                  style={{ borderLeftWidth: '3px', borderLeftColor: `rgba(${accent}, 0.65)`, padding: 0 }}
                 >
                   {/* Hover glow da classe */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl"
                     style={{ background: `radial-gradient(ellipse 80% 60% at 0% 50%, rgba(${accent}, 0.08) 0%, transparent 70%)` }} />
 
-                  <div className="relative flex items-center gap-3">
-                    {/* Avatar / Retrato */}
-                    <div className="w-11 h-[54px] rounded-xl flex-shrink-0 overflow-hidden border"
-                      style={{
-                        borderColor: `rgba(${accent}, 0.40)`,
-                        boxShadow: `0 0 14px rgba(${accent}, 0.18)`,
-                      }}>
-                      {p.foto_url ? (
-                        <img src={p.foto_url} alt={p.nome} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center"
-                          style={{ background: `radial-gradient(circle, rgba(${accent}, 0.15) 0%, rgba(${accent}, 0.04) 100%)` }}>
-                          <User size={18} style={{ color: `rgb(${accent})`, opacity: 0.65 }} />
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex-1 min-w-0">
-                      <div className="font-display text-base text-ink group-hover:text-gold transition-colors truncate tracking-wider">
-                        {p.nome || 'Sem nome'}
-                      </div>
-                      <div className="flex items-center gap-1.5 mt-0.5">
-                        {temClasse ? (
-                          <>
-                            <span className="text-2xs font-medium" style={{ color: `rgb(${accent})` }}>
-                              {p.classe}
-                            </span>
-                            <span className="text-border/50 text-2xs">·</span>
-                            <span className="text-2xs text-ink-dim">Nível {p.nivel}</span>
-                            {p.ancestralidade && (
-                              <>
-                                <span className="text-border/50 text-2xs">·</span>
-                                <span className="text-2xs text-ink-dim truncate">{p.ancestralidade}</span>
-                              </>
-                            )}
-                          </>
+                  {/* Área clicável principal */}
+                  <button
+                    type="button"
+                    onClick={() => { setConfirmandoDelete(null); selecionar(p.id); }}
+                    className="w-full text-left relative p-3 pr-10"
+                  >
+                    <div className="flex items-center gap-3">
+                      {/* Avatar */}
+                      <div className="w-11 h-[54px] rounded-xl flex-shrink-0 overflow-hidden border"
+                        style={{ borderColor: `rgba(${accent}, 0.40)`, boxShadow: `0 0 14px rgba(${accent}, 0.18)` }}>
+                        {p.foto_url ? (
+                          <img src={p.foto_url} alt={p.nome} className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-2xs text-ink-dim italic">Em criação</span>
+                          <div className="w-full h-full flex items-center justify-center"
+                            style={{ background: `radial-gradient(circle, rgba(${accent}, 0.15) 0%, rgba(${accent}, 0.04) 100%)` }}>
+                            <User size={18} style={{ color: `rgb(${accent})`, opacity: 0.65 }} />
+                          </div>
                         )}
                       </div>
 
-                      {/* Mini HP bar */}
+                      {/* Info */}
+                      <div className="flex-1 min-w-0">
+                        <div className="font-display text-base text-ink group-hover:text-gold transition-colors truncate tracking-wider">
+                          {p.nome || 'Sem nome'}
+                        </div>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                          {temClasse ? (
+                            <>
+                              <span className="text-2xs font-medium" style={{ color: `rgb(${accent})` }}>{p.classe}</span>
+                              <span className="text-border/50 text-2xs">·</span>
+                              <span className="text-2xs text-ink-dim">Nível {p.nivel}</span>
+                              {p.ancestralidade && (
+                                <>
+                                  <span className="text-border/50 text-2xs">·</span>
+                                  <span className="text-2xs text-ink-dim truncate">{p.ancestralidade}</span>
+                                </>
+                              )}
+                            </>
+                          ) : (
+                            <span className="text-2xs text-ink-dim italic">Em criação</span>
+                          )}
+                        </div>
+                        {temClasse && (
+                          <div className="h-0.5 bg-bg-inset rounded-full mt-2 overflow-hidden">
+                            <div className="h-full rounded-full"
+                              style={{
+                                width: `${pvPct * 100}%`,
+                                backgroundColor: pvPct > 0.6 ? '#ff8a8a' : pvPct > 0.3 ? '#dc9646' : '#9d1f2d',
+                              }} />
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Stats */}
                       {temClasse && (
-                        <div className="h-0.5 bg-bg-inset rounded-full mt-2 overflow-hidden">
-                          <motion.div
-                            className="h-full rounded-full"
-                            style={{
-                              width: `${pvPct * 100}%`,
-                              background: pvPct > 0.6 ? 'rgb(var(--tw-color-hp-soft, 255 138 138))' : pvPct > 0.3 ? 'rgb(220,150,70)' : 'rgb(157,31,45)',
-                              backgroundColor: pvPct > 0.6 ? '#ff8a8a' : pvPct > 0.3 ? '#dc9646' : '#9d1f2d',
-                            }}
-                          />
+                        <div className="text-right flex-shrink-0 space-y-1">
+                          <div className="font-display text-2xs px-1.5 py-0.5 rounded-md"
+                            style={{ color: `rgb(${accent})`, background: `rgba(${accent}, 0.1)` }}>
+                            Nv.{p.nivel}
+                          </div>
+                          <div className="font-display text-sm text-hp-soft">
+                            {p.pv_max - p.pv_marcados}
+                            <span className="text-ink-dim/60 text-xs">/{p.pv_max}</span>
+                          </div>
+                          <div className="flex gap-0.5 justify-end">
+                            {Array.from({ length: 6 }).map((_, i) => (
+                              <span key={i} className={`text-xs leading-none ${i < (p.esperanca ?? 0) ? 'text-gold' : 'text-border/40'}`}>
+                                {i < (p.esperanca ?? 0) ? '◆' : '◇'}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>
+                  </button>
 
-                    {/* Stats direita */}
-                    {temClasse && (
-                      <div className="text-right flex-shrink-0 space-y-1">
-                        <div
-                          className="font-display text-2xs px-1.5 py-0.5 rounded-md text-right"
-                          style={{ color: `rgb(${accent})`, background: `rgba(${accent}, 0.1)` }}
+                  {/* Botão deletar */}
+                  <div className="absolute top-0 right-0 h-full flex items-center pr-2">
+                    <AnimatePresence mode="wait">
+                      {confirmando ? (
+                        <motion.button
+                          key="confirmar"
+                          type="button"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          onClick={e => { e.stopPropagation(); remover(p.id); setConfirmandoDelete(null); }}
+                          className="text-2xs text-blood-glow bg-blood/15 border border-blood/30 rounded-lg px-2 py-1 hover:bg-blood/25 transition-colors"
                         >
-                          Nv.{p.nivel}
-                        </div>
-                        <div className="font-display text-sm text-hp-soft">
-                          {p.pv_max - p.pv_marcados}
-                          <span className="text-ink-dim/60 text-xs">/{p.pv_max}</span>
-                        </div>
-                        <div className="flex gap-0.5 justify-end">
-                          {Array.from({ length: 6 }).map((_, i) => (
-                            <span key={i} className={`text-xs leading-none ${i < (p.esperanca ?? 0) ? 'text-gold' : 'text-border/40'}`}>
-                              {i < (p.esperanca ?? 0) ? '◆' : '◇'}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                          Confirmar
+                        </motion.button>
+                      ) : (
+                        <motion.button
+                          key="lixeira"
+                          type="button"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          onClick={e => { e.stopPropagation(); setConfirmandoDelete(p.id); }}
+                          className="w-7 h-7 rounded-lg flex items-center justify-center text-ink-dim hover:text-blood-glow hover:bg-blood/10 transition-colors opacity-0 group-hover:opacity-100"
+                        >
+                          <Trash2 size={13} />
+                        </motion.button>
+                      )}
+                    </AnimatePresence>
                   </div>
-                </motion.button>
+                </motion.div>
               );
             })}
           </div>
