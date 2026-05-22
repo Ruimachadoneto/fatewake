@@ -6,7 +6,7 @@ import { useSessao, SESSAO_SALVA_KEY } from '@/store/sessao';
 import { useApp } from '@/store/app';
 import { TelaJogo } from '@/views/jogo/TelaJogo';
 import { ChevronLeft, Users, Shield, Package, Scroll, X, MapPin, Target, Image, BookOpen, Swords } from 'lucide-react';
-import type { PersonagemSala } from '@/types/supabase';
+import type { PersonagemSala, ImagemRevelada } from '@/types/supabase';
 import type { Personagem, ItemInventario } from '@/types/personagem';
 import { CANAL_REVELA, type RevelacaoPayload, type Contagem } from './FerramentasGM';
 
@@ -72,7 +72,7 @@ export function TelaSalaJogador() {
   const [ocultarPvPf, setOcultarPvPf] = useState(false);
   const [mensagemMestre, setMensagemMestre] = useState<string | null>(null);
   const [imagemAberta, setImagemAberta] = useState<{ url: string; titulo: string } | null>(null);
-  const [imagensGaleria, setImagensGaleria] = useState<{ id: string; url: string; titulo: string; timestamp: number }[]>([]);
+  const [imagensGaleria, setImagensGaleria] = useState<ImagemRevelada[]>([]);
   const syncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSyncedRef = useRef<string>('');
 
@@ -635,7 +635,7 @@ export function TelaSalaJogador() {
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {imagensGaleria.map(img => (
-                      <button key={img.id} type="button"
+                      <button key={img.url} type="button"
                         onClick={() => setImagemAberta({ url: img.url, titulo: img.titulo })}
                         className="relative rounded-xl overflow-hidden border border-border/40 aspect-video group">
                         <img src={img.url} alt={img.titulo} className="w-full h-full object-cover" loading="lazy" />

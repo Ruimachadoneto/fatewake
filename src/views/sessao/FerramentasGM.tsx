@@ -1536,8 +1536,8 @@ function GeradorImagens({ campanhaId, jogadores, canal }: {
       .from('campanhas')
       .select('imagens_reveladas')
       .eq('id', campanhaId)
-      .single();
-    const atual = (data?.imagens_reveladas as { url: string; titulo: string; timestamp: number }[]) ?? [];
+      .single() as { data: { imagens_reveladas: { url: string; titulo: string; timestamp: number }[] | null } | null; error: unknown };
+    const atual = data?.imagens_reveladas ?? [];
     await supabase
       .from('campanhas')
       .update({ imagens_reveladas: [...atual, { url: img.url, titulo: img.nome, timestamp: Date.now() }] } as never)
