@@ -18,6 +18,7 @@ interface AppStore {
   // Ações
   carregarTudo: () => void;
   criarNovo: () => void;
+  importarPersonagem: (p: Personagem) => void;
   selecionar: (id: string) => void;
   atualizar: (patch: Partial<Personagem>) => void;
   atualizarFn: (fn: (p: Personagem) => Personagem) => void;
@@ -52,6 +53,16 @@ export const useApp = create<AppStore>((set, get) => ({
       personagens: [p, ...get().personagens],
       personagemAtivo: p,
       modo: 'criacao'
+    });
+  },
+
+  importarPersonagem: (p) => {
+    storage.salvarPersonagem(p);
+    storage.salvarEstadoApp({ personagem_ativo_id: p.id, modo: 'jogo' });
+    set({
+      personagens: [p, ...get().personagens],
+      personagemAtivo: p,
+      modo: 'jogo',
     });
   },
 

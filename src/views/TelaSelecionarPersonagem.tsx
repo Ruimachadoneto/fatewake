@@ -1,8 +1,12 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '@/store/app';
 import { importarPersonagemArquivo, exportarTodos } from '@/lib/storage';
-import { Plus, Upload, Download, User, Sparkles } from 'lucide-react';
+import { parsearFichaPDF } from '@/lib/pdf-import';
+import { TelaRevisarImportacao } from '@/views/TelaRevisarImportacao';
+import { Plus, Upload, Download, User, Sparkles, FileText, Loader2 } from 'lucide-react';
+import type { FichaPDF } from '@/lib/pdf-import';
+import type { Personagem } from '@/types/personagem';
 
 const CLASSE_ACCENT: Record<string, string> = {
   'Bardo':       '196, 100, 196',
@@ -17,8 +21,12 @@ const CLASSE_ACCENT: Record<string, string> = {
 };
 
 export function TelaSelecionarPersonagem() {
-  const { personagens, criarNovo, selecionar, carregarTudo } = useApp();
+  const { personagens, criarNovo, selecionar, importarPersonagem, carregarTudo } = useApp();
   const inputRef = useRef<HTMLInputElement>(null);
+  const pdfInputRef = useRef<HTMLInputElement>(null);
+  const [fichaPDF, setFichaPDF] = useState<FichaPDF | null>(null);
+  const [carregandoPDF, setCarregandoPDF] = useState(false);
+  const [erroPDF, setErroPDF] = useState('');
 
   const handleImport = async (file: File) => {
     try {
@@ -30,7 +38,36 @@ export function TelaSelecionarPersonagem() {
     }
   };
 
+  const handleImportPDF = async (file: File) => {
+    setErroPDF('');
+    setCarregandoPDF(true);
+    try {
+      const ficha = await parsearFichaPDF(file);
+      setFichaPDF(ficha);
+    } catch (err) {
+      setErroPDF(err instanceof Error ? err.message : 'Erro ao ler o PDF');
+    } finally {
+      setCarregandoPDF(false);
+    }
+  };
+
+  const handleConfirmarImportacao = (p: Personagem) => {
+    importarPersonagem(p);
+    setFichaPDF(null);
+  };
+
   return (
+    <>
+    <AnimatePresence>
+      {fichaPDF && (
+        <TelaRevisarImportacao
+          fichaPDF={fichaPDF}
+          onConfirmar={handleConfirmarImportacao}
+          onCancelar={() => setFichaPDF(null)}
+        />
+      )}
+    </AnimatePresence>
+
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
@@ -202,7 +239,39 @@ export function TelaSelecionarPersonagem() {
         transition={{ delay: 0.4 }}
         className="mt-8"
       >
+        {/* Importar PDF */}
         <div className="section-header">
+          <span className="section-title">Importar Ficha</span>
+        </div>
+        <input
+          ref={pdfInputRef}
+          type="file"
+          accept="application/pdf"
+          className="hidden"
+          onChange={e => {
+            const f = e.target.files?.[0];
+            if (f) handleImportPDF(f);
+            e.target.value = '';
+          }}
+        />
+        <button
+          onClick={() => { setErroPDF(''); pdfInputRef.current?.click(); }}
+          disabled={carregandoPDF}
+          className="btn-primary w-full mb-2 disabled:opacity-50"
+        >
+          {carregandoPDF
+            ? <><Loader2 size={14} className="animate-spin" />Lendo PDF...</>
+            : <><FileText size={14} />Importar ficha via PDF</>
+          }
+        </button>
+        {erroPDF && (
+          <p className="text-2xs text-blood-glow bg-blood/8 border border-blood/20 rounded-lg px-3 py-2 mb-2">
+            {erroPDF}
+          </p>
+        )}
+
+        {/* Backup JSON */}
+        <div className="section-header mt-4">
           <span className="section-title">Persistência</span>
         </div>
         <div className="flex gap-2">
@@ -235,5 +304,6 @@ export function TelaSelecionarPersonagem() {
         </p>
       </motion.div>
     </motion.div>
+    </>
   );
 }
