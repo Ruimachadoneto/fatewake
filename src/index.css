@@ -1,0 +1,258 @@
+@import '@fontsource/cinzel/600.css';
+@import '@fontsource/cinzel/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html, body {
+    @apply bg-bg text-ink;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background: radial-gradient(ellipse at top, rgba(75, 46, 131, 0.18), transparent 60%),
+                radial-gradient(ellipse at bottom right, rgba(157, 31, 45, 0.08), transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(123, 63, 160, 0.05), transparent 50%),
+                linear-gradient(180deg, #0B0F1A 0%, #070A12 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Grid overlay cósmico — tint dourado subtil */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.045;
+    background-image:
+      linear-gradient(rgba(212, 175, 55, 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 175, 55, 0.18) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    @apply text-ink;
+    letter-spacing: 0.04em;
+  }
+
+  /* Safe area mobile */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Scrollbar customizada */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.4);
+  }
+}
+
+@layer components {
+  /* ===== Cards ===== */
+  .card {
+    @apply relative bg-bg-card border border-border rounded-xl p-4 shadow-card-glow;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card-elevated {
+    @apply relative bg-bg-elevated border border-border-strong rounded-xl p-4 shadow-card-glow;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .card-gold {
+    @apply card;
+    background:
+      linear-gradient(180deg, rgba(var(--fw-accent, 212, 175, 55), 0.04), rgba(var(--fw-accent, 212, 175, 55), 0.01)),
+      linear-gradient(135deg, #1B2238 0%, #0E1423 100%);
+    border-color: rgba(var(--fw-accent, 212, 175, 55), 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(var(--fw-accent, 212, 175, 55), 0.12),
+                0 0 24px rgba(var(--fw-accent, 212, 175, 55), 0.06);
+  }
+
+  .card-arcane {
+    @apply card;
+    border-color: rgba(123, 63, 160, 0.3);
+    background: linear-gradient(135deg, #1B2238 0%, #2A1B3D 100%);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(165, 107, 196, 0.1),
+                0 0 24px rgba(123, 63, 160, 0.1);
+  }
+
+  .card-blood {
+    @apply card;
+    border-color: rgba(157, 31, 45, 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(224, 112, 132, 0.08),
+                0 0 24px rgba(157, 31, 45, 0.1);
+  }
+
+  /* Ornamento decorativo (cantos dourados + profundidade) */
+  .card-ornate {
+    @apply card-gold relative overflow-hidden;
+    box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(var(--fw-accent, 212, 175, 55), 0.14),
+      inset 0 0 0 1px rgba(var(--fw-accent, 212, 175, 55), 0.06),
+      0 0 28px rgba(var(--fw-accent, 212, 175, 55), 0.07);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(var(--fw-accent, 212, 175, 55), 0.10) 0%, transparent 32%),
+      linear-gradient(180deg, rgba(var(--fw-accent, 212, 175, 55), 0.04), rgba(var(--fw-accent, 212, 175, 55), 0.01)),
+      linear-gradient(135deg, #1B2238 0%, #0E1423 100%);
+  }
+  .card-ornate::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 24px;
+    height: 24px;
+    border-top: 2px solid rgba(var(--fw-accent, 212, 175, 55), 0.65);
+    border-left: 2px solid rgba(var(--fw-accent, 212, 175, 55), 0.65);
+    border-top-left-radius: 12px;
+    pointer-events: none;
+  }
+  .card-ornate::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 24px;
+    height: 24px;
+    border-bottom: 2px solid rgba(var(--fw-accent, 212, 175, 55), 0.65);
+    border-right: 2px solid rgba(var(--fw-accent, 212, 175, 55), 0.65);
+    border-bottom-right-radius: 12px;
+    pointer-events: none;
+  }
+
+  /* ===== Botões ===== */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           font-medium text-sm transition-all
+           border border-border-strong bg-bg-elevated text-ink
+           hover:bg-bg-card hover:border-border-gold/40 active:scale-95
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn text-gold;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.1), inset 0 1px 0 rgba(212, 175, 55, 0.15);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%);
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(212, 175, 55, 0.2);
+  }
+
+  .btn-danger {
+    @apply btn text-blood-glow;
+    background: linear-gradient(180deg, rgba(157, 31, 45, 0.18) 0%, rgba(157, 31, 45, 0.06) 100%);
+    border-color: rgba(157, 31, 45, 0.4);
+  }
+  .btn-danger:hover {
+    background: linear-gradient(180deg, rgba(157, 31, 45, 0.28) 0%, rgba(157, 31, 45, 0.1) 100%);
+  }
+
+  .btn-arcane {
+    @apply btn text-arcane-glow;
+    background: linear-gradient(180deg, rgba(123, 63, 160, 0.2) 0%, rgba(123, 63, 160, 0.06) 100%);
+    border-color: rgba(123, 63, 160, 0.4);
+  }
+
+  /* ===== Inputs ===== */
+  .input {
+    @apply w-full bg-bg-inset border border-border rounded-lg px-3 py-2
+           text-ink placeholder:text-ink-dim
+           focus:outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30
+           transition-colors;
+  }
+
+  /* ===== Labels ===== */
+  .label {
+    @apply block text-2xs font-medium text-ink-muted mb-1 uppercase tracking-[0.2em];
+  }
+
+  .label-gold {
+    @apply label text-gold/80;
+  }
+
+  /* ===== Section header com linha dourada ===== */
+  .section-header {
+    @apply flex items-center gap-3 mb-4;
+  }
+  .section-header::before,
+  .section-header::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(90deg, transparent, rgba(var(--fw-accent, 212, 175, 55), 0.3), transparent);
+  }
+  .section-title {
+    @apply font-display text-sm tracking-[0.3em] uppercase;
+    color: rgb(var(--fw-accent, 212, 175, 55));
+  }
+
+  /* ===== Texto decorativo ===== */
+  .display-xl {
+    @apply font-display tracking-[0.15em] text-gold;
+  }
+
+  /* ===== Brilho dourado em ícones ===== */
+  .icon-glow-gold {
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+  }
+
+  .icon-glow-blood {
+    filter: drop-shadow(0 0 8px rgba(157, 31, 45, 0.6));
+  }
+
+  .icon-glow-arcane {
+    filter: drop-shadow(0 0 8px rgba(123, 63, 160, 0.7));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Estrelas decorativas usando pseudo */
+  .bg-starfield {
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(232, 223, 207, 0.3), transparent),
+      radial-gradient(1px 1px at 60% 70%, rgba(232, 223, 207, 0.2), transparent),
+      radial-gradient(1px 1px at 80% 20%, rgba(232, 223, 207, 0.25), transparent),
+      radial-gradient(1px 1px at 30% 80%, rgba(212, 175, 55, 0.3), transparent);
+    background-size: 200px 200px;
+  }
+}

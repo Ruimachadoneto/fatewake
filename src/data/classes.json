@@ -1,0 +1,563 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Fichas Editáveis - Jambô Editora 2025",
+    "versao": "1.0",
+    "ultima_atualizacao": "2026-05-17"
+  },
+  "Bardo": {
+    "dominios": ["Graça", "Códice"],
+    "evasao_base": 10,
+    "pv_base": 5,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Gibão",
+      "limiares_base": [5, 11],
+      "armadura_base": 3,
+      "tag": "Flexível",
+      "efeito": "+1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 0, "Força": -1, "Acuidade": 1,
+      "Instinto": 0, "Presença": 2, "Conhecimento": 1
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Rapieira",
+      "atributo": "Presença",
+      "alcance": "Corpo a corpo",
+      "dado": "d8",
+      "tipo": "físico",
+      "empunhadura": "Uma mão",
+      "habilidade": "Veloz: ao fazer um ataque, marque 1 Ponto de Fadiga para atingir outra criatura no alcance."
+    },
+    "arma_secundaria_sugerida": {
+      "nome": "Adaga pequena",
+      "atributo": "Acuidade",
+      "alcance": "Corpo a corpo",
+      "dado": "d8",
+      "tipo": "físico",
+      "empunhadura": "Uma mão",
+      "habilidade": "Par: sua arma principal causa +2 de dano em alvos corpo a corpo."
+    },
+    "esperanca": {
+      "nome": "Fazer uma Cena",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para distrair temporariamente um alvo próximo, aplicando uma penalidade de –2 à Dificuldade dele."
+    },
+    "habilidades_classe": [{
+      "nome": "Inspiração",
+      "descricao": "Uma vez por sessão, descreva como você inspira o grupo e forneça a você e seus aliados um Dado de Inspiração. No 1º nível, seu Dado de Inspiração é d6. Um personagem pode rolar o Dado de Inspiração e somar o resultado a um teste, teste de reação ou rolagem de dano, ou para recuperar um número de PF igual ao resultado. No fim de cada sessão, Dados de Inspiração não utilizados são perdidos. No 5º nível, seu Dado de Inspiração aumenta para d8."
+    }],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um livro de romance", "uma carta que nunca foi aberta"],
+      "decida": "Onde você escreve suas magias: caderno de partituras, diário etc."
+    },
+    "descricao_pessoal": {
+      "roupas": ["extravagantes", "chiques", "barulhentas", "grandes", "irregulares", "elegantes", "selvagens"],
+      "postura": ["barista", "mágico", "mestre de cerimônias", "estrela do rock", "espadachim"]
+    },
+    "perguntas_origem": [
+      "Quem em sua comunidade lhe ensinou a ter tanta confiança em si mesmo?",
+      "Você já se apaixonou. Quem você amava e como essa pessoa partiu seu coração?",
+      "Você sempre teve admiração por outro bardo. Quem é essa pessoa e por que você a idolatra?"
+    ],
+    "vinculos": [
+      "Como percebeu que seríamos grandes amigos?",
+      "O que eu faço que irrita você?",
+      "Por que você segura minha mão à noite?"
+    ],
+    "tagline": "Como bardo, você sabe como fazer as pessoas falarem, chamar a atenção para si mesmo e usar palavras ou música para influenciar o mundo ao seu redor."
+  },
+  "Druida": {
+    "dominios": ["Sabedoria", "Arcano"],
+    "evasao_base": 10,
+    "pv_base": 6,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Armadura de couro",
+      "limiares_base": [6, 13],
+      "armadura_base": 3
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 1, "Força": 0, "Acuidade": 1,
+      "Instinto": 2, "Presença": -1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Cajado curto",
+      "atributo": "Instinto",
+      "alcance": "Próximo",
+      "dado": "d8+1",
+      "tipo": "mágico",
+      "empunhadura": "Uma mão"
+    },
+    "arma_secundaria_sugerida": {
+      "nome": "Escudo redondo",
+      "atributo": "Força",
+      "alcance": "Corpo a corpo",
+      "dado": "d4",
+      "tipo": "físico",
+      "empunhadura": "Uma mão",
+      "habilidade": "Armadura: +1 Ponto de Armadura"
+    },
+    "esperanca": {
+      "nome": "Evolução",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para usar Forma de Fera sem marcar Pontos de Fadiga. Ao fazer isso, aumente um atributo em +1 até sair da Forma de Fera."
+    },
+    "habilidades_classe": [
+      {
+        "nome": "Forma de Fera",
+        "descricao": "Marque 1 PF para se transformar magicamente em uma criatura de patamar igual ou menor que o seu na lista de Formas de Fera. Você pode sair dessa forma a qualquer momento. Enquanto estiver transformado, você não pode usar armas ou feitiços das cartas de domínio, mas feitiços conjurados antes da transformação permanecem ativos, com sua duração normal, e você ainda pode falar e usar outras habilidades ou talentos aos quais tenha acesso normalmente. Você recebe as habilidades da Forma de Fera escolhida, soma o bônus de Evasão dela à sua Evasão e usa o atributo especificado nas estatísticas dela para atacar. Enquanto estiver na Forma de Fera, sua armadura se torna parte de seu corpo e você marca Pontos de Armadura normalmente; quando sai da Forma de Fera, esses PA permanecem marcados. Marcar seu último PV faz com que você saia da Forma de Fera."
+      },
+      {
+        "nome": "Dádiva da Natureza",
+        "descricao": "Você pode criar à vontade efeitos sutis e inofensivos envolvendo a natureza, como fazer uma flor crescer rapidamente, invocar uma brisa ou acender uma fogueira."
+      }
+    ],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["uma pequena bolsa com ossos e pedras", "um estranho pingente encontrado na terra"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["camufladas", "longas", "soltas", "costuradas a esmo", "majestosas", "de retalhos"],
+      "postura": ["fogos de artifício", "raposa", "guia", "hippie", "bruxa"]
+    },
+    "perguntas_origem": [
+      "Por que a comunidade na qual você cresceu confiava tanto na natureza e suas criaturas?",
+      "Qual foi o primeiro animal com o qual você teve uma conexão emocional? Por que essa conexão acabou?",
+      "Quem está caçando você? O que essa pessoa quer de você?"
+    ],
+    "vinculos": [
+      "O que você confiou a mim que sempre faz com que eu me arrisque por você?",
+      "De que animal você me faz lembrar?",
+      "Qual o apelido carinhoso que você me deu?"
+    ],
+    "tagline": "Como druida, você é uma força primal, preservando o equilíbrio entre a vida e a morte ao canalizar a própria natureza através de ti.",
+    "ficha_extra": "formas-fera"
+  },
+  "Feiticeiro": {
+    "dominios": ["Arcano", "Meia-noite"],
+    "evasao_base": 10,
+    "pv_base": 6,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Gibão",
+      "limiares_base": [5, 11],
+      "armadura_base": 3,
+      "tag": "Flexível",
+      "efeito": "+1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 0, "Força": -1, "Acuidade": 1,
+      "Instinto": 2, "Presença": 1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Cajado duplo",
+      "atributo": "Instinto",
+      "alcance": "Distante",
+      "dado": "d6+3",
+      "tipo": "mágico",
+      "empunhadura": "Duas mãos"
+    },
+    "esperanca": {
+      "nome": "Magia Volátil",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para rolar novamente uma quantidade qualquer de dados de dano em um ataque que causa dano mágico."
+    },
+    "habilidades_classe": [
+      {
+        "nome": "Sentido Arcano",
+        "descricao": "Você pode sentir a presença de objetos e pessoas com magia quando estão próximos."
+      },
+      {
+        "nome": "Ilusão Menor",
+        "descricao": "Faça um teste de conjuração (10). Em um sucesso, você cria uma ilusão visual em alcance próximo. Ela não pode ultrapassar seu tamanho. Essa ilusão parece convincente a qualquer um que esteja próximo ou mais distante."
+      },
+      {
+        "nome": "Canalizar Poder Bruto",
+        "descricao": "Uma vez por descanso longo, você pode colocar uma carta de domínio de sua mão na reserva e escolher entre: receber Pontos de Esperança igual ao nível da carta; ou aprimorar um feitiço que cause dano, recebendo um bônus na rolagem de dano igual ao dobro do nível da carta."
+      }
+    ],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um orbe sussurrante", "uma herança de família"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["leves", "extravagantes", "discretas", "em camadas", "ornamentadas", "apertadas"],
+      "postura": ["celebridade", "comandante", "político", "brincalhão", "lobo em pele de cordeiro"]
+    },
+    "perguntas_origem": [
+      "O que fez com que as pessoas da sua comunidade desconfiassem de você?",
+      "Quem lhe ensinou a domar sua magia descontrolada e por que essa pessoa não pode mais orientar você?",
+      "Você teme algo profundamente e esconde isso de todos. O que é, e por que isso o aterroriza?"
+    ],
+    "vinculos": [
+      "Por que você confia tanto em mim?",
+      "O que eu fiz para você suspeitar tanto de mim?",
+      "Por que mantemos em segredo o passado que compartilhamos?"
+    ],
+    "tagline": "Como feiticeiro, você nasceu com poderes mágicos inatos e aprendeu a usar esse poder para conseguir o que deseja."
+  },
+  "Guardião": {
+    "dominios": ["Valor", "Lâmina"],
+    "evasao_base": 9,
+    "pv_base": 7,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Cota de malha",
+      "limiares_base": [7, 15],
+      "armadura_base": 4,
+      "tag": "Pesada",
+      "efeito": "−1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 1, "Força": 2, "Acuidade": -1,
+      "Instinto": 0, "Presença": 1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Machado de batalha",
+      "atributo": "Força",
+      "alcance": "Corpo a corpo",
+      "dado": "d10+3",
+      "tipo": "físico",
+      "empunhadura": "Duas mãos"
+    },
+    "esperanca": {
+      "nome": "Linha de Frente",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para recuperar 2 Pontos de Armadura."
+    },
+    "habilidades_classe": [{
+      "nome": "Determinação",
+      "descricao": "Uma vez por descanso longo, você pode ficar Determinado, recebendo um Dado de Determinação. No 1º nível, seu Dado de Determinação é d4. Coloque-o sobre o espaço ao lado, começando com o número 1 voltado para cima. Após fazer uma rolagem de dano que tira 1 ou mais Pontos de Vida de um alvo, aumente o valor do Dado de Determinação em +1. No momento em que o dado for ultrapassar seu valor máximo, ou quando a cena acabar, remova-o e encerre sua Determinação. No 5º nível, seu Dado de Determinação aumenta para d6. Enquanto estiver Determinado, você recebe: reduz a gravidade do dano físico em uma categoria (de grave para maior, de maior para leve ou de leve para nenhum); soma o valor atual do Dado de Determinação às suas rolagens de dano; não pode ser Imobilizado ou ficar Vulnerável."
+    }],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um totem de seu mentor", "uma chave secreta"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["casuais", "intricadas", "soltas", "acolchoadas", "reais", "táticas", "desgastadas"],
+      "postura": ["capitão", "protetor", "elefante", "general", "lutador"]
+    },
+    "perguntas_origem": [
+      "Quem da sua comunidade você não conseguiu proteger e por que você ainda pensa nessa pessoa?",
+      "Você recebeu a missão de proteger e levar algo importante a um lugar perigoso. O que é e aonde você precisa ir?",
+      "Você acredita ter uma fraqueza. O que é, e como isso afeta você?"
+    ],
+    "vinculos": [
+      "Como salvei sua vida quando nos conhecemos?",
+      "Que lembrança você me deu e percebeu que eu sempre carrego comigo?",
+      "Que mentira você me contou sobre você na qual eu caí completamente?"
+    ],
+    "tagline": "Como guardião, você corre perigo para proteger seu grupo, vigiando quem não pode sobreviver sem você por perto."
+  },
+  "Guerreiro": {
+    "dominios": ["Lâmina", "Falange"],
+    "evasao_base": 11,
+    "pv_base": 6,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Cota de malha",
+      "limiares_base": [7, 15],
+      "armadura_base": 4,
+      "tag": "Pesada",
+      "efeito": "−1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 2, "Força": 1, "Acuidade": 0,
+      "Instinto": 1, "Presença": -1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Espada longa",
+      "atributo": "Agilidade",
+      "alcance": "Corpo a corpo",
+      "dado": "d8+3",
+      "tipo": "físico",
+      "empunhadura": "Duas mãos"
+    },
+    "esperanca": {
+      "nome": "Sem Piedade",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para receber um bônus de +1 em testes de ataque até seu próximo descanso."
+    },
+    "habilidades_classe": [
+      {
+        "nome": "Ataque de Oportunidade",
+        "descricao": "Se um adversário corpo a corpo tentar sair desse alcance, faça um teste de reação usando um atributo à sua escolha contra a Dificuldade dele. Em um sucesso, escolha um efeito; em um sucesso crítico, escolha dois: ele não pode sair de onde está; você causa dano a ele igual ao dano de sua arma principal; você se movimenta com ele."
+      },
+      {
+        "nome": "Treinamento de Combate",
+        "descricao": "Você ignora o tipo de empunhadura de armas equipadas. Ao causar dano físico, você recebe um bônus igual ao seu nível na rolagem de dano."
+      }
+    ],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["o desenho da pessoa amada", "uma pedra de amolar"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["ousadas", "remendadas", "reforçadas", "reais", "elegantes", "econômicas", "desgastadas"],
+      "postura": ["touro", "soldado dedicado", "gladiador", "herói", "mercenário contratado"]
+    },
+    "perguntas_origem": [
+      "Quem ensinou você a lutar e por que essa pessoa ficou para trás quando você saiu de sua comunidade?",
+      "Anos atrás, você perdeu uma batalha para alguém que o deixou à beira da morte. Quem é essa pessoa e como ela traiu você?",
+      "Que lugar lendário você sempre quis visitar e por que ele é tão especial?"
+    ],
+    "vinculos": [
+      "Nos conhecíamos bem antes do surgimento do grupo. Como?",
+      "Com qual tarefa mundana você costuma me ajudar, fora dos momentos de batalha?",
+      "Que medos estou ajudando você a superar?"
+    ],
+    "tagline": "Como guerreiro, você corre para a batalha sem hesitação ou cautela, sabendo que pode derrubar qualquer inimigo que estiver em seu caminho."
+  },
+  "Ladino": {
+    "dominios": ["Meia-noite", "Graça"],
+    "evasao_base": 12,
+    "pv_base": 6,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Gibão",
+      "limiares_base": [5, 11],
+      "armadura_base": 3,
+      "tag": "Flexível",
+      "efeito": "+1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 1, "Força": -1, "Acuidade": 2,
+      "Instinto": 0, "Presença": 1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Adaga",
+      "atributo": "Acuidade",
+      "alcance": "Corpo a corpo",
+      "dado": "d8+1",
+      "tipo": "físico",
+      "empunhadura": "Uma mão"
+    },
+    "arma_secundaria_sugerida": {
+      "nome": "Adaga pequena",
+      "atributo": "Acuidade",
+      "alcance": "Corpo a corpo",
+      "dado": "d8",
+      "tipo": "físico",
+      "empunhadura": "Uma mão",
+      "habilidade": "Par: sua arma principal causa +2 de dano em alvos corpo a corpo."
+    },
+    "esperanca": {
+      "nome": "Esquiva de Ladino",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para receber um bônus de +2 na Evasão até o próximo ataque que acertar você. Caso contrário, esse bônus dura até seu próximo descanso."
+    },
+    "habilidades_classe": [
+      {
+        "nome": "Oculto",
+        "descricao": "Sempre que estiver Escondido, em vez disso você fica Oculto. Além dos benefícios da condição Escondido, enquanto estiver Oculto você permanece sem ser visto mesmo que um adversário se mova para onde normalmente o veria, desde que você fique parado. Ao concluir um movimento dentro da linha de visão de um adversário, ou ao atacar, você deixa de estar Oculto."
+      },
+      {
+        "nome": "Ataque Furtivo",
+        "descricao": "Quando acertar um ataque enquanto estiver Oculto, ou enquanto um aliado estiver corpo a corpo ao seu alvo, some um número de d6 igual ao seu patamar à rolagem de dano. 1º nível está no 1º patamar; 2º-4º no 2º patamar; 5º-7º no 3º patamar; 8º-10º no 4º patamar."
+      }
+    ],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um conjunto de ferramentas de falsificação", "um arpéu"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["limpas", "escuras", "discretas", "de couro", "táticas", "apertadas"],
+      "postura": ["bandido", "vigarista", "apostador", "chefe de máfia", "pirata"]
+    },
+    "perguntas_origem": [
+      "O que sua comunidade descobriu você fazendo que fez com que fosse expulso?",
+      "Você tinha uma vida diferente, mas tentou abandoná-la. Que figura do passado ainda o persegue?",
+      "Você ficou mais triste ao se despedir de quem?"
+    ],
+    "vinculos": [
+      "O que eu convenci você a fazer recentemente que nos deixou em apuros?",
+      "O que eu descobri sobre o seu passado e escondo dos outros?",
+      "Quem você conhece do meu passado e como essa pessoa influenciou o que você sente sobre mim?"
+    ],
+    "tagline": "Como ladino, você tem experiência em lutar tanto com sua lâmina quanto com sua inteligência, preferindo se mover rápido e lutar em silêncio."
+  },
+  "Mago": {
+    "dominios": ["Códice", "Esplendor"],
+    "evasao_base": 11,
+    "pv_base": 5,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Armadura de couro",
+      "limiares_base": [6, 13],
+      "armadura_base": 3
+    },
+    "atributos_sugeridos": {
+      "Agilidade": -1, "Força": 0, "Acuidade": 0,
+      "Instinto": 1, "Presença": 1, "Conhecimento": 2
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Cajado grande",
+      "atributo": "Conhecimento",
+      "alcance": "Muito distante",
+      "dado": "d6",
+      "tipo": "mágico",
+      "empunhadura": "Duas mãos",
+      "habilidade": "Poderoso: ao acertar um ataque, role +1 dado de dano e descarte o de resultado mais baixo."
+    },
+    "esperanca": {
+      "nome": "Não Dessa Vez",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para forçar um adversário distante ou mais próximo a refazer um teste de ataque ou uma rolagem de dano."
+    },
+    "habilidades_classe": [
+      {
+        "nome": "Padrões Estranhos",
+        "descricao": "Escolha um número de 1 a 12. Ao rolar esse número em um Dado do Destino, receba 1 Ponto de Esperança ou recupere 1 Ponto de Fadiga. Você pode mudar o número escolhido durante um descanso longo."
+      },
+      {
+        "nome": "Prestidigitação",
+        "descricao": "Você pode executar efeitos mágicos sutis e inofensivos à vontade. Por exemplo, você pode mudar a cor de um objeto, criar um cheiro, acender uma vela, fazer um pequeno objeto flutuar, iluminar uma sala ou consertar um objeto pequeno."
+      }
+    ],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um livro que você está tentando traduzir", "um pequeno e inofensivo elemental de estimação"],
+      "decida": "Onde você escreve suas magias: um grimório, cartas de tarô etc."
+    },
+    "descricao_pessoal": {
+      "roupas": ["bonitas", "limpas", "comuns", "leves", "em camadas", "de retalhos", "apertadas"],
+      "postura": ["excentricidade", "bibliotecário", "pavio curto", "filósofo", "professor"]
+    },
+    "perguntas_origem": [
+      "Para quais responsabilidades sua comunidade já contou com você? Como você a decepcionou?",
+      "Você passou a vida em busca de um livro ou objeto importante. O que é, e por que é tão importante?",
+      "Você tem um rival poderoso. Quem é essa pessoa e por que você quer tanto derrotá-la?"
+    ],
+    "vinculos": [
+      "Que favor eu pedi e você não sabe se conseguirá cumprir?",
+      "Que passatempo ou fascinação estranha nós compartilhamos?",
+      "Que segredo a seu respeito você confiou a mim?"
+    ],
+    "tagline": "Como mago, você se familiarizou com o arcano através do estudo incansável de grimórios e outras ferramentas mágicas."
+  },
+  "Patrulheiro": {
+    "dominios": ["Falange", "Sabedoria"],
+    "evasao_base": 12,
+    "pv_base": 6,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Armadura de couro",
+      "limiares_base": [6, 13],
+      "armadura_base": 3
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 2, "Força": 0, "Acuidade": 1,
+      "Instinto": 1, "Presença": -1, "Conhecimento": 0
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Arco curto",
+      "atributo": "Agilidade",
+      "alcance": "Distante",
+      "dado": "d6+3",
+      "tipo": "físico",
+      "empunhadura": "Duas mãos"
+    },
+    "esperanca": {
+      "nome": "Segurem Eles",
+      "custo": 3,
+      "efeito": "Quando acerta um ataque com uma arma, você pode gastar 3 Pontos de Esperança para usar o mesmo teste contra dois adversários adicionais no alcance."
+    },
+    "habilidades_classe": [{
+      "nome": "Marca da Presa",
+      "descricao": "Gaste 1 Ponto de Esperança e ataque um alvo. Se acertar, cause o dano normal e Marque o alvo. Até o efeito desta habilidade acabar ou até você Marcar outra criatura, receba os seguintes benefícios contra o alvo Marcado: você sabe precisamente em que direção ele está; quando causar dano a esse alvo, ele deve marcar 1 PF; quando erra um ataque contra ele, você pode encerrar sua Marca da Presa para rolar seus Dados de Dualidade novamente."
+    }],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["um troféu do seu primeiro abate", "uma bússola quebrada"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["fluidas", "suaves", "naturais", "manchadas", "táticas", "apertadas", "de panos finos"],
+      "postura": ["criança", "fantasma", "sobrevivente", "professor", "cão de guarda"]
+    },
+    "perguntas_origem": [
+      "Uma criatura terrível prejudicou sua comunidade e você jurou abatê-la. Que criatura é essa e qual é a trilha ou sinal específico que ela deixa para trás?",
+      "A primeira presa que você abateu quase o matou. Que criatura foi essa, e, desde então, que parte de você nunca mais foi a mesma?",
+      "Você já visitou muitos lugares perigosos, mas qual é o lugar aonde você jamais iria?"
+    ],
+    "vinculos": [
+      "Qual é a rivalidade amigável que temos?",
+      "Por que você age de forma tão diferente quando estamos sozinhos e quando há outras pessoas junto?",
+      "Você me pediu para tomar cuidado com qual ameaça, e por que se preocupa com isso?"
+    ],
+    "tagline": "Como caçador, seu olhar aguçado e sua graciosa rapidez o tornam indispensável ao rastrear inimigos e viajar pelas áreas selvagens.",
+    "ficha_extra": "companheiro-animal"
+  },
+  "Serafim": {
+    "dominios": ["Esplendor", "Valor"],
+    "evasao_base": 9,
+    "pv_base": 7,
+    "pf_base": 6,
+    "armadura_sugerida": {
+      "nome": "Cota de malha",
+      "limiares_base": [7, 15],
+      "armadura_base": 4,
+      "tag": "Pesada",
+      "efeito": "−1 em Evasão"
+    },
+    "atributos_sugeridos": {
+      "Agilidade": 0, "Força": 2, "Acuidade": 0,
+      "Instinto": 1, "Presença": 1, "Conhecimento": -1
+    },
+    "arma_primaria_sugerida": {
+      "nome": "Machado sagrado",
+      "atributo": "Força",
+      "alcance": "Corpo a corpo",
+      "dado": "d8+1",
+      "tipo": "mágico",
+      "empunhadura": "Uma mão"
+    },
+    "arma_secundaria_sugerida": {
+      "nome": "Escudo redondo",
+      "atributo": "Força",
+      "alcance": "Corpo a corpo",
+      "dado": "d4",
+      "tipo": "físico",
+      "empunhadura": "Uma mão",
+      "habilidade": "Armadura: +1 Ponto de Armadura"
+    },
+    "esperanca": {
+      "nome": "Alicerce da Vida",
+      "custo": 3,
+      "efeito": "Gaste 3 Pontos de Esperança para recuperar 1 Ponto de Vida de um aliado próximo."
+    },
+    "habilidades_classe": [{
+      "nome": "Dados de Oração",
+      "descricao": "No início de cada sessão, role um número de d4 igual ao atributo de conjuração de sua subclasse e coloque-os sobre os espaços ao lado. Eles são seus Dados de Oração. Você pode gastar qualquer número de Dados de Oração para auxiliar a si mesmo ou um aliado até o alcance distante. Você pode usar o valor de um dado gasto para reduzir o dano sofrido, somá-lo ao resultado de uma rolagem após ela ser feita ou receber um número de Esperança igual ao resultado. No fim de cada sessão, Dados de Oração não utilizados são perdidos."
+    }],
+    "inventario_inicial": {
+      "padrao": ["uma tocha", "15m de corda", "suprimentos básicos", "um punhado de ouro"],
+      "escolha_pocao": ["Poção de Vida Menor", "Poção de Vigor Menor"],
+      "escolha_item": ["algumas oferendas", "um símbolo de seu deus"]
+    },
+    "descricao_pessoal": {
+      "roupas": ["brilhantes", "onduladas", "ornamentadas", "apertadas", "modestas", "naturais"],
+      "postura": ["anjo", "médico", "evangelista", "monge", "padre"]
+    },
+    "perguntas_origem": [
+      "Que deus(a) você segue? Que façanha incrível essa divindade realizou em seu momento de desespero?",
+      "O que mudou em sua aparência após seu juramento?",
+      "De que forma estranha ou exclusiva você se comunica com a divindade que segue?"
+    ],
+    "vinculos": [
+      "O que você me fez prometer caso morra em batalha?",
+      "Por que pergunta tantas coisas sobre minha divindade?",
+      "Você me pediu para proteger um membro do grupo acima de todos, inclusive de você. Quem e por quê?"
+    ],
+    "tagline": "Como serafim, você fez um voto a uma divindade que o ajuda a canalizar poder mágico sagrado para manter seu grupo vivo."
+  }
+}

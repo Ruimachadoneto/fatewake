@@ -1,0 +1,16 @@
+{
+  "objetivos": [
+    { "valor": 1,  "descricao": "Adquirir (obter ou roubar) um item(s) importante(s)." },
+    { "valor": 2,  "descricao": "Capturar um ou mais oponentes." },
+    { "valor": 3,  "descricao": "Ativar um dispositivo mágico." },
+    { "valor": 4,  "descricao": "Incriminar alguém ou manchar sua reputação." },
+    { "valor": 5,  "descricao": "Encurralar o oponente ou emboscá-lo." },
+    { "valor": 6,  "descricao": "Interromper um ritual mágico, cerimônia legal ou um feitiço com tempo limitado." },
+    { "valor": 7,  "descricao": "Manter a posição — impedir que o inimigo alcance uma área ou grupo específico." },
+    { "valor": 8,  "descricao": "Plantar evidências ou rastrear um alvo." },
+    { "valor": 9,  "descricao": "Proteger um local antes da chegada de outro grupo." },
+    { "valor": 10, "descricao": "Esgotar recursos do oponente ou mantê-lo ocupado." },
+    { "valor": 11, "descricao": "Destruir uma peça arquitetônica, uma estátua, um santuário ou uma arma." },
+    { "valor": 12, "descricao": "Investigar uma situação para confirmar ou negar informações existentes." }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Fichas Editáveis - Jambô Editora 2025",
+    "classe": "Druida",
+    "descricao": "22 Formas de Fera divididas em 4 patamares. O patamar máximo disponível é igual ao patamar do druida."
+  },
+  "patamares": [
+    {
+      "patamar": 1,
+      "niveis": "1",
+      "formas": [
+        {
+          "nome": "Animal Doméstico",
+          "exemplos": "Cão, coelho, gato etc.",
+          "atributo_bonus": {"Instinto": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Instinto", "dado": "d6", "tipo": "físico"},
+          "vantagem_em": ["escalar", "localizar", "proteger"],
+          "habilidades": [
+            "Companhia: ao ajudar um aliado, você pode rolar 1d8 como seu dado de vantagem.",
+            "Frágil: ao sofrer dano maior ou superior, você sai da Forma de Fera."
+          ]
+        },
+        {
+          "nome": "Aracnídeo Espreitador",
+          "exemplos": "Aranha-lobo, tarântula etc.",
+          "atributo_bonus": {"Acuidade": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Acuidade", "dado": "d6+1", "tipo": "físico"},
+          "vantagem_em": ["atacar", "escalar", "esgueirar"],
+          "habilidades": [
+            "Lança-teia: você pode criar uma poderosa teia, útil nas aventuras e nas batalhas. Ela é resistente o bastante para suportar uma criatura. Você pode Imobilizar temporariamente um alvo próximo se passar em um teste de Acuidade contra ele.",
+            "Picada Peçonhenta: quando acerta um ataque contra um alvo corpo a corpo, você o deixa temporariamente Envenenado. Uma criatura Envenenada sofre 1d10 de dano físico direto cada vez que age."
+          ]
+        },
+        {
+          "nome": "Explorador Ágil",
+          "exemplos": "Camundongo, doninha, raposa etc.",
+          "atributo_bonus": {"Agilidade": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d4", "tipo": "físico"},
+          "vantagem_em": ["enganar", "localizar", "mover-se furtivamente"],
+          "habilidades": [
+            "Ágil: seu movimento é silencioso e você pode gastar 1 Ponto de Esperança para se mover até um ponto distante sem precisar fazer um teste.",
+            "Frágil: ao sofrer dano maior ou superior, você sai da Forma de Fera."
+          ]
+        },
+        {
+          "nome": "Explorador Aquático",
+          "exemplos": "Enguia, peixe, polvo etc.",
+          "atributo_bonus": {"Agilidade": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d4", "tipo": "físico"},
+          "vantagem_em": ["mover-se furtivamente", "nadar", "orientar-se"],
+          "habilidades": [
+            "Aquático: você pode respirar e se movimentar naturalmente embaixo d'água.",
+            "Frágil: ao sofrer dano maior ou superior, você sai da Forma de Fera."
+          ]
+        },
+        {
+          "nome": "Predador de Bando",
+          "exemplos": "Coiote, hiena, lobo etc.",
+          "atributo_bonus": {"Força": 2},
+          "evasao_bonus": 1,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d8+2", "tipo": "físico"},
+          "vantagem_em": ["atacar", "correr", "rastrear"],
+          "habilidades": [
+            "Caça em Bando: quando você acerta um ataque contra um alvo atingido por um aliado imediatamente antes de você, seu dano aumenta em +1d8.",
+            "Golpe Debilitante: quando você acerta um ataque contra um alvo corpo a corpo, você pode marcar 1 Ponto de Fadiga para torná-lo temporariamente Vulnerável."
+          ]
+        },
+        {
+          "nome": "Ruminante Arisco",
+          "exemplos": "Cabra, cervo, gazela etc.",
+          "atributo_bonus": {"Agilidade": 1},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d6", "tipo": "físico"},
+          "vantagem_em": ["correr", "mover-se furtivamente", "saltar"],
+          "habilidades": [
+            "Frágil: ao sofrer dano maior ou superior, você sai da Forma de Fera.",
+            "Presa Arisca: quando sofre um ataque, você pode marcar 1 Ponto de Fadiga para rolar 1d4 e somar o resultado à sua Evasão contra esse ataque."
+          ]
+        }
+      ]
+    },
+    {
+      "patamar": 2,
+      "niveis": "2-4",
+      "formas": [
+        {
+          "nome": "Carapaça Vigilante",
+          "exemplos": "Pangolim, tartaruga, tatu etc.",
+          "atributo_bonus": {"Força": 1},
+          "evasao_bonus": 1,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d8+2", "tipo": "físico"},
+          "vantagem_em": ["cavar", "localizar", "proteger"],
+          "habilidades": [
+            "Canhão Ricochete: marque 1 Ponto de Fadiga para que um aliado arremesse você contra um adversário. O aliado faz um teste de ataque usando Agilidade ou Força contra um alvo próximo. Em um sucesso, o adversário sofre d12+2 de dano físico usando a Proficiência de seu aliado. Você pode gastar 1 Ponto de Esperança para escolher outro adversário muito próximo do primeiro como alvo (sofre metade do dano).",
+            "Carapaça Reforçada: seu exterior sólido concede resistência a dano físico. Você pode marcar 1 Ponto de Armadura para se recolher em sua carapaça. Enquanto estiver dentro dela, o dano físico sofrido é reduzido em um número igual à sua Armadura (após aplicar a resistência), mas você não pode realizar outras ações."
+          ]
+        },
+        {
+          "nome": "Fera Alada",
+          "exemplos": "Coruja, corvo, gavião etc.",
+          "atributo_bonus": {"Acuidade": 1},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Acuidade", "dado": "d4+2", "tipo": "físico"},
+          "vantagem_em": ["enganar", "intimidar", "localizar"],
+          "habilidades": [
+            "Ossos Ocos: você sofre uma penalidade de –2 nos seus limiares de dano.",
+            "Visão Aérea: você pode voar à vontade. Uma vez por descanso, e enquanto estiver no ar, você pode perguntar ao mestre algo sobre a paisagem abaixo sem precisar de teste. Na primeira vez que um personagem fizer um teste para agir em relação a essa informação, ele o faz com vantagem."
+          ]
+        },
+        {
+          "nome": "Fera Poderosa",
+          "exemplos": "Alce, touro, urso etc.",
+          "atributo_bonus": {"Força": 3},
+          "evasao_bonus": 1,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d10+4", "tipo": "físico"},
+          "vantagem_em": ["intimidar", "orientar-se", "proteger"],
+          "habilidades": [
+            "Ataque Violento: quando tira 1 em um dado de dano, você pode rolar 1d10 e somar o resultado à rolagem de dano. Antes de fazer um teste de ataque, você pode marcar 1 Ponto de Fadiga para receber +1 em sua Proficiência para esse ataque.",
+            "Couro Espesso: você recebe +2 de bônus nos seus limiares de dano."
+          ]
+        },
+        {
+          "nome": "Predador Furtivo",
+          "exemplos": "Guepardo, leão, onça etc.",
+          "atributo_bonus": {"Instinto": 1},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Instinto", "dado": "d8+6", "tipo": "físico"},
+          "vantagem_em": ["atacar", "escalar", "mover-se furtivamente"],
+          "habilidades": [
+            "Abate: marque 1 Ponto de Fadiga para se mover até ficar corpo a corpo a um alvo e fazer um teste de ataque contra ele. Em um sucesso, +2 em sua Proficiência para esse ataque e o alvo deve marcar 1 Ponto de Fadiga.",
+            "Disparada: gaste 1 Ponto de Esperança para se mover até um ponto em alcance distante sem precisar fazer um teste."
+          ]
+        },
+        {
+          "nome": "Serpente Traiçoeira",
+          "exemplos": "Cascavel, naja, víbora etc.",
+          "atributo_bonus": {"Acuidade": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Muito próximo", "atributo": "Acuidade", "dado": "d8+4", "tipo": "físico"},
+          "vantagem_em": ["deslizar", "enganar", "escalar"],
+          "habilidades": [
+            "Bote Peçonhento: faça um ataque contra qualquer número de alvos muito próximos. Em um sucesso, o alvo fica temporariamente Envenenado. Uma criatura Envenenada sofre 1d10 de dano físico direto a cada vez que age.",
+            "Silvo de alerta: marque 1 Ponto de Fadiga para forçar qualquer número de alvos corpo a corpo a se afastarem até ficarem muito próximos."
+          ]
+        },
+        {
+          "nome": "Trotador Robusto",
+          "exemplos": "Camelo, cavalo, zebra etc.",
+          "atributo_bonus": {"Agilidade": 1},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d8+1", "tipo": "físico"},
+          "vantagem_em": ["correr", "orientar-se", "saltar"],
+          "habilidades": [
+            "Atropelar: marque 1 Ponto de Fadiga para se mover até um ponto em alcance próximo em linha reta e atacar todos os alvos corpo a corpo à linha. Alvos atingidos sofrem d8+1 de dano físico usando sua Proficiência e ficam temporariamente Vulneráveis.",
+            "Besta de Carga: você pode carregar até dois aliados voluntários com você enquanto se movimenta."
+          ]
+        }
+      ]
+    },
+    {
+      "patamar": 3,
+      "niveis": "5-7",
+      "formas": [
+        {
+          "nome": "Fera Lendária",
+          "exemplos": "Aprimoramento de 1º patamar",
+          "habilidades": [
+            "Evoluído: escolha uma Forma de Fera de 1º patamar e torne-se uma versão maior e mais poderosa dessa criatura. Mantém todos os atributos e habilidades da forma original e recebe: +6 em rolagens de dano; +1 no atributo da forma; +2 na Evasão."
+          ]
+        },
+        {
+          "nome": "Grande Fera Alada",
+          "exemplos": "Águia-gigante, falcão etc.",
+          "atributo_bonus": {"Acuidade": 2},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Acuidade", "dado": "d8+6", "tipo": "físico"},
+          "vantagem_em": ["distrair", "enganar", "localizar"],
+          "habilidades": [
+            "Besta de Carga: você pode carregar até dois aliados voluntários com você enquanto se movimenta.",
+            "Visão Aérea: você pode voar à vontade. Uma vez por descanso, no ar, pergunte ao mestre algo sobre a paisagem abaixo sem precisar de teste. Primeira ação relacionada a essa informação é feita com vantagem."
+          ]
+        },
+        {
+          "nome": "Grande Predador",
+          "exemplos": "Lobo-atroz, tigre-dentes-de-sabre, velociraptor etc.",
+          "atributo_bonus": {"Força": 2},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d12+8", "tipo": "físico"},
+          "vantagem_em": ["atacar", "correr", "mover-se furtivamente"],
+          "habilidades": [
+            "Ataque Voraz: quando acerta um ataque em um alvo, gaste 1 Ponto de Esperança para deixá-lo temporariamente Vulnerável e receber +1 em Proficiência nesse ataque.",
+            "Besta de Carga: você pode carregar até dois aliados voluntários com você."
+          ]
+        },
+        {
+          "nome": "Híbrido Lendário",
+          "exemplos": "Esfinge, grifo etc.",
+          "atributo_bonus": {"Força": 2},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d10+8", "tipo": "físico"},
+          "habilidades": [
+            "Habilidades Híbridas: marque 1 Ponto de Fadiga adicional para se transformar nesta criatura. Escolha duas opções quaisquer de Forma de Fera de 1º a 2º patamar. Escolha um total de quatro vantagens e duas habilidades dessas opções."
+          ]
+        },
+        {
+          "nome": "Lagarto Poderoso",
+          "exemplos": "Crocodilo, jacaré, monstro-de-gila etc.",
+          "atributo_bonus": {"Instinto": 2},
+          "evasao_bonus": 1,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Instinto", "dado": "d10+7", "tipo": "físico"},
+          "vantagem_em": ["atacar", "mover-se furtivamente", "rastrear"],
+          "habilidades": [
+            "Armadura Física: você recebe +3 em seus limiares de dano.",
+            "Golpe Súbito: quando acerta corpo a corpo, gaste 1 Ponto de Esperança para segurá-lo com a mandíbula, deixando-o temporariamente Imobilizado e Vulnerável."
+          ]
+        },
+        {
+          "nome": "Predador Aquático",
+          "exemplos": "Golfinho, orca, tubarão etc.",
+          "atributo_bonus": {"Agilidade": 2},
+          "evasao_bonus": 4,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d10+6", "tipo": "físico"},
+          "vantagem_em": ["atacar", "nadar", "rastrear"],
+          "habilidades": [
+            "Aquático: você pode respirar e se movimentar naturalmente embaixo d'água.",
+            "Ataque Voraz: quando acerta um ataque em um alvo, gaste 1 Ponto de Esperança para deixá-lo temporariamente Vulnerável e receber +1 em Proficiência nesse ataque."
+          ]
+        }
+      ]
+    },
+    {
+      "patamar": 4,
+      "niveis": "8-10",
+      "formas": [
+        {
+          "nome": "Caçador Aéreo Mítico",
+          "exemplos": "Dragão, pterodátilo, roca, serpe etc.",
+          "atributo_bonus": {"Acuidade": 3},
+          "evasao_bonus": 4,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Acuidade", "dado": "d10+11", "tipo": "físico"},
+          "vantagem_em": ["atacar", "enganar", "localizar", "orientar-se"],
+          "habilidades": [
+            "Ave de Rapina Mortal: você pode voar à vontade e se mover até um ponto em alcance distante como parte da sua ação. Quando ataca após se mover em linha reta até ficar corpo a corpo a partir de no mínimo alcance próximo, role novamente todos os dados de dano com resultado menor que sua Proficiência.",
+            "Besta de Carga: você pode carregar até três aliados voluntários com você."
+          ]
+        },
+        {
+          "nome": "Fera Aquática Épica",
+          "exemplos": "Baleia, lula-gigante etc.",
+          "atributo_bonus": {"Agilidade": 3},
+          "evasao_bonus": 3,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Agilidade", "dado": "d10+10", "tipo": "físico"},
+          "vantagem_em": ["intimidar", "localizar", "proteger", "rastrear"],
+          "habilidades": [
+            "Mestre do Oceano: você pode respirar e se movimentar naturalmente debaixo d'água. Quando acerta corpo a corpo, pode deixá-lo temporariamente Imobilizado.",
+            "Robusto: quando for marcar Ponto de Armadura, role 1d6. Em 5+, reduza a gravidade em um limiar sem marcar PA."
+          ]
+        },
+        {
+          "nome": "Fera Massiva",
+          "exemplos": "Elefante, mamute, rinoceronte etc.",
+          "atributo_bonus": {"Força": 3},
+          "evasao_bonus": 1,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d12+12", "tipo": "físico"},
+          "vantagem_em": ["correr", "intimidar", "localizar", "proteger"],
+          "habilidades": [
+            "Besta de Carga: você pode carregar até quatro aliados voluntários com você.",
+            "Demolir: gaste 1 Ponto de Esperança para se mover até um ponto distante em linha reta e atacar todos os alvos corpo a corpo à linha. Alvos atingidos sofrem d8+10 de dano físico usando sua Proficiência e ficam temporariamente Vulneráveis.",
+            "Impávido: você recebe +2 em seus limiares de dano."
+          ]
+        },
+        {
+          "nome": "Fera Mítica",
+          "exemplos": "Aprimoramento de 1º ou 2º patamar",
+          "habilidades": [
+            "Evoluído: escolha uma Forma de Fera de 1º ou 2º patamar e torne-se uma versão maior e mais poderosa dessa criatura. Mantém todos os atributos e habilidades da forma original e recebe: +9 em rolagens de dano; +2 no atributo da forma; +3 na Evasão; seu dado de dano aumenta em um passo (d6→d8, d8→d10 etc.)."
+          ]
+        },
+        {
+          "nome": "Híbrido Mítico",
+          "exemplos": "Cocatriz, mantícora, quimera etc.",
+          "atributo_bonus": {"Força": 3},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d12+10", "tipo": "físico"},
+          "habilidades": [
+            "Habilidades Híbridas: marque 2 Pontos de Fadiga adicionais para se transformar nesta criatura. Escolha duas opções quaisquer de Forma de Fera de 1º a 3º patamar. Escolha um total de cinco vantagens e três habilidades dessas opções."
+          ]
+        },
+        {
+          "nome": "Lagarto Terrível",
+          "exemplos": "Braquiossauro, tiranossauro etc.",
+          "atributo_bonus": {"Força": 3},
+          "evasao_bonus": 2,
+          "ataque": {"alcance": "Corpo a corpo", "atributo": "Força", "dado": "d12+10", "tipo": "físico"},
+          "vantagem_em": ["atacar", "enganar", "intimidar", "rastrear"],
+          "habilidades": [
+            "Disparada Massiva: você pode se mover até um ponto em alcance distante sem precisar fazer um teste. Ignora terreno difícil devido ao seu tamanho.",
+            "Golpes Devastadores: quando causa dano grave em alvo corpo a corpo, marque 1 Ponto de Fadiga para forçá-lo a marcar 1 PV adicional."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart - Livro Básico, Jambô Editora 2025",
+    "versao": "1.0"
+  },
+  "Anão": {
+    "descricao": "Humanoides baixos (1,2–1,65m), musculatura densa, pele resistente com muita queratina. Todos os gêneros têm barba. Vivem até 250 anos.",
+    "habilidade_1": { "nome": "Pele Espessa", "descricao": "Ao sofrer dano menor, marque 2 PF em vez de 1 PV." },
+    "habilidade_2": { "nome": "Vigoroso", "descricao": "Gaste 3 Esperança para reduzir à metade o dano físico sofrido." }
+  },
+  "Clank": {
+    "descricao": "Seres mecânicos sencientes feitos de madeira, metal ou pedra. Podem ter aparência animal, humanoide ou de objeto. Efetivamente imortais enquanto conseguirem novas partes.",
+    "habilidade_1": { "nome": "Projeto Intencional", "descricao": "Escolha uma Experiência alinhada ao propósito pelo qual foi construído → +1 permanente nela." },
+    "habilidade_2": { "nome": "Eficiente", "descricao": "Ao fazer descanso curto, escolha um movimento de descanso longo em vez de descanso curto." }
+  },
+  "Drakona": {
+    "descricao": "Dragões humanoides sem asas (1,5–2,1m), escamas espessas, dentes que crescem continuamente. Vivem até 350 anos.",
+    "habilidade_1": { "nome": "Escamas", "descricao": "Ao sofrer dano grave, marque 1 PF para marcar 1 PV a menos." },
+    "habilidade_2": { "nome": "Sopro Elemental", "descricao": "Escolha elemento (eletricidade/fogo/gelo). Ataque em alcance muito próximo: usa Instinto, causa d8 de dano mágico com Proficiência." }
+  },
+  "Elfo": {
+    "descricao": "Humanoides altos (1,8–1,95m) com orelhas pontudas e sentidos apurados. Alguns desenvolvem 'forma mística'. Vivem até 350 anos.",
+    "habilidade_1": { "nome": "Reação Rápida", "descricao": "Marque 1 PF para ter vantagem em um teste de reação." },
+    "habilidade_2": { "nome": "Transe Celestial", "descricao": "Em qualquer descanso, entre em transe celestial para escolher um movimento de repouso adicional." }
+  },
+  "Fada": {
+    "descricao": "Humanoides alados com traços insetoides (60cm–2,1m). Todas possuem asas membranosas. Passam por metamorfose com aparência única. Vivem ~50 anos.",
+    "habilidade_1": { "nome": "Testar a Sorte", "descricao": "Uma vez por sessão, após você ou aliado voluntário próximo fazer teste, gaste 3 Esperança → role Dados de Dualidade novamente." },
+    "habilidade_2": { "nome": "Asas", "descricao": "Você pode voar. Voando, após ataque, marque 1 PF → +2 Evasão contra esse ataque." }
+  },
+  "Fauno": {
+    "descricao": "Cabras humanoides (1,2–1,95m) com cascos fendidos, chifres curvados e pupilas retangulares. Membros proporcionalmente longos. Vivem ~225 anos.",
+    "habilidade_1": { "nome": "Salto Caprino", "descricao": "Salte para qualquer ponto em alcance próximo como movimento normal — transponha obstáculos, fendas e barreiras." },
+    "habilidade_2": { "nome": "Coice", "descricao": "Ao acertar ataque corpo a corpo, marque 1 PF → +2d6 de dano e empurre adversário (ou você mesmo) para alcance muito próximo." }
+  },
+  "Firbolg": {
+    "descricao": "Humanoides bovinos (1,5–2,1m), focinho largo, orelhas caídas, pelagem com tons discretos ou pastel. Força extraordinária. Vivem ~150 anos.",
+    "habilidade_1": { "nome": "Investida", "descricao": "Ao mover de distante/muito distante para corpo a corpo, marque 1 PF → cause 1d12 dano físico a todos os alvos corpo a corpo." },
+    "habilidade_2": { "nome": "Inabalável", "descricao": "Ao marcar 1 PF, role 1d6. Se tirar 6, não o marque." }
+  },
+  "Fungril": {
+    "descricao": "Cogumelos humanoides (60cm–2,1m) em cores variadas de terroso a exuberante. Comunicam-se por rede micelial. Vivem ~300 anos (ou mais).",
+    "habilidade_1": { "nome": "Conexão Fungril", "descricao": "Teste de Instinto (12) → converse com outros fungris pela rede micelial a qualquer distância." },
+    "habilidade_2": { "nome": "Vínculo Mortal", "descricao": "Tocando cadáver recente, marque 1 PF → extraia memória relacionada a emoção/sensação à sua escolha." }
+  },
+  "Galapa": {
+    "descricao": "Tartarugas antropomórficas (1,2–1,8m) com carapaça larga. Cada um tem padrão único de casco. Movem-se lentamente. Vivem ~150 anos.",
+    "habilidade_1": { "nome": "Carapaça", "descricao": "+X nos limiares de dano (X = sua Proficiência)." },
+    "habilidade_2": { "nome": "Retração", "descricao": "Marque 1 PF → entre na carapaça. Dentro: resistência a dano físico, desvantagem em testes, não pode se mover." }
+  },
+  "Gigante": {
+    "descricao": "Humanoides descomunais (1,8–2,55m) com braços longos e 1 a 3 olhos. Músculos naturalmente desenvolvidos. Vivem ~75 anos.",
+    "habilidade_1": { "nome": "Resistência", "descricao": "+1 PV permanente na criação de personagem." },
+    "habilidade_2": { "nome": "Alcance", "descricao": "Trate armas/talentos/magias com alcance corpo a corpo como se fossem alcance muito próximo." }
+  },
+  "Goblin": {
+    "descricao": "Pequenos humanoides (90cm–1,2m) com grandes olhos e orelhas membranosas enormes. Audição e visão aguçadas. Vivem ~100 anos.",
+    "habilidade_1": { "nome": "Passo Firme", "descricao": "Ignore desvantagem em testes de Agilidade." },
+    "habilidade_2": { "nome": "Cheiro de Perigo", "descricao": "Uma vez por descanso, marque 1 PF → force adversário a refazer teste de ataque contra você ou aliado muito próximo." }
+  },
+  "Humano": {
+    "descricao": "Humanoides reconhecíveis (1,5–1,95m) com mãos habilidosas e orelhas arredondadas. Fisicamente adaptáveis. Vivem ~100 anos.",
+    "habilidade_1": { "nome": "Resiliência", "descricao": "+1 PF permanente na criação de personagem." },
+    "habilidade_2": { "nome": "Adaptabilidade", "descricao": "Ao falhar num teste usando uma Experiência, marque 1 PF → refaça a rolagem." }
+  },
+  "Infernis": {
+    "descricao": "Descendentes de demônios (1,5–2,1m) com chifres, caninos afiados, orelhas pontiagudas. Alguns têm cauda. Vivem ~350 anos.",
+    "habilidade_1": { "nome": "Destemido", "descricao": "Ao rolar com Medo, marque 2 PF → role com Esperança em vez disso." },
+    "habilidade_2": { "nome": "Aspecto Apavorante", "descricao": "Vantagem em testes para intimidar criaturas hostis." }
+  },
+  "Katari": {
+    "descricao": "Humanoides felinos (1,5–1,95m) com garras retráteis, pupilas fendidas e orelhas triangulares no topo da cabeça. Metade tem cauda. Vivem ~150 anos.",
+    "habilidade_1": { "nome": "Instinto Felino", "descricao": "Em teste de Agilidade, gaste 2 Esperança → role Dado de Esperança novamente." },
+    "habilidade_2": { "nome": "Garras Retráteis", "descricao": "Teste de Agilidade para arranhar corpo a corpo. Em sucesso, alvo fica temporariamente Vulnerável." }
+  },
+  "Orc": {
+    "descricao": "Humanoides (1,5–1,95m) com feições quadradas e presas mandibulares protuberantes. Pele em azuis, cinzas, rosas ou verdes. Vivem ~125 anos.",
+    "habilidade_1": { "nome": "Robusto", "descricao": "Quando tiver apenas 1 PV restante, ataques contra você têm desvantagem." },
+    "habilidade_2": { "nome": "Presas", "descricao": "Ao acertar corpo a corpo, gaste 1 Esperança → +1d6 de dano perfurante." }
+  },
+  "Pequenino": {
+    "descricao": "Humanoides pequenos (90cm–1,2m) com pés peludos grandes e orelhas arredondadas proeminentes. Senso de direção natural. Vivem ~150 anos.",
+    "habilidade_1": { "nome": "Talismã da Sorte", "descricao": "No início de cada sessão, todos os membros do grupo recebem 1 Ponto de Esperança." },
+    "habilidade_2": { "nome": "Senso de Direção", "descricao": "Ao rolar 1 no Dado de Esperança, role-o novamente." }
+  },
+  "Quacho": {
+    "descricao": "Sapos antropomórficos (90cm–1,35m) com olhos protuberantes e mãos/pés membranosos. Movem-se principalmente pulando. Vivem ~100 anos.",
+    "habilidade_1": { "nome": "Anfíbio", "descricao": "Respire e mova-se naturalmente debaixo d'água." },
+    "habilidade_2": { "nome": "Linguarudo", "descricao": "Marque 1 PF → use a língua como arma de Acuidade alcance próximo que causa d12 de dano físico com Proficiência." }
+  },
+  "Símio": {
+    "descricao": "Primatas antropomórficos (60cm–1,8m) com membros longos e pés preênseis. Alguns têm cauda preênsil. Excelentes em escalar. Vivem ~100 anos.",
+    "habilidade_1": { "nome": "Escalador Natural", "descricao": "Vantagem em testes de Agilidade para equilibrar-se e escalar." },
+    "habilidade_2": { "nome": "Ágil", "descricao": "+1 Evasão permanente na criação de personagem." }
+  }
+}

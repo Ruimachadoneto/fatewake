@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 3,
+    "nota": "Cartas de nível 3 dos 9 domínios."
+  },
+  "cartas": [
+    { "id": "arcano-contramagica", "dominio": "Arcano", "nivel": 3, "tipo": "Feitiço", "nome": "Contramágica", "custo_recordacao": 2, "descricao": "Reação: teste de conjuração para interromper efeito mágico em andamento. Sucesso → efeito termina, consequências evitadas, carta vai para sua reserva." },
+    { "id": "arcano-voo", "dominio": "Arcano", "nivel": 3, "tipo": "Feitiço", "nome": "Voo", "custo_recordacao": 1, "descricao": "Teste de conjuração (15). Sucesso → marcadores = Agilidade (mín. 1) nesta carta. Ao fazer teste enquanto voa, gaste 1 marcador. Após gastar o último marcador, você desce para o solo abaixo." },
+
+    { "id": "codice-livro-korvax", "dominio": "Códice", "nivel": 3, "tipo": "Grimório", "nome": "Livro de Korvax", "custo_recordacao": 2, "descricao": "Três feitiços: Círculo Rúnico (marque 1 PF → adversários CaC sofrem 2d12+4 dano mágico e são empurrados para muito próximo), Lapso (1 Esp. → alvo CaC testa reação 15 ou esquece o último minuto de conversa), Levitação (suspende e move alvo visível para ponto em alcance próximo)." },
+    { "id": "codice-livro-norai", "dominio": "Códice", "nivel": 3, "tipo": "Grimório", "nome": "Livro de Norai", "custo_recordacao": 2, "descricao": "Dois feitiços: Amarração Mística (teste contra alvo distante → alvo fica Imobilizado e marca 1 PF; se voando, aterrissa e fica Imobilizado), Bola de Fogo (teste contra alvo muito distante; ele e os muito próximos testam reação 13 → falha: d20+5 dano mágico com Prof.; sucesso: metade)." },
+
+    { "id": "esplendor-novo-folego", "dominio": "Esplendor", "nivel": 3, "tipo": "Talento", "nome": "Novo Fôlego", "custo_recordacao": 2, "descricao": "Uma vez por descanso, ao acertar ataque → recupera 1 PV ou 3 PF. Sucesso com Esperança → aliado próximo também recupera 1 PV ou 3 PF." },
+    { "id": "esplendor-voz-da-razao", "dominio": "Esplendor", "nivel": 3, "tipo": "Talento", "nome": "Voz da Razão", "custo_recordacao": 1, "descricao": "Vantagem em testes para acalmar situações violentas ou convencer alguém a seguir sua ordem. Quando todos os PF estiverem marcados, receba bônus de +1 na Proficiência para rolagens de dano." },
+
+    { "id": "falange-resistir", "dominio": "Falange", "nivel": 3, "tipo": "Talento", "nome": "Resistir", "custo_recordacao": 1, "descricao": "Ao marcar 1 PA para reduzir o dano sofrido, pode marcar 1 PF → marca 1 PA adicional." },
+    { "id": "falange-taticas", "dominio": "Falange", "nivel": 3, "tipo": "Talento", "nome": "Táticas", "custo_recordacao": 1, "descricao": "Ao prestar ajuda, gaste 1 Esp. → some uma Experiência à rolagem junto ao dado de vantagem. Ao fazer teste em dupla, use 1d20 como Dado de Esperança." },
+
+    { "id": "graca-invisibilidade", "dominio": "Graça", "nivel": 3, "tipo": "Feitiço", "nome": "Invisibilidade", "custo_recordacao": 1, "descricao": "Teste de conjuração (10). Sucesso + marque 1 PF → você ou aliado CaC fica Invisível. Marcadores = atributo de conjuração. Gaste 1 marcador por ação feita pela criatura Invisível. Termina ao gastar o último marcador. Uma criatura Invisível por vez." },
+    { "id": "graca-lampejo-hipnotico", "dominio": "Graça", "nivel": 3, "tipo": "Feitiço", "nome": "Lampejo Hipnótico", "custo_recordacao": 1, "descricao": "Teste de conjuração contra todos adversários próximos na sua frente. Uma vez/descanso, sucesso → lampejos ilusórios deixam alvos Atordoados e forçam marcar 1 PF. Atordoados não podem usar reações nem fazer outras ações até se recuperarem." },
+
+    { "id": "lamina-mexa-se", "dominio": "Lâmina", "nivel": 3, "tipo": "Talento", "nome": "Mexa-se", "custo_recordacao": 1, "descricao": "Uma vez por descanso, quando criatura corpo a corpo for causar dano a você, pode evitar o ataque e sair com segurança do alcance do inimigo." },
+    { "id": "lamina-versatilidade", "dominio": "Lâmina", "nivel": 3, "tipo": "Talento", "nome": "Versatilidade", "custo_recordacao": 1, "descricao": "Em vez do atributo requerido pela arma equipada, use um atributo diferente. Ao causar dano, marque 1 PF → use o valor máximo de um dos dados de dano." },
+
+    { "id": "meianoite-estrangulamento", "dominio": "Meia-noite", "nivel": 3, "tipo": "Talento", "nome": "Estrangulamento", "custo_recordacao": 1, "descricao": "Ao se posicionar atrás de criatura de tamanho similar, marque 1 PF → estrangula, deixando-a temporariamente Vulnerável. Criaturas que atacam alvo Vulnerável dessa forma causam 2d6 de dano adicional." },
+    { "id": "meianoite-veu-da-noite", "dominio": "Meia-noite", "nivel": 3, "tipo": "Feitiço", "nome": "Véu da Noite", "custo_recordacao": 1, "descricao": "Teste de conjuração (13). Sucesso → cortina de escuridão entre 2 pontos em alcance distante. Só você vê através. Você fica Escondido para adversários do outro lado e ataca com vantagem. Dura até conjurar outro feitiço." },
+
+    { "id": "sabedoria-projetil-corrosivo", "dominio": "Sabedoria", "nivel": 3, "tipo": "Feitiço", "nome": "Projétil Corrosivo", "custo_recordacao": 1, "descricao": "Teste de conjuração contra alvo distante. Sucesso → d6+4 dano mágico com Prof. Marque 2+ PF → alvo fica permanentemente Corroído: –1 na Dificuldade por cada 2 PF gastos (cumulativo)." },
+    { "id": "sabedoria-tronco-descomunal", "dominio": "Sabedoria", "nivel": 3, "tipo": "Feitiço", "nome": "Tronco Descomunal", "custo_recordacao": 1, "descricao": "Uma vez/descanso, conjura tronco espesso em ponto em alcance próximo (altura equivalente a alcance distante). Como ataque: teste contra adversários próximos → d8 dano físico com Prof." },
+
+    { "id": "valor-inspiracao-critica", "dominio": "Valor", "nivel": 3, "tipo": "Talento", "nome": "Inspiração Crítica", "custo_recordacao": 1, "descricao": "Uma vez por descanso, ao obter sucesso crítico em ataque → todos aliados muito próximos recuperam 1 PF ou recebem 1 Ponto de Esperança." },
+    { "id": "valor-palavras-de-conforto", "dominio": "Valor", "nivel": 3, "tipo": "Talento", "nome": "Palavras de Conforto", "custo_recordacao": 1, "descricao": "Uma vez por descanso longo, ao consolar ou inspirar aliado que falhou em teste → vocês dois recuperam 2 PF cada." }
+  ]
+}

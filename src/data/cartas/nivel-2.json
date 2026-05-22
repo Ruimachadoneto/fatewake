@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "2.0",
+    "nivel": 2,
+    "nota": "Cartas de nível 2 dos 9 domínios. Revisado em 2026-05: domínios e níveis verificados contra o baralho oficial. Força Esmagadora e Presença Corajosa pertencem ao Valor (não Lâmina). Resistir/Táticas são nível 3 da Falange."
+  },
+  "cartas": [
+    { "id": "arcano-incendiar", "dominio": "Arcano", "nivel": 2, "tipo": "Feitiço", "nome": "Incendiar", "custo_recordacao": 1, "descricao": "Teste de conjuração contra alvo corpo a corpo. Sucesso: alvo sofre 1d20+3 de dano mágico e fica temporariamente Em Chamas. Criaturas Em Chamas sofrem 2d6 dano mágico adicional ao agir se ainda estiverem Em Chamas no fim da ação." },
+    { "id": "arcano-olho-flutuante", "dominio": "Arcano", "nivel": 2, "tipo": "Feitiço", "nome": "Olho Flutuante", "custo_recordacao": 0, "descricao": "Gaste 1 Esperança → crie orbe flutuante que você move para qualquer ponto em alcance muito distante. Veja pelos olhos do orbe à vontade. Se sofrer dano ou sair do alcance, o feitiço termina." },
+
+    { "id": "codice-livro-sitil", "dominio": "Códice", "nivel": 2, "tipo": "Grimório", "nome": "Livro de Sitil", "custo_recordacao": 2, "descricao": "Três feitiços: Ajustar Aparência (muda magicamente aparência e vestimentas), Paralelos (gaste 2 Esp. → próximo ataque do alvo acerta alvo adicional no alcance; uma criatura por vez), Ilusão (teste 14 → ilusão visual temporária em alcance próximo; não levanta suspeitas até alvo estar CaC dela)." },
+    { "id": "codice-livro-vagras", "dominio": "Códice", "nivel": 2, "tipo": "Grimório", "nome": "Livro de Vagras", "custo_recordacao": 2, "descricao": "Três feitiços: Portal Arcano (sem adversários CaC, teste 13 + 1 Esp. → portal do ponto atual até ponto visível em distante; fecha após uma criatura passar), Revelar (revela coisas escondidas por magia em próximo), Tranca Rúnica (teste 15 → tranca objeto tocado; só criaturas designadas abrem; quebrado em 1h com magia)." },
+
+    { "id": "esplendor-ultimas-palavras", "dominio": "Esplendor", "nivel": 2, "tipo": "Feitiço", "nome": "Últimas Palavras", "custo_recordacao": 1, "descricao": "Teste conjuração (13) sobre cadáver recente. Sucesso com Esperança → responde 3 perguntas. Sucesso com Medo → responde 1. Falha ou após responder → cadáver vira pó." },
+    { "id": "esplendor-maos-curativas", "dominio": "Esplendor", "nivel": 2, "tipo": "Feitiço", "nome": "Mãos Curativas", "custo_recordacao": 1, "descricao": "Teste conjuração (13) contra criatura corpo a corpo que não você. Sucesso + marque 1 PF → alvo recupera 2 PV ou 2 PF. Falha + marque 1 PF → alvo recupera 1 PV ou 1 PF. Não pode curar mesmo alvo até próximo descanso longo." },
+
+    { "id": "falange-aproximacao-estrategica", "dominio": "Falange", "nivel": 2, "tipo": "Talento", "nome": "Aproximação Estratégica", "custo_recordacao": 1, "descricao": "Após descanso longo, marcadores = Conhecimento (mín. 1). Ao mover para próximo de adversário e atacar, gaste 1 marcador → ataque com vantagem / aliado CaC recupera 1 PF / +1d8 ao dano. Marcadores não usados perdem-se." },
+    { "id": "falange-ferocidade", "dominio": "Falange", "nivel": 2, "tipo": "Talento", "nome": "Ferocidade", "custo_recordacao": 2, "descricao": "Ao fazer adversário marcar 1+ PV, gaste 2 Esp. → aumente sua Evasão em número igual aos PV que ele marcou. Bônus dura até o término do próximo ataque contra você." },
+
+    { "id": "graca-insolencia", "dominio": "Graça", "nivel": 2, "tipo": "Talento", "nome": "Insolência", "custo_recordacao": 2, "descricao": "Ao insultar/provocar alvo distante, teste de Presença contra ele. Uma vez por descanso, sucesso → role Xd4 (X = Proficiência). Alvo marca PF igual ao maior resultado." },
+    { "id": "graca-nao-minta-para-mim", "dominio": "Graça", "nivel": 2, "tipo": "Feitiço", "nome": "Não Minta para Mim", "custo_recordacao": 1, "descricao": "Teste conjuração contra alvo muito próximo. Sucesso → ele não pode mentir enquanto em alcance próximo (não é obrigado a falar). Se recusar a responder, marca 1 PF e efeito termina. Alvo geralmente não sabe que o feitiço foi conjurado." },
+
+    { "id": "lamina-ataque-imprudente", "dominio": "Lâmina", "nivel": 2, "tipo": "Talento", "nome": "Ataque Imprudente", "custo_recordacao": 1, "descricao": "Marque 1 PF → vantagem em um teste de ataque." },
+    { "id": "lamina-fraternidade-marcial", "dominio": "Lâmina", "nivel": 2, "tipo": "Talento", "nome": "Fraternidade Marcial", "custo_recordacao": 1, "descricao": "Uma vez por descanso longo, ao elogiar ou perguntar algo que alguém faz bem → vocês dois recebem 3 Pontos de Esperança." },
+
+    { "id": "meianoite-espirito-da-meianoite", "dominio": "Meia-noite", "nivel": 2, "tipo": "Feitiço", "nome": "Espírito da Meia-noite", "custo_recordacao": 1, "descricao": "Gaste 1 Esp. → invoque espírito humanoide que move/carrega coisas até próximo descanso. Para atacar: teste conjuração contra alvo muito distante. Sucesso → role Xd6 (X = atributo conjuração) como dano mágico; espírito se dissipa. Apenas um por vez." },
+    { "id": "meianoite-sombra-traiceira", "dominio": "Meia-noite", "nivel": 2, "tipo": "Feitiço", "nome": "Sombra Traiçoeira", "custo_recordacao": 0, "descricao": "Teste conjuração contra todos adversários muito próximos. Alvos atingidos ficam temporariamente Imobilizados pela própria sombra." },
+
+    { "id": "sabedoria-conjurar-enxame", "dominio": "Sabedoria", "nivel": 2, "tipo": "Feitiço", "nome": "Conjurar Enxame", "custo_recordacao": 1, "descricao": "Besouros Blindados: marque 1 PF → enxame ao redor; próximo dano reduzido em 1 limiar (gaste 1 Esp. para manter após o dano). Vaga-Lumes: teste conjuração contra todos próximos + 1 Esp. → 2d8+3 dano mágico." },
+    { "id": "sabedoria-familiar-da-natureza", "dominio": "Sabedoria", "nivel": 2, "tipo": "Feitiço", "nome": "Familiar da Natureza", "custo_recordacao": 1, "descricao": "Gaste 1 Esp. → invoque espírito/criatura da floresta até próximo descanso. +1 Esp. para familiar voador. Comunique-se, mande-o em tarefas (teste conjuração) e veja pelos olhos dele (marque 1 PF). Ao causar dano CaC ao familiar → +1d6 ao dano." },
+
+    { "id": "valor-forca-esmagadora", "dominio": "Valor", "nivel": 2, "tipo": "Talento", "nome": "Força Esmagadora", "custo_recordacao": 1, "descricao": "Ao acertar ataque com arma de alcance corpo a corpo, receba bônus = sua Força na rolagem de dano." },
+    { "id": "valor-presenca-corajosa", "dominio": "Valor", "nivel": 2, "tipo": "Talento", "nome": "Presença Corajosa", "custo_recordacao": 0, "descricao": "Ao fazer teste de Presença, gaste 1 Esp. → some sua Força à rolagem. Uma vez por descanso, ao sofrer condição, descreva como sua Presença impede → não sofre a condição." }
+  ]
+}

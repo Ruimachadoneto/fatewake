@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Jambô Editora 2025",
+    "versao": "1.0",
+    "descricao": "Tabelas de equipamentos de 1° patamar"
+  },
+  "armas_primarias_fisicas": [
+    { "nome": "Adaga",            "atributo": "Acuidade",     "alcance": "Corpo a corpo",  "dado": "d8+1",  "tipo": "físico", "empunhadura": "Uma mão" },
+    { "nome": "Alabarda",         "atributo": "Força",        "alcance": "Muito próximo",  "dado": "d10+2", "tipo": "físico", "empunhadura": "Duas mãos", "habilidade": "Inconveniente: –1 em Acuidade" },
+    { "nome": "Arco curto",       "atributo": "Agilidade",    "alcance": "Distante",       "dado": "d6+3",  "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Arco longo",       "atributo": "Agilidade",    "alcance": "Muito distante", "dado": "d8+3",  "tipo": "físico", "empunhadura": "Duas mãos", "habilidade": "Inconveniente: –1 em Acuidade" },
+    { "nome": "Besta",            "atributo": "Acuidade",     "alcance": "Distante",       "dado": "d6+1",  "tipo": "físico", "empunhadura": "Uma mão" },
+    { "nome": "Bordão",           "atributo": "Instinto",     "alcance": "Corpo a corpo",  "dado": "d10+3", "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Cimitarra",        "atributo": "Presença",     "alcance": "Corpo a corpo",  "dado": "d8+1",  "tipo": "físico", "empunhadura": "Uma mão" },
+    { "nome": "Espada larga",     "atributo": "Agilidade",    "alcance": "Corpo a corpo",  "dado": "d8",    "tipo": "físico", "empunhadura": "Uma mão",   "habilidade": "Confiável: +1 em testes de ataque" },
+    { "nome": "Espada longa",     "atributo": "Agilidade",    "alcance": "Corpo a corpo",  "dado": "d10+3", "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Lança",            "atributo": "Acuidade",     "alcance": "Muito próximo",  "dado": "d8+3",  "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Maça",             "atributo": "Força",        "alcance": "Corpo a corpo",  "dado": "d8+1",  "tipo": "físico", "empunhadura": "Uma mão" },
+    { "nome": "Machado de batalha","atributo": "Força",       "alcance": "Corpo a corpo",  "dado": "d10+3", "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Martelo de guerra","atributo": "Força",        "alcance": "Corpo a corpo",  "dado": "d12+3", "tipo": "físico", "empunhadura": "Duas mãos" },
+    { "nome": "Montante",         "atributo": "Força",        "alcance": "Corpo a corpo",  "dado": "d10+3", "tipo": "físico", "empunhadura": "Duas mãos", "habilidade": "Enorme: –1 em Evasão; ao acertar um ataque, role +1 dado de dano e descarte o de resultado mais baixo" },
+    { "nome": "Rapieira",         "atributo": "Presença",     "alcance": "Corpo a corpo",  "dado": "d8",    "tipo": "físico", "empunhadura": "Uma mão",   "habilidade": "Veloz: ao fazer um ataque, marque 1 Ponto de Fadiga para atingir outra criatura no alcance" }
+  ],
+  "armas_primarias_magicas": [
+    { "nome": "Anéis luminosos",  "atributo": "Agilidade",    "alcance": "Muito próximo",  "dado": "d10+1", "tipo": "mágico", "empunhadura": "Duas mãos" },
+    { "nome": "Cajado curto",     "atributo": "Instinto",     "alcance": "Próximo",        "dado": "d8+1",  "tipo": "mágico", "empunhadura": "Uma mão" },
+    { "nome": "Cajado duplo",     "atributo": "Instinto",     "alcance": "Distante",       "dado": "d6+3",  "tipo": "mágico", "empunhadura": "Duas mãos" },
+    { "nome": "Cajado grande",    "atributo": "Conhecimento", "alcance": "Muito distante", "dado": "d6",    "tipo": "mágico", "empunhadura": "Duas mãos", "habilidade": "Poderoso: ao acertar um ataque, role +1 dado de dano e descarte o de resultado mais baixo" },
+    { "nome": "Cetro",            "atributo": "Presença",     "alcance": "Distante",       "dado": "d6",    "tipo": "mágico", "empunhadura": "Duas mãos", "habilidade": "Versátil: também pode ser usada com estas estatísticas — Presença, corpo a corpo, d8" },
+    { "nome": "Lâmina do retorno","atributo": "Acuidade",     "alcance": "Próximo",        "dado": "d8",    "tipo": "mágico", "empunhadura": "Uma mão",   "habilidade": "Retornável: quando é arremessada nos limites do alcance, esta arma reaparece em sua mão imediatamente após o ataque" },
+    { "nome": "Machado sagrado",  "atributo": "Força",        "alcance": "Corpo a corpo",  "dado": "d8+1",  "tipo": "mágico", "empunhadura": "Uma mão" },
+    { "nome": "Manoplas arcanas", "atributo": "Força",        "alcance": "Corpo a corpo",  "dado": "d10+3", "tipo": "mágico", "empunhadura": "Duas mãos" },
+    { "nome": "Runas de mão",     "atributo": "Instinto",     "alcance": "Muito próximo",  "dado": "d10",   "tipo": "mágico", "empunhadura": "Uma mão" },
+    { "nome": "Varinha",          "atributo": "Conhecimento", "alcance": "Distante",       "dado": "d6+1",  "tipo": "mágico", "empunhadura": "Uma mão" }
+  ],
+  "armas_secundarias": [
+    { "nome": "Adaga pequena",  "atributo": "Acuidade",  "alcance": "Corpo a corpo", "dado": "d8",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Par: sua arma principal causa +2 de dano em alvos corpo a corpo" },
+    { "nome": "Besta de mão",   "atributo": "Acuidade",  "alcance": "Distante",      "dado": "d6+1", "tipo": "físico", "empunhadura": "Uma mão" },
+    { "nome": "Chicote",        "atributo": "Presença",  "alcance": "Muito próximo", "dado": "d6",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Alarmante: marque 1 PF para forçar os adversários corpo a corpo a recuar para um ponto em alcance próximo" },
+    { "nome": "Escudo redondo", "atributo": "Força",     "alcance": "Corpo a corpo", "dado": "d4",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Armadura: +1 Ponto de Armadura" },
+    { "nome": "Escudo-torre",   "atributo": "Força",     "alcance": "Corpo a corpo", "dado": "d6",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Barreira: +2 Pontos de Armadura; –1 na Evasão" },
+    { "nome": "Espada curta",   "atributo": "Agilidade", "alcance": "Corpo a corpo", "dado": "d8",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Par: sua arma principal causa +2 de dano em alvos corpo a corpo" },
+    { "nome": "Gancho",         "atributo": "Acuidade",  "alcance": "Próximo",       "dado": "d6",   "tipo": "físico", "empunhadura": "Uma mão", "habilidade": "Gancho: ao acertar um ataque, você pode puxar o alvo para ficar corpo a corpo" }
+  ],
+  "armaduras": [
+    { "nome": "Gibão",              "limiares_base": [5, 11], "armadura_base": 3, "tag": "Flexível",    "efeito": "+1 em Evasão",                        "evasao_bonus": 1  },
+    { "nome": "Armadura de couro",  "limiares_base": [6, 13], "armadura_base": 3,                                                                         "evasao_bonus": 0  },
+    { "nome": "Cota de malha",      "limiares_base": [7, 15], "armadura_base": 4, "tag": "Pesada",      "efeito": "–1 em Evasão",                        "evasao_bonus": -1 },
+    { "nome": "Armadura de placas", "limiares_base": [8, 17], "armadura_base": 4, "tag": "Muito Pesada","efeito": "–2 em Evasão; –1 em Agilidade",       "evasao_bonus": -2 }
+  ]
+}

@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sessão 3 — As Raízes da Dor</title>
+<link href="./fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0f;
+    --bg2: #111318;
+    --bg3: #181c22;
+    --bg4: #1e232b;
+    --surface: #232830;
+    --surface2: #2a3040;
+    --border: #2e3545;
+    --border2: #3d4860;
+    --text: #d4cfc8;
+    --text2: #9a9590;
+    --text3: #605c58;
+    --gold: #c9a84c;
+    --gold2: #e8c96a;
+    --gold-dim: #7a6130;
+    --teal: #4a9b8e;
+    --teal-dim: #1e4a44;
+    --red: #9b4a4a;
+    --red-dim: #3d1c1c;
+    --red-bright: #c96a6a;
+    --purple: #7a5a9b;
+    --purple-dim: #2e1e4a;
+    --green: #5a8a5a;
+    --green-dim: #1e3a1e;
+    --amber: #9b7a4a;
+    --amber-dim: #3a2a1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* LAYOUT */
+  .app { display: flex; height: 100vh; overflow: hidden; }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-title {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .sidebar-sub {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 0;
+  }
+
+  .sidebar-nav::-webkit-scrollbar { width: 4px; }
+  .sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+  .sidebar-nav::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .nav-section {
+    margin-bottom: 8px;
+  }
+
+  .nav-ato {
+    padding: 8px 24px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    border-left: 2px solid transparent;
+    font-size: 14px;
+    color: var(--text2);
+    font-family: 'Crimson Pro', serif;
+  }
+
+  .nav-item:hover { background: var(--bg3); color: var(--text); }
+
+  .nav-item.active {
+    background: var(--bg3);
+    color: var(--gold);
+    border-left-color: var(--gold);
+  }
+
+  .nav-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    min-width: 20px;
+  }
+
+  .nav-item.active .nav-num { color: var(--gold-dim); }
+
+  /* MAIN */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--bg);
+  }
+
+  .main::-webkit-scrollbar { width: 6px; }
+  .main::-webkit-scrollbar-track { background: transparent; }
+  .main::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+  /* PAGES */
+  .page { display: none; padding: 52px 64px; max-width: 820px; animation: fadeIn 0.3s ease; }
+  .page.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* TYPOGRAPHY */
+  .page-overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cena-title {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cena-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-dim);
+    background: var(--bg3);
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* BLOCOS ESPECIAIS */
+  .narrar {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.85;
+  }
+
+  .narrar p { margin-bottom: 12px; }
+  .narrar p:last-child { margin-bottom: 0; }
+
+  .fala {
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border2);
+  }
+
+  .fala-header {
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .fala-body {
+    padding: 14px 16px;
+    font-style: italic;
+    line-height: 1.8;
+    background: var(--bg3);
+  }
+
+  .fala-body p { margin-bottom: 8px; }
+  .fala-body p:last-child { margin-bottom: 0; }
+
+  .fala.sael .fala-header { background: var(--teal-dim); color: var(--teal); }
+  .fala.anciã .fala-header { background: var(--red-dim); color: var(--red-bright); }
+  .fala.vorukh .fala-header { background: #2a1a0a; color: var(--amber); }
+  .fala.default .fala-header { background: var(--surface); color: var(--text2); }
+
+  /* CAIXAS MECÂNICAS */
+  .caixa {
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+  }
+
+  .caixa-header {
+    padding: 10px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .caixa-body {
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .caixa-body p { margin-bottom: 10px; }
+  .caixa-body p:last-child { margin-bottom: 0; }
+
+  .caixa-body ul { padding-left: 20px; }
+  .caixa-body li { margin-bottom: 6px; }
+
+  .caixa.mecanica .caixa-header { background: var(--teal-dim); color: var(--teal); }
+  .caixa.mecanica .caixa-body { background: #0d1e1c; }
+
+  .caixa.medo .caixa-header { background: var(--red-dim); color: var(--red-bright); }
+  .caixa.medo .caixa-body { background: #140a0a; }
+
+  .caixa.esperanca .caixa-header { background: var(--green-dim); color: #7ab87a; }
+  .caixa.esperanca .caixa-body { background: #0a140a; }
+
+  .caixa.lore .caixa-header { background: var(--purple-dim); color: #a07acc; }
+  .caixa.lore .caixa-body { background: #110d1a; }
+
+  .caixa.npc .caixa-header { background: var(--amber-dim); color: #d4a860; }
+  .caixa.npc .caixa-body { background: #120e07; }
+
+  .caixa.alerta .caixa-header { background: #1a1200; color: var(--gold2); }
+  .caixa.alerta .caixa-body { background: #100d00; }
+
+  /* TAGS */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid;
+    text-transform: uppercase;
+  }
+  .tag.lore { color: #a07acc; border-color: var(--purple); background: var(--purple-dim); }
+  .tag.mecanica { color: var(--teal); border-color: var(--teal-dim); background: var(--teal-dim); }
+  .tag.tensao { color: var(--red-bright); border-color: var(--red); background: var(--red-dim); }
+  .tag.social { color: #d4a860; border-color: var(--amber); background: var(--amber-dim); }
+  .tag.narrativa { color: var(--gold2); border-color: var(--gold-dim); background: #1a1200; }
+
+  /* SEPARADOR */
+  .sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+
+  /* RELÓGIO */
+  .relogio-wrapper { display: flex; align-items: center; gap: 20px; margin: 20px 0; }
+  .relogio {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--red);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .relogio svg { position: absolute; top: 0; left: 0; }
+  .relogio-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red-bright);
+    font-weight: 400;
+  }
+  .relogio-text { font-size: 15px; color: var(--text2); line-height: 1.6; }
+
+  /* CARD CENA expansível */
+  .cena-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .cena-card:hover { border-color: var(--border2); }
+
+  .cena-card-header {
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+
+  .cena-card-header:hover { background: var(--bg3); }
+
+  .cena-card-chevron {
+    margin-left: auto;
+    color: var(--text3);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+
+  .cena-card.open .cena-card-chevron { transform: rotate(180deg); }
+
+  .cena-card-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cena-card.open .cena-card-body { display: block; }
+
+  /* CAPA */
+  .capa {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(74,155,142,0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .capa-ornamento {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .capa-sessao {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .capa-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .capa-subtitulo {
+    font-family: 'Crimson Pro', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 48px;
+  }
+
+  .capa-divisor {
+    width: 80px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin-bottom: 36px;
+  }
+
+  .capa-resumo {
+    max-width: 560px;
+    font-size: 18px;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .capa-atos {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+
+  .capa-ato {
+    padding: 10px 20px;
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--bg2);
+  }
+
+  .capa-ato:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--bg3);
+  }
+
+  .capa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+
+  .capa-stat {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  .capa-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .capa-stat-value {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  /* BOTÃO */
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid var(--gold-dim);
+    background: transparent;
+    color: var(--gold);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn:hover { background: var(--bg3); border-color: var(--gold); }
+
+  /* FIM DE SESSÃO */
+  .fim-box {
+    background: var(--bg2);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+
+  .fim-header {
+    background: var(--red-dim);
+    padding: 12px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--red-bright);
+    text-transform: uppercase;
+  }
+
+  .fim-body {
+    padding: 24px 20px;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  .fim-body p { margin-bottom: 14px; }
+  .fim-body p:last-child { margin-bottom: 0; }
+
+  /* UTILITY */
+  .mt { margin-top: 20px; }
+  .mb { margin-bottom: 20px; }
+
+  strong { color: var(--text); font-weight: 600; }
+  em { color: var(--gold); font-style: italic; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .page { padding: 32px 24px; }
+    .capa { padding: 48px 24px; }
+    .capa-titulo { font-size: 36px; }
+    .capa-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-overline">Surto Selvagem</div>
+      <div class="sidebar-title">Sessão 3</div>
+      <div class="sidebar-sub">As Raízes da Dor</div>
+    </div>
+    <div class="sidebar-nav">
+
+      <div class="nav-section">
+        <div class="nav-ato">Índice</div>
+        <div class="nav-item active" onclick="showPage('capa')">
+          <span class="nav-num">—</span> Capa & Resumo
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-ato">Ato 1 · Templo de Oove</div>
+        <div class="nav-item" onclick="showPage('c1')">
+          <span class="nav-num">C1</span> A Queda e o Respiro
+        </div>
+        <div class="nav-item" onclick="showPage('c2')">
+          <span class="nav-num">C2</span> Murais dos Deuses
+        </div>
+        <div class="nav-item" onclick="showPage('c3')">
+          <span class="nav-num">C3</span> Descanso & A Carta
+        </div>
+        <div class="nav-item" onclick="showPage('c4')">
+          <span class="nav-num">C4</span> O Puzzle da Lua
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-ato">Ato 2 · Fuga pelo Túnel</div>
+        <div class="nav-item" onclick="showPage('c5')">
+          <span class="nav-num">C5</span> Os Primeiros Fungris
+        </div>
+        <div class="nav-item" onclick="showPage('c6')">
+          <span class="nav-num">C6</span> Corredor dos Adormecidos
+        </div>
+        <div class="nav-item" onclick="showPage('c7')">
+          <span class="nav-num">C7</span> A Saída
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-ato">Ato 3 · Vila de Vaelia</div>
+        <div class="nav-item" onclick="showPage('c8')">
+          <span class="nav-num">C8</span> Thariel
+        </div>
+        <div class="nav-item" onclick="showPage('c9')">
+          <span class="nav-num">C9</span> A Vila & Os Soldados
+        </div>
+        <div class="nav-item" onclick="showPage('c10')">
+          <span class="nav-num">C10</span> A Casa & O Diário
+        </div>
+        <div class="nav-item" onclick="showPage('c11')">
+          <span class="nav-num">C11</span> A Névoa & Sael
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-ato">Encerramento</div>
+        <div class="nav-item" onclick="showPage('fim')">
+          <span class="nav-num">—</span> Fim da Sessão
+        </div>
+        <div class="nav-item" onclick="showPage('fungri')">
+          <span class="nav-num">★</span> Ficha: Fungri Cego
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- CAPA -->
+    <div class="page active capa" id="page-capa">
+      <div class="capa-ornamento">◈ O Surto Selvagem · Temporada 1</div>
+      <div class="capa-sessao">Sessão 3</div>
+      <div class="capa-titulo">As Raízes<br>da Dor</div>
+      <div class="capa-subtitulo">Sistema Daggerheart · Dark Fantasy & Survival Horror</div>
+      <div class="capa-divisor"></div>
+      <div class="capa-resumo">
+        O grupo começa no escuro das raízes de Alula e termina com o peso de uma escolha moral impossível. Três atos. Um deus moribundo. A história de uma mãe destruída pelo luto. E um filho que ainda pede para salvá-la.
+      </div>
+      <div class="capa-atos">
+        <div class="capa-ato" onclick="showPage('c1')">Ato 1 · Templo de Oove →</div>
+        <div class="capa-ato" onclick="showPage('c5')">Ato 2 · Fuga pelo Túnel →</div>
+        <div class="capa-ato" onclick="showPage('c8')">Ato 3 · Vila de Vaelia →</div>
+        <div class="capa-ato" onclick="showPage('c11')">Cliffhanger · A Névoa →</div>
+      </div>
+      <div class="capa-grid">
+        <div class="capa-stat">
+          <div class="capa-stat-label">Onde paramos</div>
+          <div class="capa-stat-value">Alçapão fechado. Fanáticos do Culto arrombando a biblioteca acima. O grupo desceu para o breu das raízes.</div>
+        </div>
+        <div class="capa-stat">
+          <div class="capa-stat-label">PJs</div>
+          <div class="capa-stat-value">Levi Lamarck — Mago (Égide)<br>Maia Zamora — Patrulheira (Viço)</div>
+        </div>
+        <div class="capa-stat">
+          <div class="capa-stat-label">NPCs presentes</div>
+          <div class="capa-stat-value">Elara (Oráculo) · Marla (Discípula)</div>
+        </div>
+        <div class="capa-stat">
+          <div class="capa-stat-label">Tom da sessão</div>
+          <div class="capa-stat-value">Contemplação → Survival Horror → Luto. Nunca apresente Vaelia como vilã.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C1 -->
+    <div class="page" id="page-c1">
+      <div class="page-overline">Ato 1 · Templo de Oove</div>
+      <div class="page-title">C1 — A Queda e o Primeiro Respiro</div>
+      <div class="tags"><span class="tag narrativa">atmosfera</span><span class="tag social">grupo</span></div>
+
+      <div class="narrar">
+        <p>Retomada imediata. O alçapão fecha com um baque acima de vocês. Por alguns segundos, tudo é breu e o barulho abafado de machados golpeando madeira lá em cima.</p>
+        <p>Depois os passos somem. E depois o barulho some. E o que fica é um silêncio diferente — não o silêncio do perigo, mas o silêncio de algo que existe há muito tempo e não tem pressa nenhuma.</p>
+        <p>As paredes ao redor de vocês começam a pulsar. Musgos, líquens, flores minúsculas que não deveriam existir no subterrâneo — emitem um brilho frio e azulado. Não é quente. Não agride os olhos. É como luar dentro da terra.</p>
+        <p>Vocês estão nas raízes de Alula. E algo muito antigo mora aqui.</p>
+      </div>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Mecânica Central — A Lei da Luz de Oove</div>
+        <div class="caixa-body">
+          <p><strong>Estabeleça esta regra agora, com clareza.</strong></p>
+          <p>A bioluminescência das plantas sagradas de Oove é <strong>segura</strong>. Ela existe há séculos e os Fungris a ignoram — é parte do ambiente deles.</p>
+          <p>Tochas comuns, feitiços de luz intensa ou qualquer fonte de calor luminoso <strong>(incluindo os feitiços dourados de Levi)</strong> funcionam como um farol para os Fungris. Eles não enxergam, mas sentem calor e vibração sonora.</p>
+          <p>Não force. Deixe os jogadores chegarem sozinhos — ou pagarem o preço depois.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C2 -->
+    <div class="page" id="page-c2">
+      <div class="page-overline">Ato 1 · Templo de Oove</div>
+      <div class="page-title">C2 — Os Murais de Pedra</div>
+      <div class="tags"><span class="tag lore">lore</span><span class="tag social">Elara</span></div>
+
+      <p>As paredes do templo são cobertas de entalhes contando a história do panteão diáfano. Elara lidera a leitura — ela reconhece os símbolos como Oráculo. Narrar os painéis em sequência.</p>
+
+      <div class="caixa lore">
+        <div class="caixa-header">◈ Painel 1 — Nikta, A Grande Coruja</div>
+        <div class="caixa-body">
+          <p>Uma coruja colossal com dois olhos brilhantes sustenta um ciclo entre as asas: flores brotando de um lado, folhas morrendo do outro. Estações girando.</p>
+          <p><em>"O Olho da Semeadura e o Olho da Colheita. Ela era o equilíbrio. Sem os dois, o ciclo para."</em></p>
+        </div>
+      </div>
+
+      <div class="caixa lore">
+        <div class="caixa-header">◈ Painel 2 — Shun'Aush, A Serpente de Granito</div>
+        <div class="caixa-body">
+          <p>Uma serpente monumental enrolada sob a terra, como fundação do mundo. Raízes crescem ao redor dela. Povos constroem cidades sobre seu dorso. Ela é a permanência. O peso da história.</p>
+        </div>
+      </div>
+
+      <div class="caixa medo">
+        <div class="caixa-header">⚠ Painel 3 — O que choca Elara</div>
+        <div class="caixa-body">
+          <p>Soldados com armaduras de pedra e aço marchando. A serpente sendo <strong>fragmentada</strong> — não morta em batalha, mas desmontada, peça por peça. Os fragmentos sendo transportados. Empilhados. Tornando-se muralhas.</p>
+          <div class="narrar" style="margin: 12px 0;">
+            <p><em>"Eles não apenas roubaram um olho de Nikta. Eles construíram uma cidade com o cadáver de uma deusa."</em></p>
+          </div>
+          <p>Pausa longa. Deixe o grupo processar.</p>
+        </div>
+      </div>
+
+      <div class="caixa lore">
+        <div class="caixa-header">◈ Painel 4 — Oove, O Deus da Lua</div>
+        <div class="caixa-body">
+          <p>Uma figura lunar — nem humana nem animal, mais luz do que forma — abre as mãos sobre a terra. Onde os dedos tocam o solo, plantas bioluminescentes crescem.</p>
+          <p>Texto em baixo-relevo: <em>"...para que ninguém fique cego nos sete dias de noite..."</em></p>
+        </div>
+      </div>
+
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Gancho — Premonição de Elara (Sessão 2)</div>
+        <div class="caixa-body">
+          <p>Elara viu: a ossada colossal de Nikta, o mundo estéril, pessoas definhando. No Painel 4, o lugar onde Nikta deveria estar está <strong>vazio — raspado</strong>. Como se alguém tivesse removido a imagem dela depois que o templo foi construído.</p>
+          <p>Elara não diz nada. Mas olha para Marla por um segundo longo demais. <strong>Não explique. Deixe o silêncio plantar a semente.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C3 -->
+    <div class="page" id="page-c3">
+      <div class="page-overline">Ato 1 · Templo de Oove</div>
+      <div class="page-title">C3 — Descanso & A Decodificação</div>
+      <div class="tags"><span class="tag mecanica">mecânica</span><span class="tag narrativa">revelação</span></div>
+
+      <p>Uma câmara interna com fonte de pedra seca e uma área plana que serviu de sala de meditação. O lugar mais seguro desde a Sessão 1. É aqui que Levi abre os livros de receitas.</p>
+
+      <div class="caixa esperanca">
+        <div class="caixa-header">◆ Descanso Longo</div>
+        <div class="caixa-body">
+          <p>Recuperação completa de PV e PF. Momento para roleplay: o que cada personagem faz?</p>
+          <p>Maia pode examinar a bússola de Kael. Marla pode colocar as mãos no chão e ouvir o que a terra diz aqui embaixo. Elara medita ou copia os entalhes dos murais. Levi abre os livros.</p>
+        </div>
+      </div>
+
+      <div class="section-title">A Epifania</div>
+      <p>Marla, entediada, folheia o Livro 2 e aponta uma receita sem ilustração: <em>"Folhado das Torres"</em>. Levi responde distraído: <em>"É uma torta de maçã..."</em> E congela.</p>
+      <p>A chave da criptografia são os ingredientes das receitas. Cada ingrediente corresponde a uma letra ou palavra em código.</p>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Teste — Conhecimento (Analisar), Dificuldade 13 — Levi</div>
+        <div class="caixa-body">
+          <p><strong>Sucesso com Esperança:</strong> Decifra a carta completamente em uma hora. Mensagem clara. Ganha 1 Ponto de Esperança.</p>
+          <p><strong>Sucesso com Medo:</strong> Decifra, mas uma seção está danificada. A informação perdida pode ser o número de dias até Vaelia agir, ou a localização exata do Ninho de Nikta. Mestre ganha 1 Ponto de Medo.</p>
+          <p><strong>Falha:</strong> A lógica não funciona. Marla aponta a receita e a epifania acontece de qualquer forma — mas Levi marca 1 Ponto de Fadiga. Mestre ganha 1 Ponto de Medo.</p>
+        </div>
+      </div>
+
+      <div class="section-title">O Conteúdo da Carta</div>
+      <div class="narrar">
+        <p><em>"A Espectro não é uma lenda. É uma insurgência com estrutura, lealdade e um poder que não deveria existir.</em></p>
+        <p><em>O Culto das Folhas Mortas fez um pacto de sangue com Vorukh, o Javali de Ferro. O preço desse poder é a vida dos dispensáveis — eles drenam os inocentes até que sequem como madeira velha.</em></p>
+        <p><em>A Espectro marchará para o Ninho da Deusa. Se Nikta morrer, o Inverno do Luto engolirá tudo. O Viço. O Égide. Tudo.</em></p>
+        <p><em>Impeçam-na."</em></p>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--text3); font-style: normal;">— Kreil Dirn, Mestre-Espião de Égide</p>
+      </div>
+
+      <div class="caixa alerta">
+        <div class="caixa-header">★ Nota de direção</div>
+        <div class="caixa-body">
+          <p>Depois de ler a carta, <strong>não avance imediatamente</strong>. Deixe o silêncio durar. Olhe para os jogadores. O peso da informação é parte da cena.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C4 -->
+    <div class="page" id="page-c4">
+      <div class="page-overline">Ato 1 · Templo de Oove</div>
+      <div class="page-title">C4 — O Puzzle da Lua</div>
+      <div class="tags"><span class="tag mecanica">puzzle</span><span class="tag tensao">contagem regressiva</span></div>
+
+      <p>No fundo do templo: uma grande porta de pedra com entalhes circulares. Ao redor, distribuídos pela parede, pontos com flores bioluminescentes apagadas dentro de conchas de pedra.</p>
+      <p>O puzzle: iluminar os pontos certos para formar a silhueta da Lua Cheia. A resposta está no Painel 4 de Oove — a posição das flores no mural é o mapa exato.</p>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Três Caminhos para Resolver</div>
+        <div class="caixa-body">
+          <p><strong>Investigação:</strong> Teste de Instinto (Perceber) Dif. 12 para associar o mural ao puzzle.</p>
+          <p><strong>Marla instintiva:</strong> Como elementalista da terra, ela sente quais flores são as certas. Sem teste — ela simplesmente sabe.</p>
+          <p><strong>Solução narrativa:</strong> Se os jogadores verbalizarem a conexão com o mural antes de rolar qualquer dado, deixa acontecer sem teste. O puzzle é recompensa de atenção, não obstáculo de dado.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Quando o último ponto se acende</div>
+      <div class="narrar">
+        <p>A última flor brilha. Por um segundo, a parede inteira pulsa em azul — a forma da Lua desenhada de luz fria.</p>
+        <p>E então a porta desce.</p>
+        <p>O som é profundo. Pedra contra pedra, ecoando pelo templo inteiro, subindo pelas raízes, viajando pelo subsolo de Alula. É um som que não tem pressa de acabar.</p>
+        <p>Nas paredes ao redor de vocês, algo muda. Os fungos bioluminescentes param de pulsar.</p>
+      </div>
+
+      <div class="relogio-wrapper">
+        <div class="relogio">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#3d1c1c" stroke-width="2"/>
+            <path d="M40 6 A34 34 0 0 1 74 40 L40 40 Z" fill="#9b4a4a" opacity="0.7"/>
+            <circle cx="40" cy="40" r="3" fill="#c96a6a"/>
+          </svg>
+        </div>
+        <div class="relogio-text">
+          <strong style="color: var(--red-bright);">Relógio de 3 fatias — iniciado.</strong><br>
+          O barulho da porta preencheu <strong>1 fatia automaticamente</strong>.<br>
+          Fatia 2: barulho alto ou luz mágica na fuga.<br>
+          Fatia 3: horda acorda completamente.
+        </div>
+      </div>
+    </div>
+
+    <!-- C5 -->
+    <div class="page" id="page-c5">
+      <div class="page-overline">Ato 2 · A Fuga pelo Túnel</div>
+      <div class="page-title">C5 — Os Primeiros Fungris</div>
+      <div class="tags"><span class="tag tensao">combate</span><span class="tag mecanica">aprendizado</span></div>
+
+      <div class="caixa alerta">
+        <div class="caixa-header">★ Nota de direção — Mudança de Tom</div>
+        <div class="caixa-body">
+          <p>O templo era contemplação e descoberta. O túnel é sobrevivência pura. Os Fungris <strong>não são monstros para matar</strong>. São o ambiente. O objetivo é atravessá-los.</p>
+        </div>
+      </div>
+
+      <div class="narrar">
+        <p>Dois — talvez três — surgem do chão perto da porta. Não de forma dramática. Eles simplesmente... emergem. Como se a terra os estivesse cuspindo.</p>
+        <p>Sem olhos. Carapaça quitinosa de um cinza-acastanhado, como pedra viva. Antenas longas que tremem e giram — farejando som, farejando calor.</p>
+        <p>Eles não sabem que vocês estão aqui. Ainda.</p>
+      </div>
+
+      <div class="caixa medo">
+        <div class="caixa-header">⚠ Ficha — Fungri Cego (Adversário Corrompido)</div>
+        <div class="caixa-body">
+          <p><strong>Tipo:</strong> Comum / Corrompido &nbsp;|&nbsp; <strong>PV:</strong> 3 &nbsp;|&nbsp; <strong>Evasão:</strong> 12 &nbsp;|&nbsp; <strong>Armadura:</strong> 2</p>
+          <p><strong>Limiares:</strong> Menor 6 / Maior 12 &nbsp;|&nbsp; <strong>Dano:</strong> d6+2 físico (mordida / garra)</p>
+          <hr style="border-color: var(--red-dim); margin: 12px 0;">
+          <p><strong>Sensor de Calor e Som:</strong> Se um personagem usa magia de luz intensa, tocha ou faz barulho alto no turno, o Fungri recebe vantagem no próximo ataque. O barulho preenche 1 fatia do relógio.</p>
+          <p><strong>Chamado da Horda:</strong> Quando um Fungri morre com barulho, rola 1d6. Em resultado 4+, um novo Fungri emerge de uma parede próxima no próximo turno.</p>
+          <p><strong>Fraqueza — Morte Silenciosa:</strong> Se morrer por ataque corpo a corpo sem barulho (faca, golpe preciso), não ativa o Chamado da Horda.</p>
+        </div>
+      </div>
+
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Movimento do Mestre — A Tentação de Levi</div>
+        <div class="caixa-body">
+          <p>Quando o combate parecer difícil, dê a Levi uma abertura óbvia para um feitiço de luz. <strong>Não diga nada. Apenas descreva o Fungri avançando.</strong></p>
+          <p>Se ele usar magia luminosa: preencha 1 fatia do relógio imediatamente.</p>
+          <p>Se ele resistir: ganhe 1 Ponto de Esperança para o grupo — eles estão aprendendo as regras deste lugar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C6 -->
+    <div class="page" id="page-c6">
+      <div class="page-overline">Ato 2 · A Fuga pelo Túnel</div>
+      <div class="page-title">C6 — O Corredor dos Adormecidos</div>
+      <div class="tags"><span class="tag tensao">tensão máxima</span><span class="tag mecanica">furtividade</span></div>
+
+      <div class="narrar">
+        <p>Além da porta há um corredor.</p>
+        <p>Estreito — dois de vocês lado a lado, no máximo. Comprido o suficiente para que a luz azul das plantas não chegue ao fundo.</p>
+        <p>E nas paredes: Fungris. Dezenas deles. Encaixados na pedra e na terra como parasitas em um hospedeiro. Carapaças pulsando devagar. Antenas dobradas sobre o corpo. Adormecidos.</p>
+        <p>Vocês precisam passar por todos eles.</p>
+      </div>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Teste em Grupo — Agilidade (Manobrar / Esconder-se), Dificuldade 13</div>
+        <div class="caixa-body">
+          <p>Cada personagem rola individualmente. O grupo passa se a maioria passar.</p>
+          <p><strong>Sucesso com Esperança:</strong> Atravessa sem incidentes. Ganha 1 Ponto de Esperança.</p>
+          <p><strong>Sucesso com Medo:</strong> O personagem passa, mas esbarra em um Fungri. As antenas tremem. O corpo se contrai. Pausa longa. Ele relaxa e dorme de volta. Mestre ganha 1 Ponto de Medo.</p>
+          <p><strong>Falha:</strong> Barulho. Preenche 1 fatia do relógio. Se o relógio completar: horda acorda, a cena muda para fuga.</p>
+        </div>
+      </div>
+
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Movimento do Mestre — O Bloqueio no Meio do Corredor</div>
+        <div class="caixa-body">
+          <p>No ponto médio, um Fungri maior escorregou da parede e bloqueia o caminho. Está dormindo no chão.</p>
+          <p>A solução óbvia para Levi é um feitiço. A solução certa é Maia.</p>
+          <p><strong>Maia</strong> pode mover o Fungri milímetro por milímetro com Acuidade (Manobrar) Dificuldade 15.</p>
+          <p>Sucesso: o caminho está aberto. Silêncio absoluto.<br>
+          Falha com Medo: ela move o Fungri, mas ele range. O grupo tem 1 turno para correr antes que os vizinhos acordem.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C7 -->
+    <div class="page" id="page-c7">
+      <div class="page-overline">Ato 2 · A Fuga pelo Túnel</div>
+      <div class="page-title">C7 — A Saída</div>
+      <div class="tags"><span class="tag tensao">tensão</span><span class="tag narrativa">transição</span></div>
+
+      <div class="narrar">
+        <p>O fim do corredor aparece — uma escada de raízes entrelaçadas subindo para a superfície. A luz do dia entra de cima.</p>
+        <p>Atrás de vocês, no escuro do corredor, algo ressona. Uma vibração que sobe do chão. Depois outra. Depois muitas ao mesmo tempo.</p>
+        <p>A horda acordou.</p>
+        <p>Vocês sobem correndo. Raízes arranham os braços, o teto fica mais baixo, e os sons atrás ficam mais próximos — até que o último de vocês sai e Maia enterra a faca no mecanismo de raízes na abertura. Ela se fecha com um estrondo abafado que some para baixo.</p>
+        <p>Silêncio. Floresta. Sol — ou estrelas.</p>
+        <p>Vocês estão fora.</p>
+      </div>
+    </div>
+
+    <!-- C8 -->
+    <div class="page" id="page-c8">
+      <div class="page-overline">Ato 3 · A Vila de Vaelia</div>
+      <div class="page-title">C8 — Thariel</div>
+      <div class="tags"><span class="tag lore">lore</span><span class="tag social">Elara</span></div>
+
+      <div class="caixa alerta">
+        <div class="caixa-header">★ Regra deste ato</div>
+        <div class="caixa-body">
+          <p>Nunca apresente Vaelia como vilã. Apresente-a como alguém que o mundo destruiu.</p>
+        </div>
+      </div>
+
+      <p>Na floresta, logo após sair do túnel, o grupo encontra três corpos. Um mercador com o carroção virado. Duas mulheres — provavelmente mãe e filha — caídas juntas. Mortos recentes, mas a pele já começa a enrugar, as veias já ficam escuras. A Morte Seca. O grupo reconhece.</p>
+
+      <div class="narrar">
+        <p>Entre os corpos, uma forma se materializa — devagar, como neblina tomando forma contra a vontade.</p>
+        <p>Chifres de cervo. Contornos humanos que nunca ficam completamente sólidos. Olhos que são luz branca sem pupila.</p>
+        <p>Ele se dobra sobre os corpos com algo que, se você traduzisse para uma emoção humana, chamaria de angústia. Suas mãos de névoa tocam as faces das mulheres. As almas deveriam ir — mas não vão. Algo as prende.</p>
+        <p>Ele está tentando. E não consegue.</p>
+      </div>
+
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Elara Reconhece — narrar para a jogadora</div>
+        <div class="caixa-body">
+          <p>Thariel, o Guia das Almas. O deus que leva os mortos para onde precisam ir. E ele está falhando — o Surto corrompeu até a morte. As almas querem partir mas o corpo não deixa.</p>
+          <p>Elara começa a entoar — palavras em uma língua antiga, quase esquecida. Sutras de passagem. Ritos de soltar.</p>
+          <p><strong>Não peça teste. Este é o papel dela como Oráculo. Deixe ela ter este momento.</strong></p>
+        </div>
+      </div>
+
+      <div class="narrar">
+        <p>As mãos de Elara brilham fracamente — não luz de magia, mas algo mais antigo, como o eco de uma prece.</p>
+        <p>Thariel ergue a cabeça para ela. Há reconhecimento naquele olhar de luz branca. O brilho ao redor dos corpos pulsa uma vez, duas — e os espíritos se dissipam. Como um suspiro que demorava tempo demais para sair.</p>
+        <p>Thariel cai de joelhos. Quase transparente. Exausto de uma forma que deuses não deveriam estar.</p>
+        <p>E então levanta um braço de névoa. Aponta para a floresta. Uma direção específica.</p>
+        <p>Imagens chegam — não palavras. Uma vila queimada. Raízes negras. Dois vultos com capas de folhas mortas. Urgência.</p>
+      </div>
+    </div>
+
+    <!-- C9 -->
+    <div class="page" id="page-c9">
+      <div class="page-overline">Ato 3 · A Vila de Vaelia</div>
+      <div class="page-title">C9 — A Vila & Os Soldados</div>
+      <div class="tags"><span class="tag tensao">furtividade</span><span class="tag lore">investigação</span></div>
+
+      <div class="narrar">
+        <p>A floresta abre para uma clareira. E na clareira: o que sobrou de uma vila.</p>
+        <p>Casas de madeira carbonizadas, abertas para o céu. Jardins estrangulados por vinhas negras que continuaram crescendo depois do fogo — o Surto não se importa com o que está queimado.</p>
+        <p>No centro, um poço de pedra entulhado de terra e folhas. Uma praça com pedras que foram brancas um dia.</p>
+        <p>É um lugar que já foi lar. Isso é o mais perturbador.</p>
+      </div>
+
+      <p>Dois soldados do Culto vasculham os escombros com propósito — não saqueando, procurando algo. Seguem um rastro no chão que os PJs não conseguem ver daqui.</p>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Teste — Instinto (Pressentir) Dif. 12 — Maia</div>
+        <div class="caixa-body">
+          <p>Sucesso: ela percebe que os soldados estão rastreando um traço de magia no chão — como sabujos seguindo um rastro de sangue ritual. Não estão procurando objetos.</p>
+        </div>
+      </div>
+
+      <div class="section-title">O que fazer com os soldados</div>
+
+      <div class="caixa esperanca">
+        <div class="caixa-header">◆ Espionar (recomendado)</div>
+        <div class="caixa-body">
+          <p>O grupo se esconde e ouve. Um soldado diz ao outro: <em>"O sangue de Vorukh ainda pinga no altar. A Espectro disse pra não tocar sem ela."</em> Confirmam a existência do templo subterrâneo.</p>
+        </div>
+      </div>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Seguir</div>
+        <div class="caixa-body">
+          <p>Quando os soldados terminam, descem por um poço no centro da praça. Se o grupo seguir à distância, chegam direto à entrada do templo de Vorukh.</p>
+        </div>
+      </div>
+
+      <div class="caixa medo">
+        <div class="caixa-header">⚠ Confrontar</div>
+        <div class="caixa-body">
+          <p>Combate rápido. Mas se um soldado escapar, o Culto vai saber que alguém esteve aqui. <strong>Movimento do Mestre:</strong> Torin manda uma patrulha.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C10 -->
+    <div class="page" id="page-c10">
+      <div class="page-overline">Ato 3 · A Vila de Vaelia</div>
+      <div class="page-title">C10 — A Casa & O Diário</div>
+      <div class="tags"><span class="tag narrativa">narrativa</span><span class="tag lore">lore pessoal</span></div>
+
+      <div class="narrar">
+        <p>Uma casa diferente das outras. Paredes de pedra — alguém as construiu para durar. O telhado desabou para dentro, mas as paredes ficaram.</p>
+        <p>Dentro: uma mesa com livros encharcados que se desfazem ao toque. Um castiçal derretido. No canto, um berço de madeira queimado até os pés.</p>
+        <p>No chão ao lado da mesa, meio enterrado sob cinzas: um diário com capa de couro escuro. Fechado. Um galho fino e seco cresceu ao redor da lombada, como se a própria casa tentasse guardá-lo.</p>
+      </div>
+
+      <div class="caixa lore">
+        <div class="caixa-header">◈ Fragmentos Legíveis no Diário</div>
+        <div class="caixa-body">
+          <p><em>"...ele disse que a terra estava chorando... não é loucura, eu ouço junto com ele às vezes..."</em></p>
+          <p><em>"...a vila não acredita. Eles têm medo..."</em></p>
+          <p><em>"...ele gritou a noite toda. Eu não consigo mais..."</em></p>
+          <p><em>"...por favor alguém me diga o que fazer..."</em></p>
+          <p style="margin-top: 12px;"><strong>Última página — quatro palavras, o papel rasgado pela força da escrita:</strong></p>
+          <p><em style="font-size: 20px; color: var(--gold);">"eu não tinha escolha"</em></p>
+        </div>
+      </div>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Teste — Conhecimento (Analisar) Dif. 14 — Levi</div>
+        <div class="caixa-body">
+          <p><strong>Sucesso:</strong> Mesmo sem as palavras, ele reconstrói a sequência emocional — luto → raiva → pacto.</p>
+          <p><strong>Falha:</strong> Os fragmentos não fazem sentido. Mas então Thariel reaparece e a névoa sobe.</p>
+        </div>
+      </div>
+
+      <p>Thariel reaparece aqui — mais fraco que antes, quase invisível, apenas o contorno de chifres de cervo no ar parado da casa destruída. Ele coloca uma mão de névoa sobre o diário.</p>
+    </div>
+
+    <!-- C11 -->
+    <div class="page" id="page-c11">
+      <div class="page-overline">Ato 3 · A Vila de Vaelia</div>
+      <div class="page-title">C11 — A Névoa & Sael</div>
+      <div class="tags"><span class="tag narrativa">clímax narrativo</span><span class="tag lore">memórias</span></div>
+
+      <div class="caixa alerta">
+        <div class="caixa-header">★ Nota de direção — Leia com calma</div>
+        <div class="caixa-body">
+          <p>Esta é a cena central da sessão. Não apresse. Deixe os silêncios existirem. As pausas entre as memórias são tão importantes quanto as memórias em si.</p>
+        </div>
+      </div>
+
+      <div class="narrar">
+        <p>A mão de névoa de Thariel toca a capa do diário. Por um segundo, nada. Depois as páginas começam a fumegar — não como papel queimando, mas como gelo derretendo ao contrário. A fumaça sobe densa, cinza-azulada, e se move com intenção.</p>
+        <p>Ela não sobe para o teto. Ela vem em direção a vocês.</p>
+        <p>Antes que alguém consiga recuar, ela entra. Pelo nariz, pela boca, pelos pulmões. Não dói. É como engolir o cheiro de terra após chuva, de madeira velha, de algo que existiu há muito tempo.</p>
+        <p>O chão some.</p>
+      </div>
+
+      <div class="narrar">
+        <p>Vocês estão de pé. A casa não existe mais. Névoa branca ao redor, pulsando devagar. Thariel ao lado de vocês — mais sólido aqui do que no mundo real, como se este lugar fosse mais dele do que o outro.</p>
+        <p>A névoa à frente se mexe. Contrai. Toma forma.</p>
+        <p>Uma criança. Oito, talvez nove anos. Um único chifre nascendo do lado direito da cabeça — pequeno, ainda crescendo. Olhos humanos, grandes e escuros, sérios demais para a idade. As mãos abertas ao lado do corpo, como se sempre estivesse prestes a tocar algo.</p>
+        <p>Ele olha para vocês como se soubesse quem são.</p>
+      </div>
+
+      <div class="fala sael">
+        <div class="fala-header">Sael</div>
+        <div class="fala-body">
+          <p>"Eu pedi a ele que te trouxesse. Thariel. Ele estava me procurando faz tempo — as almas que ficam presas às vezes conseguem falar com ele."</p>
+          <p>"Eu fiquei."</p>
+        </div>
+      </div>
+
+      <div class="fala sael">
+        <div class="fala-header">Sael</div>
+        <div class="fala-body">
+          <p>"Por favor. Salva minha mãe."</p>
+          <p>"Eu sei o que ela está fazendo. Eu sei o que ela quer fazer. Mas ela não era assim — antes. Eu preciso que alguém saiba como ela era antes, porque acho que ela esqueceu."</p>
+        </div>
+      </div>
+
+      <p>Thariel levanta uma mão. A névoa começa a se mover — como cortinas sendo abertas. As memórias começam.</p>
+      <hr class="sep">
+
+      <div class="section-title">As Memórias</div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 1</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">A vila viva — Vaelia e Sael</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="narrar" style="margin-top: 16px;">
+            <p>A vila existe. Casas com jardins pequenos. Crianças correndo. Cheiro de pão e terra molhada.</p>
+            <p>Uma mulher de cabelos escuros — jovem, talvez trinta anos — está ajoelhada no jardim dos fundos. Na frente dela, Sael, com as mãos enterradas na terra até os pulsos, olhos fechados, sorrindo.</p>
+            <p>Vaelia fala com ele. Vocês não ouvem as palavras — só o tom. É o tom de alguém completamente em paz.</p>
+            <p>Sael abre os olhos e diz algo. Ela ri. Passa a mão no cabelo dele com a familiaridade de quem já fez aquilo mil vezes — desviando do chifre pequeno sem precisar olhar.</p>
+            <p>A névoa treme. A cena avança.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 2</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">A terra grita — início da corrupção</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="narrar" style="margin-top: 16px;">
+            <p>A mesma casa. Noite. Sael está no chão do quarto, de joelhos, mãos pressionadas contra as tábuas. Tremendo.</p>
+            <p>Vaelia segura os ombros dele. Tenta fazê-lo olhar para ela — mas os olhos dele estão em outro lugar. Ouvindo algo que ela não consegue ouvir.</p>
+          </div>
+          <div class="fala sael">
+            <div class="fala-header">Sael — na memória</div>
+            <div class="fala-body">
+              <p>"Mãe. A terra está gritando. Você não ouve?"</p>
+              <p>"Por que você não ouve?"</p>
+              <p>"Ela está com dor, mãe — ela está com tanta dor—"</p>
+            </div>
+          </div>
+          <div class="narrar">
+            <p>Vaelia aperta ele contra o peito. Por cima da cabeça do filho, o rosto dela — ela não entende, mas entende que ele tem medo. E isso é suficiente para partir qualquer coisa.</p>
+            <p>Na parede atrás deles, uma raiz fina atravessa a madeira. Cresce devagar enquanto vocês assistem. Ninguém percebe ainda.</p>
+          </div>
+          <div class="caixa npc">
+            <div class="caixa-header">◎ Para o jogador de Marla</div>
+            <div class="caixa-body">
+              <p>Marla ouve a terra. Ela sabe o que é sentir o Surto através das raízes — a vibração errada, o crescimento que não deveria estar acontecendo. O que Sael estava ouvindo, ela reconhece. É o mesmo grito que ela às vezes tenta não escutar. <strong>Não force. Diga isso e deixe o silêncio trabalhar.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 3</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">A vila descobre — e vai até a casa</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="narrar" style="margin-top: 16px;">
+            <p>A corrupção avançou. Sael não sai mais do quarto. As raízes na parede cresceram — espessura de braço agora, negras, pulsando. O chão ao redor dele está se transformando.</p>
+            <p>E o grito na cabeça dele ficou mais alto. Quanto mais o Surto tomava o corpo, mais a terra falava — não em palavras, em dor pura. Um volume sem fim.</p>
+            <p>A porta da frente é golpeada. Uma multidão do lado de fora — rostos que antes eram de vizinhos, agora fechados de medo. Um homem mais velho na frente com uma tocha.</p>
+          </div>
+          <div class="fala anciã">
+            <div class="fala-header">Ancião da Vila — na memória</div>
+            <div class="fala-body">
+              <p>"Vaelia. Nós sabemos que ele está lá dentro. Nós ouvimos. Todo mundo ouviu. Isso não é uma criança doente — isso é o Surto. Você sabe o que precisa ser feito."</p>
+            </div>
+          </div>
+          <div class="narrar">
+            <p>Vaelia está na porta. Não abre. O corpo dela bloqueia a entrada — não com força, com determinação. A multidão avança.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 4</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">O galho, o grito, e o que ela fez</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="caixa alerta" style="margin-top: 16px;">
+            <div class="caixa-header">★ Narrar devagar. Com peso.</div>
+            <div class="caixa-body">
+              <p>Esta é a memória mais importante. Não apresse. A névoa fecha antes do momento final — não descreva o que Vaelia faz. Deixe o som e o silêncio trabalharem.</p>
+            </div>
+          </div>
+          <div class="narrar">
+            <p>O quarto. A multidão batendo lá fora. Vaelia de joelhos ao lado de Sael encostado na parede. O lado direito do rosto dele — onde o chifre nasceu — está inchado, escuro sob a pele.</p>
+            <p>Ele para de gritar. Por um segundo há silêncio. Vaelia inclina a testa contra a testa do filho.</p>
+          </div>
+          <div class="fala sael">
+            <div class="fala-header">Sael — na memória</div>
+            <div class="fala-body"><p>"Mãe—"</p></div>
+          </div>
+          <div class="narrar">
+            <p>O galho sai. Devagar demais para ser rápido. Rápido demais para ser parado. Atravessa o olho esquerdo de Sael de dentro para fora — fino, negro, com uma folha pequena e doentia na ponta.</p>
+            <p><strong>A névoa fecha.</strong></p>
+            <p>Vocês não veem o que Vaelia faz em seguida. Mas ouvem.</p>
+            <p>O som de algo terminando. O som de uma mãe fazendo a única coisa que ela achava que podia fazer.</p>
+            <p>Quando a névoa abre de novo, Sael não está mais lá. Vaelia está de pé no centro do quarto. Imóvel. As mãos ao lado do corpo. Ela olha para o chão por um tempo longo demais. E então levanta os olhos para a porta.</p>
+            <p>O rosto dela mudou. Não de expressão — de algo mais fundo do que expressão.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 5</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">O fogo e as cinzas</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="narrar" style="margin-top: 16px;">
+            <p>Esta memória é rápida. Fragmentada. Como um sonho ruim que o cérebro não quer guardar inteiro.</p>
+            <p>Fogo. A vila ardendo. Vaelia caminhando entre as chamas sem se desviar de nada. Ela não está com raiva. Está vazia de tudo — exceto de uma coisa que ainda não tem nome, mas que vai encontrar um.</p>
+            <p>A névoa salta. Escombros. Cinza. Madrugada.</p>
+            <p>Vaelia ajoelhada no centro do que era a praça. Sozinha. As mãos abertas para cima — exatamente como Sael ficava quando ouvia a terra. Ela está falando. Para o céu. Para o chão. Para qualquer coisa que escute.</p>
+            <p>Vocês não ouvem as palavras. Mas entendem o que é. É alguém que já deu tudo e está oferecendo o que sobrou.</p>
+            <p>A névoa esfria. O ar fica pesado. Das sombras entre as árvores queimadas ao redor da praça, algo se move.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cena-card" onclick="toggleCard(this)">
+        <div class="cena-card-header">
+          <span class="cena-num">Memória 6</span>
+          <span class="cena-title" style="margin: 0; font-size: 14px; font-family: 'Crimson Pro';">Vorukh — o que aparece quando tudo se quebra</span>
+          <span class="cena-card-chevron">▼</span>
+        </div>
+        <div class="cena-card-body">
+          <div class="narrar" style="margin-top: 16px;">
+            <p>Ele não surge de forma dramática. É o que torna assustador.</p>
+            <p>Uma forma nas sombras — grande, muito maior que qualquer animal. Parada. Paciente. O contorno de um javali colossal com presas enferrujadas e olhos como brasa morta. Ele está lá há tempo suficiente para que vocês percebam que ele estava esperando por este momento específico.</p>
+            <p>Vaelia o vê. Não recua. Não grita. Olha para ele — e no rosto dela há algo que vocês reconheceriam em qualquer rosto:</p>
+            <p>Alívio. O alívio de quem estava se afogando e finalmente parou de nadar.</p>
+            <p>Vorukh avança. Devagar. Cada passo faz a cinza ao redor se mover em ondas pequenas. Ele para na frente dela — enorme, abaixando a cabeça colossal ao nível dos olhos dela. As presas passam ao lado do rosto dela sem tocar.</p>
+            <p>Ele não fala. Mas Vaelia estende a mão e coloca a palma contra o focinho dele.</p>
+            <p>A névoa recua — vocês veem os dois de longe. A mulher e o deus da sobrevivência bruta, no centro de uma vila que ela destruiu, fechando um acordo que ninguém mais vai saber os termos.</p>
+            <p>A névoa fecha devagar. O espaço branco volta. Sael está ali. Ele esperou.</p>
+          </div>
+          <div class="fala sael">
+            <div class="fala-header">Sael</div>
+            <div class="fala-body">
+              <p>"Ela não era isso. Eu preciso que você saiba que ela não era isso."</p>
+            </div>
+          </div>
+          <div class="fala sael">
+            <div class="fala-header">Sael</div>
+            <div class="fala-body">
+              <p>"Ela vai acabar com tudo. Eu sei. Mas ela acha que está me vingando."</p>
+              <p>"E eu não quero ser vingado. Eu quero que ela pare."</p>
+            </div>
+          </div>
+          <div class="fala sael">
+            <div class="fala-header">Sael</div>
+            <div class="fala-body"><p>"Por favor."</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIM -->
+    <div class="page" id="page-fim">
+      <div class="page-overline">Encerramento</div>
+      <div class="page-title">Fim da Sessão 3</div>
+
+      <div class="fim-box">
+        <div class="fim-header">Corta</div>
+        <div class="fim-body">
+          <p>A névoa some de uma vez. O cheiro de terra e cinza vai junto. Vocês estão de volta na casa destruída de Vaelia.</p>
+          <p>O diário nas mãos de Levi é pó — se desfaz enquanto ele segura, grão por grão, até não sobrar nada.</p>
+          <p>Thariel não está mais aqui. Sael não está mais aqui. A floresta lá fora está quieta com o tipo de silêncio que existe depois de algo importante.</p>
+          <p>Corta.</p>
+        </div>
+      </div>
+
+      <div class="section-title">O que o grupo sabe ao final</div>
+      <div class="caixa lore">
+        <div class="caixa-header">◈ Informações reveladas nesta sessão</div>
+        <div class="caixa-body">
+          <p><strong>O plano de Vaelia:</strong> marcha para o Ninho de Nikta para matar a Deusa Coruja e instaurar o Inverno do Luto.</p>
+          <p><strong>A fonte do poder do Culto:</strong> o sangue de Vorukh, que pinga de uma estátua no templo subterrâneo. Quem bebe controla o Surto — e criaturas corrompidas.</p>
+          <p><strong>A história de Vaelia:</strong> foi destruída. O Surto tomou o filho. A vila forçou sua mão. Vorukh apareceu quando ela estava no ponto mais baixo.</p>
+          <p><strong>O pedido de Sael:</strong> salvar a mãe. Não derrotá-la. Salvá-la.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Ganchos para a Sessão 4</div>
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Fios em aberto</div>
+        <div class="caixa-body">
+          <p>O templo de Vorukh está sob a vila — a entrada foi encontrada. Entrar agora ou primeiro descobrir mais sobre Vaelia?</p>
+          <p>Torin e o Culto ainda controlam Alula. Eles vão notar que o grupo desapareceu — e que os soldados enviados à vila não voltaram.</p>
+          <p>Marla ouviu Sael descrever o mesmo grito que ela às vezes sente. Isso ainda não foi dito em voz alta.</p>
+          <p>Elara tem uma teoria sobre sua premonição e o mural de Oove. Ela ainda não compartilhou.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNGRI -->
+    <div class="page" id="page-fungri">
+      <div class="page-overline">Referência Rápida</div>
+      <div class="page-title">Ficha — Fungri Cego</div>
+      <div class="tags"><span class="tag tensao">adversário</span><span class="tag lore">corrompido</span></div>
+
+      <div class="caixa medo">
+        <div class="caixa-header">⚠ Estatísticas</div>
+        <div class="caixa-body">
+          <p><strong>Tipo:</strong> Comum / Corrompido</p>
+          <p><strong>PV:</strong> 3 &nbsp;|&nbsp; <strong>Evasão:</strong> 12 &nbsp;|&nbsp; <strong>Armadura:</strong> 2</p>
+          <p><strong>Limiares:</strong> Menor 6 / Maior 12 / Grave 18</p>
+          <p><strong>Dano:</strong> d6+2 físico (mordida / garra afiada)</p>
+        </div>
+      </div>
+
+      <div class="caixa mecanica">
+        <div class="caixa-header">⚙ Sensor de Calor e Som</div>
+        <div class="caixa-body">
+          <p>O Fungri não tem olhos. Detecta calor e vibração sonora com as antenas.</p>
+          <p>Se um personagem usa <strong>magia de luz intensa, tocha ou faz barulho alto</strong> no turno: o Fungri recebe <strong>vantagem</strong> no próximo ataque contra esse personagem. O barulho preenche <strong>1 fatia do relógio</strong>.</p>
+        </div>
+      </div>
+
+      <div class="caixa medo">
+        <div class="caixa-header">⚠ Chamado da Horda</div>
+        <div class="caixa-body">
+          <p>Quando um Fungri morre <strong>com barulho</strong> (magia, grito, impacto sonoro), rola 1d6.</p>
+          <p>Em resultado <strong>4, 5 ou 6</strong>: um novo Fungri emerge de uma parede próxima no início do próximo turno.</p>
+        </div>
+      </div>
+
+      <div class="caixa esperanca">
+        <div class="caixa-header">◆ Fraqueza — Morte Silenciosa</div>
+        <div class="caixa-body">
+          <p>Se morrer por ataque <strong>corpo a corpo sem barulho</strong> (faca, golpe preciso, estrangulamento): <strong>não ativa o Chamado da Horda</strong>.</p>
+          <p>Esta é a forma correta de atravessar o corredor. Os jogadores precisam descobrir isso — ou pagar o preço.</p>
+        </div>
+      </div>
+
+      <div class="caixa npc">
+        <div class="caixa-header">◎ Como usar em jogo</div>
+        <div class="caixa-body">
+          <p>Os Fungris no <strong>combate forçado (C5)</strong> são 2-3 e devem ser resolvidos em 2-3 turnos. O objetivo é o aprendizado, não a batalha.</p>
+          <p>Os Fungris no <strong>corredor (C6)</strong> são dezenas — não são para combate. São o ambiente. Um único Fungri despertado aqui pode virar uma cascata de horda se mal administrado.</p>
+          <p>Nunca use os Fungris como TPK. Use-os como pressão que ensina as regras do lugar.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    document.querySelector(`.nav-item[onclick="showPage('${id}')"]`)?.classList.add('active');
+    document.querySelector('.main').scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleCard(card) {
+    card.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

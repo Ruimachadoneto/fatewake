@@ -1,0 +1,41 @@
+# Dependências (pesado, irrelevante)
+node_modules/
+dist/
+dist-ssr/
+
+# Capacitor builds nativos
+android/
+ios/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# Build artifacts e caches
+.cache/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+
+# Env (segurança)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Arquivos grandes (PDFs de referência ficam em outra pasta se forem usados)
+*.pdf
+*.zip
+*.png.backup
+
+# Coverage
+coverage/
+.nyc_output/

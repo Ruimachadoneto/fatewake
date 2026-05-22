@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 5,
+    "nota": "Cartas de nível 5. Nota: Meia-noite e Valor não possuem cartas de nível 5 no baralho oficial."
+  },
+  "cartas": [
+    { "id": "arcano-corrente-de-relampagos", "dominio": "Arcano", "nivel": 5, "tipo": "Feitiço", "nome": "Corrente de Relâmpagos", "custo_recordacao": 1, "descricao": "Marque 2 PF → teste de conjuração e libere relâmpagos em cadeia contra todos os alvos próximos. Alvos atingidos e adversários próximos deles testam reação (Dificuldade = resultado do teste) → falha: 2d8+4 dano mágico. Corrente continua até não haver mais alvos no alcance." },
+    { "id": "arcano-premonição", "dominio": "Arcano", "nivel": 5, "tipo": "Feitiço", "nome": "Premonição", "custo_recordacao": 2, "descricao": "Uma vez por descanso longo, imediatamente após o mestre apresentar as consequências de um teste seu, você pode ignorar esse movimento e suas consequências como se não tivessem acontecido e fazer outro movimento no lugar." },
+
+    { "id": "codice-muralha", "dominio": "Códice", "nivel": 5, "tipo": "Feitiço", "nome": "Muralha", "custo_recordacao": 2, "descricao": "Teste de conjuração (15). Uma vez/descanso + 1 Esp. → parede mágica temporária entre 2 pontos em alcance distante (até 15m, qualquer ângulo). Criaturas no caminho são desviadas. Dura até próximo descanso ou nova conjuração." },
+
+    { "id": "esplendor-moldar-material", "dominio": "Esplendor", "nivel": 5, "tipo": "Feitiço", "nome": "Moldar Material", "custo_recordacao": 1, "descricao": "Gaste 1 Esp. → molde material natural tocado (gelo, madeira, pedra) à sua vontade. Área máxima não pode ser maior que você. Pode criar ferramentas rudimentares, portas ou outras estruturas simples." },
+    { "id": "esplendor-punicao", "dominio": "Esplendor", "nivel": 5, "tipo": "Feitiço", "nome": "Punição", "custo_recordacao": 2, "descricao": "Uma vez/descanso, gaste 3 Esp. → carregue sua Punição. Ao acertar o próximo ataque com uma arma, dobre o resultado da rolagem de dano. Independente do tipo da arma, este ataque causa dano mágico." },
+
+    { "id": "falange-conhece-teu-inimigo", "dominio": "Falange", "nivel": 5, "tipo": "Talento", "nome": "Conhece Teu Inimigo", "custo_recordacao": 1, "descricao": "Observando criatura, teste de Instinto contra ela. Sucesso + 1 Esp. → faça ao mestre uma das perguntas: PV/PF restantes; Dificuldade e limiares; táticas e dados de dano; habilidades e Experiências. Em sucesso, pode marcar 1 PF para mestre perder 1 Ponto de Medo." },
+    { "id": "falange-golpe-pessoal", "dominio": "Falange", "nivel": 5, "tipo": "Talento", "nome": "Golpe Pessoal", "custo_recordacao": 1, "descricao": "Crie e nomeie seu golpe icônico de combate. Uma vez/descanso, ao usá-lo como parte de uma ação, role 1d20 como Dado de Esperança. Em sucesso, recupere 1 PF." },
+
+    { "id": "graca-palavras-de-discordia", "dominio": "Graça", "nivel": 5, "tipo": "Feitiço", "nome": "Palavras de Discórdia", "custo_recordacao": 1, "descricao": "Sussurre a adversário corpo a corpo, teste de conjuração (13). Sucesso → alvo marca 1 PF e ataca outro adversário em vez de você ou aliados. Após o ataque, o alvo percebe o ocorrido. Próxima vez que usar sobre ele: –5 no teste." },
+    { "id": "graca-sondar-pensamentos", "dominio": "Graça", "nivel": 5, "tipo": "Feitiço", "nome": "Sondar Pensamentos", "custo_recordacao": 2, "descricao": "Gaste 1 Esp. → leia pensamentos vagos e superficiais de alvo distante. Teste de conjuração contra o alvo → sonde pensamentos profundos e escondidos. Se rolar com Medo, o alvo pode perceber que você está lendo a mente dele." },
+
+    { "id": "lamina-vantagem-do-campeao", "dominio": "Lâmina", "nivel": 5, "tipo": "Talento", "nome": "Vantagem do Campeão", "custo_recordacao": 1, "descricao": "Ao ter sucesso crítico em ataque, gaste até 3 Esp. e escolha uma opção por Esp. (sem repetir): recupera 1 PV / recupera 1 PA / alvo marca 1 PV adicional." },
+    { "id": "lamina-vitalidade", "dominio": "Lâmina", "nivel": 5, "tipo": "Talento", "nome": "Vitalidade", "custo_recordacao": 0, "descricao": "Ao escolher esta carta, receba 2 destes bônus permanentes: +1 PF / +1 PV / +2 nos limiares de dano. Em seguida, esta carta vai para a reserva permanentemente." },
+
+    { "id": "sabedoria-fortaleza-selvagem", "dominio": "Sabedoria", "nivel": 5, "tipo": "Feitiço", "nome": "Fortaleza Selvagem", "custo_recordacao": 1, "descricao": "Teste de conjuração (13) + 2 Esp. → domo natural de cobertura. Dentro: não pode atacar nem ser alvo de ataques. Ataques ao domo acertam automaticamente. O domo tem 3 PV e limiares 15/30." },
+    { "id": "sabedoria-pele-de-espinhos", "dominio": "Sabedoria", "nivel": 5, "tipo": "Feitiço", "nome": "Pele de Espinhos", "custo_recordacao": 1, "descricao": "Uma vez/descanso + 1 Esp. → espinhos brotam do corpo. Marcadores = atributo de conjuração. Ao sofrer dano, gaste marcadores e role d6 por marcador → reduza o dano pelo resultado. Se CaC com o atacante, cause o mesmo dano a ele." }
+  ]
+}

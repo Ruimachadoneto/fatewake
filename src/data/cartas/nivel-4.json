@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 4,
+    "nota": "Cartas de nível 4 dos 9 domínios."
+  },
+  "cartas": [
+    { "id": "arcano-impacto-defensivo", "dominio": "Arcano", "nivel": 4, "tipo": "Feitiço", "nome": "Impacto Defensivo", "custo_recordacao": 2, "descricao": "Teste de conjuração contra todos os alvos corpo a corpo. Atingidos são empurrados para ponto em alcance distante e sofrem d8+3 de dano mágico usando seu atributo de conjuração." },
+    { "id": "arcano-translocacao", "dominio": "Arcano", "nivel": 4, "tipo": "Feitiço", "nome": "Translocação", "custo_recordacao": 1, "descricao": "Teste de conjuração (12). Sucesso + 1 Esp. → teleporte para ponto visível em alcance distante. Gaste 1 Esp. adicional por criatura voluntária muito próxima que quiser levar consigo." },
+
+    { "id": "codice-livro-ecsota", "dominio": "Códice", "nivel": 4, "tipo": "Grimório", "nome": "Livro de Ecsota", "custo_recordacao": 3, "descricao": "Dois feitiços: Criar Construto (1 Esp. → construto animado que obedece comandos básicos; compartilha seus atributos e Evasão; ataques causam 2d10+3 dano físico; desfaz ao sofrer qualquer dano; um por vez), Repudiar (uma vez/descanso, teste de conjuração → interrompe efeito mágico)." },
+    { "id": "codice-livro-grynn", "dominio": "Códice", "nivel": 4, "tipo": "Grimório", "nome": "Livro de Grynn", "custo_recordacao": 2, "descricao": "Três feitiços: Deflexão (uma vez/descanso longo, 1 Esp. → nega dano de ataque em você ou aliado muito próximo), Muralha de Fogo (teste 15 → parede entre 2 pontos em distante; atravessar causa 4d10+3 dano mágico), Tranca Temporal (objeto distante para no tempo e espaço até próximo descanso)." },
+
+    { "id": "esplendor-adivinhacao", "dominio": "Esplendor", "nivel": 4, "tipo": "Feitiço", "nome": "Adivinhação", "custo_recordacao": 1, "descricao": "Uma vez/descanso longo, gaste 3 Esp. → comunique-se com forças do além e faça uma pergunta de sim/não sobre evento, lugar, pessoa ou situação no futuro próximo. A resposta surge magicamente diante de você." },
+    { "id": "esplendor-sigilo-da-vida", "dominio": "Esplendor", "nivel": 4, "tipo": "Feitiço", "nome": "Sigilo da Vida", "custo_recordacao": 1, "descricao": "Gaste 3 Esp. → aliado próximo fica marcado por sigilo protetor. Quando ele for fazer movimento de morte, recupera 1 PV em vez disso. Termina ao salvar o alvo, ao conjurar sobre outro alvo ou no descanso longo." },
+
+    { "id": "falange-impulso", "dominio": "Falange", "nivel": 4, "tipo": "Talento", "nome": "Impulso", "custo_recordacao": 1, "descricao": "Marque 1 PF → use aliado próximo voluntário como impulso para ataque aéreo contra alvo distante. Vantagem no ataque, +1d10 ao dano, termina corpo a corpo ao alvo." },
+    { "id": "falange-redirecionar", "dominio": "Falange", "nivel": 4, "tipo": "Talento", "nome": "Redirecionar", "custo_recordacao": 1, "descricao": "Quando ataque originado fora do CaC falha contra você, role Xd6 (X = Proficiência). Se tirar 6 em qualquer dado, marque 1 PF → ataque é redirecionado a adversário muito próximo." },
+
+    { "id": "graca-espionar", "dominio": "Graça", "nivel": 4, "tipo": "Feitiço", "nome": "Espionar", "custo_recordacao": 1, "descricao": "Escolha alvo muito distante. Veja e ouça pelos olhos e ouvidos dele à vontade até seu próximo descanso ou até conjurar outro feitiço." },
+    { "id": "graca-palavras-tranquilizantes", "dominio": "Graça", "nivel": 4, "tipo": "Talento", "nome": "Palavras Tranquilizantes", "custo_recordacao": 1, "descricao": "Durante descanso curto, ao passar tempo usando Tratar Ferimentos em outro personagem → ele recupera 1 PV adicional. Você também recupera 2 PV." },
+
+    { "id": "lamina-armadura-fortificada", "dominio": "Lâmina", "nivel": 4, "tipo": "Talento", "nome": "Armadura Fortificada", "custo_recordacao": 0, "descricao": "Bônus permanente de +2 nos limiares de dano enquanto estiver usando armadura." },
+    { "id": "lamina-concentracao-mortal", "dominio": "Lâmina", "nivel": 4, "tipo": "Talento", "nome": "Concentração Mortal", "custo_recordacao": 2, "descricao": "Uma vez/descanso, concentre-se totalmente em um alvo → +1 na Proficiência em ataques contra ele. Dura até derrotar o alvo, atacar outra criatura ou a batalha terminar." },
+
+    { "id": "meianoite-glifo-do-ocaso", "dominio": "Meia-noite", "nivel": 4, "tipo": "Feitiço", "nome": "Glifo do Ocaso", "custo_recordacao": 1, "descricao": "Teste de conjuração contra alvo muito próximo. Sucesso + 1 Esp. → glifo sombrio reduz temporariamente a Dificuldade do alvo em valor = seu Conhecimento (mín. 1), expondo seus pontos fracos." },
+    { "id": "meianoite-mestre-da-furtividade", "dominio": "Meia-noite", "nivel": 4, "tipo": "Talento", "nome": "Mestre da Furtividade", "custo_recordacao": 0, "descricao": "Ao rolar com Medo tentando se mover sem ser percebido, marque 1 PF → role com Esperança em vez disso. Se aliado próximo também tentar e rolar com Medo, marque 1 PF → mude o resultado para Esperança." },
+
+    { "id": "sabedoria-campo-curativo", "dominio": "Sabedoria", "nivel": 4, "tipo": "Feitiço", "nome": "Campo Curativo", "custo_recordacao": 2, "descricao": "Uma vez/descanso longo, plantas curativas irrompem em todo alcance próximo. Você e aliados na área recuperam 1 PV. Gaste 2 Esp. → recupera 2 PV em vez de 1." },
+    { "id": "sabedoria-constricao-mortal", "dominio": "Sabedoria", "nivel": 4, "tipo": "Feitiço", "nome": "Constrição Mortal", "custo_recordacao": 1, "descricao": "Teste de conjuração contra alvo próximo. Sucesso → vinhas causam efeito escolhido e Imobilizam alvo: puxar alvo para CaC (ou você até CaC a ele) / alvo marca 2 PF / adversários entre você e alvo testam reação 13 (falha: 3d6+2 dano físico)." },
+
+    { "id": "valor-bastiao", "dominio": "Valor", "nivel": 4, "tipo": "Talento", "nome": "Bastião", "custo_recordacao": 2, "descricao": "Quando aliado próximo falhar em teste, gaste 2 Esp. → aliado pode rolar novamente o Dado de Medo ou de Esperança." },
+    { "id": "valor-incitar", "dominio": "Valor", "nivel": 4, "tipo": "Talento", "nome": "Incitar", "custo_recordacao": 1, "descricao": "Provoque alvo próximo. Teste de Presença contra ele. Sucesso → alvo marca 1 PF e na próxima vez que o mestre o colocar em foco, ele deve atacar você com desvantagem." }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 10,
+    "nota": "Cartas de nível 10. Presente apenas no domínio da Falange."
+  },
+  "cartas": [
+    { "id": "falange-passo-celere", "dominio": "Falange", "nivel": 10, "tipo": "Talento", "nome": "Passo Célere", "custo_recordacao": 2, "descricao": "Quando ataque falha contra você, recupere 1 PF. Se não puder recuperar PF, receba 1 Ponto de Esperança." },
+    { "id": "falange-trajeto-mortal", "dominio": "Falange", "nivel": 10, "tipo": "Talento", "nome": "Trajeto Mortal", "custo_recordacao": 1, "descricao": "Gaste 3 Esp. → percorra em linha reta até alcance distante, atacando todos adversários no alcance da arma ao longo do caminho. Primeiro alvo: dano com +1 Proficiência. Cada alvo seguinte: remova 1 dado de dano. O mesmo alvo não pode ser escolhido mais de uma vez." }
+  ]
+}

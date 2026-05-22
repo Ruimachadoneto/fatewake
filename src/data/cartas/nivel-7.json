@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 7,
+    "nota": "Cartas de nível 7, incluindo os Dons de Domínio (requerem 4+ cartas do domínio na mão)."
+  },
+  "cartas": [
+    { "id": "esplendor-dom-do-esplendor", "dominio": "Esplendor", "nivel": 7, "tipo": "Talento", "nome": "Dom do Esplendor", "custo_recordacao": 2, "descricao": "Se 4+ cartas na mão forem do Esplendor: +3 no limiar de dano grave. Uma vez/descanso longo, ao marcar PV por dano, pode marcar PF equivalente ou gastar Esperança equivalente em vez disso." },
+
+    { "id": "falange-dom-da-falange", "dominio": "Falange", "nivel": 7, "tipo": "Talento", "nome": "Dom da Falange", "custo_recordacao": 2, "descricao": "Se 4+ cartas na mão forem da Falange: +1 na Agilidade. Uma vez/descanso, gaste 3 Esp. → ataque bem-sucedido contra você falha." },
+    { "id": "falange-acuidade-cruel", "dominio": "Falange", "nivel": 7, "tipo": "Talento", "nome": "Acuidade Cruel", "custo_recordacao": 1, "descricao": "Ao acertar ataque com uma arma, receba bônus = sua Acuidade ou Agilidade na rolagem de dano." },
+
+    { "id": "graca-carisma-infinito", "dominio": "Graça", "nivel": 7, "tipo": "Talento", "nome": "Carisma Infinito", "custo_recordacao": 1, "descricao": "Após fazer teste para obter favores, mentir ou persuadir, gaste 1 Esp. → role novamente seu Dado de Esperança ou Medo." },
+    { "id": "graca-dom-da-graca", "dominio": "Graça", "nivel": 7, "tipo": "Talento", "nome": "Dom da Graça", "custo_recordacao": 2, "descricao": "Se 4+ cartas na mão forem da Graça: pode marcar 1 PA em vez de 1 PF. Ao fazer com que alvo marque PV, pode forçá-lo a marcar PF equivalente em vez disso." },
+
+    { "id": "lamina-dom-da-lamina", "dominio": "Lâmina", "nivel": 7, "tipo": "Talento", "nome": "Dom da Lâmina", "custo_recordacao": 1, "descricao": "Se 4+ cartas na mão forem da Lâmina: +2 em testes de ataque e +4 no limiar de dano grave." },
+    { "id": "lamina-golpe-de-raspao", "dominio": "Lâmina", "nivel": 7, "tipo": "Talento", "nome": "Golpe de Raspão", "custo_recordacao": 1, "descricao": "Quando erra um ataque, pode marcar 1 PF → cause o dano da arma usando metade da Proficiência." },
+
+    { "id": "sabedoria-aspecto-selvagem", "dominio": "Sabedoria", "nivel": 7, "tipo": "Feitiço", "nome": "Aspecto Selvagem", "custo_recordacao": 2, "descricao": "Uma vez/descanso longo, marque 1 PF → coloque 1d6 nesta carta (começa em 1). Some o valor do dado a todos os seus testes. Após usar em teste, aumente o dado em 1. Ao ultrapassar 6 ou descansar, termina e marca 1 PF adicional." },
+    { "id": "sabedoria-dom-da-sabedoria", "dominio": "Sabedoria", "nivel": 7, "tipo": "Talento", "nome": "Dom da Sabedoria", "custo_recordacao": 2, "descricao": "Se 4+ cartas na mão forem da Sabedoria: +2 em testes de conjuração em ambiente natural. Uma vez/descanso, dobre sua Agilidade ou Instinto ao fazer teste com esse atributo (deve declarar antes de rolar)." }
+  ]
+}

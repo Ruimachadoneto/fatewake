@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 8,
+    "nota": "Cartas de nível 8. Presente nos domínios: Falange, Graça, Lâmina, Sabedoria."
+  },
+  "cartas": [
+    { "id": "falange-amontoar", "dominio": "Falange", "nivel": 8, "tipo": "Talento", "nome": "Amontoar", "custo_recordacao": 1, "descricao": "Teste de Agilidade contra todos os alvos próximos. Gaste 1 Esp. → mova os alvos atingidos e aliados próximos voluntários para outro ponto em alcance próximo." },
+    { "id": "falange-golpe-debilitante", "dominio": "Falange", "nivel": 8, "tipo": "Talento", "nome": "Golpe Debilitante", "custo_recordacao": 3, "descricao": "Ao acertar ataque, pode marcar 1 PF → o próximo ataque bem-sucedido contra o mesmo alvo causa 2d12 de dano adicional." },
+
+    { "id": "graca-enfeiticar-em-massa", "dominio": "Graça", "nivel": 8, "tipo": "Feitiço", "nome": "Enfeitiçar em Massa", "custo_recordacao": 3, "descricao": "Teste de conjuração contra todos os alvos distantes. Atingidos ficam temporariamente Enfeitiçados (atenção fixa em você). Marque 1 PF → todos Enfeitiçados marcam 1 PF cada, encerrando o feitiço." },
+    { "id": "graca-projecao-astral", "dominio": "Graça", "nivel": 8, "tipo": "Feitiço", "nome": "Projeção Astral", "custo_recordacao": 0, "descricao": "Uma vez/descanso longo, marque 1 PF → projete cópia de si em qualquer lugar onde já esteve. Veja, ouça e aja através dela. Uma criatura que a investigue pode discernir sua origem mágica. Dura até próximo descanso ou a projeção sofrer qualquer dano." },
+
+    { "id": "lamina-grito-de-guerra", "dominio": "Lâmina", "nivel": 8, "tipo": "Talento", "nome": "Grito de Guerra", "custo_recordacao": 2, "descricao": "Uma vez/descanso longo, ao se lançar rumo ao perigo, emita grito de guerra: cada aliado que ouvir recupera 1 PF e ganha 1 Esp. Aliados fazem testes de ataque com vantagem até você ou algum aliado rolar falha com Medo." },
+
+    { "id": "sabedoria-barreira-revigorante", "dominio": "Sabedoria", "nivel": 8, "tipo": "Feitiço", "nome": "Barreira Revigorante", "custo_recordacao": 1, "descricao": "Teste de conjuração (15). Uma vez/descanso → barreira protetora muito próxima a você. Aliados dentro recuperam 1d4 PV. Enquanto ativa, aliados no interior têm resistência a dano físico vindo de fora. A barreira se move com você." }
+  ]
+}

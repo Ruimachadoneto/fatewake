@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Fichas Editáveis - Jambô Editora 2025",
+    "classe": "Patrulheiro",
+    "descricao": "Sistema de Companheiro Animal. Colabore com o mestre para decidir o tipo de animal. Crie 2 Experiências iniciais. Defina o método de causar dano (ataque padrão) - no 1º nível, o dado é d6 e alcance Corpo a Corpo."
+  },
+  "regras_basicas": {
+    "evasao_inicial": 10,
+    "dado_dano_inicial": "d6",
+    "alcance_inicial": "Corpo a Corpo",
+    "experiencias_iniciais": 2,
+    "experiencias_bonus_inicial": 2,
+    "pf_inicial": "ver caixas na ficha (~6)"
+  },
+  "ataque": {
+    "como_funciona": "Faça um teste de conjuração para criar um elo com seu companheiro e mandá-lo agir. Gaste 1 Ponto de Esperança para somar uma Experiência aplicável ao teste. Em sucesso com Esperança, se seu próximo movimento se relacionar ao sucesso dele, você faz o teste com vantagem.",
+    "beneficios": "Ao mandar o companheiro atacar, ele recebe todos os benefícios que você receberia (como Marca da Presa). Em sucesso, a rolagem de dano usa sua Proficiência e o dado de dano dele.",
+    "evolucao_dado": ["d6", "d8", "d10", "d12"]
+  },
+  "fadiga": {
+    "descricao": "Quando seu companheiro sofre qualquer quantidade de dano, ele marca 1 PF. Ao marcar o último PF, ele sai de cena (escondendo-se, fugindo etc.). Fica indisponível até o início do seu próximo descanso longo, retornando recuperado com Fadiga 1.",
+    "descanso": "Quando você escolhe um movimento de repouso para recuperar sua Fadiga, seu companheiro recupera a mesma quantidade."
+  },
+  "experiencias_sugeridas": [
+    "Ágil", "Alerta Máximo", "Amigável", "Animal de Serviço", "Companheiro Real",
+    "Distração Corajosa", "Escudeiro", "Especialista em Escalada", "Guardião da Floresta",
+    "Horripilante", "Intimidador", "Leal Até o Fim", "Montaria Confiável",
+    "Ninguém Fica Para Trás", "Nós Sempre Nos Encontramos", "Orientação",
+    "Protetor", "Vigilante", "Você Não Pode Acertar o Que Não Pode Ver"
+  ],
+  "treinamentos": [
+    {
+      "nome": "Afago",
+      "frequencia": "Uma vez por descanso",
+      "descricao": "Ao passar um momento dando carinho e atenção a seu companheiro, você pode receber 1 Ponto de Esperança ou cada um de vocês pode recuperar 1 PF."
+    },
+    {
+      "nome": "Apegado",
+      "descricao": "Quando você marca seu último Ponto de Vida, seu companheiro vem rapidamente para socorrê-lo. Role um número de d6 igual ao número de PF que ele ainda tem disponível e marque-os. Se tirar 6 em qualquer rolagem, seu companheiro o ajuda — recupere seu último PV e volte à cena."
+    },
+    {
+      "nome": "Atento",
+      "descricao": "Seu companheiro animal recebe um bônus permanente de +2 na Evasão."
+    },
+    {
+      "nome": "Blindado",
+      "descricao": "Quando seu companheiro sofre dano, você pode marcar um de seus Pontos de Armadura em vez de marcar 1 Ponto de Fadiga dele."
+    },
+    {
+      "nome": "Feroz",
+      "descricao": "Aumente o dado de dano ou alcance de seu companheiro em um passo (d6 para d8, Próximo para Distante etc.)."
+    },
+    {
+      "nome": "Inteligente",
+      "descricao": "Seu companheiro recebe um bônus permanente de +1 em uma Experiência de companheiro à sua escolha."
+    },
+    {
+      "nome": "Luz no Fim do Túnel",
+      "descricao": "Use este espaço para marcar 1 Ponto de Esperança adicional do seu personagem."
+    },
+    {
+      "nome": "Resiliente",
+      "descricao": "Seu companheiro recebe 1 PF adicional."
+    }
+  ]
+}

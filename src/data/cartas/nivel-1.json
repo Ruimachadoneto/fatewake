@@ -1,0 +1,253 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 1,
+    "nota": "Cartas de nível 1 dos 9 domínios. Personagem nível 1 escolhe 2 cartas (podem ser do mesmo domínio)."
+  },
+  "cartas": [
+    {
+      "id": "arcano-protecao-runica",
+      "dominio": "Arcano",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Proteção Rúnica",
+      "custo_recordacao": 0,
+      "descricao": "Talismã pessoal que pode ser infundido com magia. O portador gasta 1 Esperança → reduz dano sofrido em 1d8. Se tirar 8, o poder se encerra (recarrega no próximo descanso)."
+    },
+    {
+      "id": "arcano-caos-liberto",
+      "dominio": "Arcano",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Caos Liberto",
+      "custo_recordacao": 1,
+      "descricao": "No início da sessão, coloque marcadores (= atributo de conjuração). Gaste qualquer número → cause resultado em d10 por marcador como dano mágico a alvo distante. Marque 1 PF para recarregar."
+    },
+    {
+      "id": "arcano-caminhar-parede",
+      "dominio": "Arcano",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Caminhar na Parede",
+      "custo_recordacao": 1,
+      "descricao": "Gaste 1 Esperança: criatura tocada escala paredes e tetos como se fosse chão firme. Dura até o fim da cena ou até conjurar novamente."
+    },
+    {
+      "id": "lamina-levante-se",
+      "dominio": "Lâmina",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Levante-se",
+      "custo_recordacao": 1,
+      "descricao": "Ao sofrer dano grave, marque 1 PF → reduza a gravidade em um limiar."
+    },
+    {
+      "id": "lamina-nao-suficiente",
+      "dominio": "Lâmina",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Não o Suficiente",
+      "custo_recordacao": 1,
+      "descricao": "Ao rolar dados de dano, role novamente quaisquer resultados 1 ou 2."
+    },
+    {
+      "id": "lamina-turbilhao",
+      "dominio": "Lâmina",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Turbilhão",
+      "custo_recordacao": 0,
+      "descricao": "Ao acertar ataque contra alvo muito próximo, gaste 1 Esperança → use mesmo ataque contra todos os outros alvos muito próximos (metade do dano)."
+    },
+    {
+      "id": "falange-movimento-ligeiro",
+      "dominio": "Falange",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Movimento Ligeiro",
+      "custo_recordacao": 0,
+      "descricao": "Uma vez por descanso, marque 1 PF → mova-se para qualquer lugar em alcance distante sem teste. Se atacar corpo a corpo logo após, +1 no teste de ataque."
+    },
+    {
+      "id": "falange-passo-a-frente",
+      "dominio": "Falange",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Um Passo à Frente",
+      "custo_recordacao": 1,
+      "descricao": "Ao ser alvo de ataque de fora do corpo a corpo, marque 1 PF → role 1d4 e some à Evasão contra esse ataque."
+    },
+    {
+      "id": "falange-intocavel",
+      "dominio": "Falange",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Intocável",
+      "custo_recordacao": 1,
+      "descricao": "Receba bônus na Evasão igual à metade da sua Agilidade (permanente)."
+    },
+    {
+      "id": "graca-dissimulacao",
+      "dominio": "Graça",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Dissimulação",
+      "custo_recordacao": 0,
+      "descricao": "Gaste 1 Esperança → vantagem em teste para enganar ou fazer alguém acreditar em uma mentira que você contar."
+    },
+    {
+      "id": "graca-enfeiticar",
+      "dominio": "Graça",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Enfeitiçar",
+      "custo_recordacao": 1,
+      "descricao": "Teste de conjuração contra alvo próximo. Em sucesso, ele fica temporariamente Enfeitiçado (atenção fixada em você). Uma vez por descanso, marque 1 PF → alvo Enfeitiçado marca 1 PF também."
+    },
+    {
+      "id": "graca-palavras-inspiradoras",
+      "dominio": "Graça",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Palavras Inspiradoras",
+      "custo_recordacao": 1,
+      "descricao": "Após descanso longo, coloque marcadores (= Presença). Ao falar com aliado, gaste 1 → ele recupera 1 PF / 1 PV / ganha 1 Esperança. Marcadores perdem-se no próximo descanso longo."
+    },
+    {
+      "id": "meianoite-chuva-laminas",
+      "dominio": "Meia-noite",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Chuva de Lâminas",
+      "custo_recordacao": 1,
+      "descricao": "Gaste 1 Esperança → teste de conjuração → d8+2 dano mágico com Proficiência contra todos os alvos muito próximos. Alvo Vulnerável sofre +1d8."
+    },
+    {
+      "id": "meianoite-disfarce-inquietante",
+      "dominio": "Meia-noite",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Disfarce Inquietante",
+      "custo_recordacao": 0,
+      "descricao": "Alguns minutos de preparo + marque 1 PF → assuma forma de humanoide que pode ver claramente. Vantagem em testes de Presença para não ser descoberto. Marcadores (= atributo de conjuração) se gastam a cada ação."
+    },
+    {
+      "id": "meianoite-delinquente",
+      "dominio": "Meia-noite",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Delinquente",
+      "custo_recordacao": 0,
+      "descricao": "Vantagem em testes para arrombar fechaduras não mágicas, desarmar armadilhas não mágicas ou roubar itens de um alvo."
+    },
+    {
+      "id": "valor-armadura-corporal",
+      "dominio": "Valor",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Armadura Corporal",
+      "custo_recordacao": 0,
+      "descricao": "Sem armadura equipada: Armadura base = 3 + Força. Limiares de dano base por patamar: 1º→9/19, 2º→11/24, 3º→13/31, 4º→15/38."
+    },
+    {
+      "id": "codice-livro-de-ava",
+      "dominio": "Códice",
+      "nivel": 1,
+      "tipo": "Grimório",
+      "nome": "Livro de Ava",
+      "custo_recordacao": 2,
+      "descricao": "Três feitiços: Propelir (teste conjuração CaC → empurra alvo para alcance distante + d10+2 dano mágico com Prof.), Armadura de Tava (gaste 1 Esperança → +1 Armadura a alvo tocado até próximo descanso), Estaca de Gelo (teste conjuração 12 → espinho de gelo em alcance distante, d6 dano físico com Prof.)."
+    },
+    {
+      "id": "codice-livro-de-illiat",
+      "dominio": "Códice",
+      "nivel": 1,
+      "tipo": "Grimório",
+      "nome": "Livro de Illiat",
+      "custo_recordacao": 2,
+      "descricao": "Três feitiços: Sonolência (teste conjuração CaC → alvo Adormecido até sofrer dano), Saraivada Arcana (gaste X Esperança → role Xd6 de dano mágico em alvo próximo), Telepatia (gaste 1 Esperança → comunicação mental com alvo visível até próximo descanso)."
+    },
+    {
+      "id": "codice-livro-de-tyfar",
+      "dominio": "Códice",
+      "nivel": 1,
+      "tipo": "Grimório",
+      "nome": "Livro de Tyfar",
+      "custo_recordacao": 2,
+      "descricao": "Três feitiços: Chama Selvagem (teste conjuração contra até 3 adversários CaC → 2d6 dano mágico + marca 1 PF cada), Mão Arcana (conjura mão mágica controlável em alcance distante), Névoa Misteriosa (teste conjuração 13 → névoa densa estática em área muito próxima, fortemente obscurecida)."
+    },
+    {
+      "id": "esplendor-raio-luminoso",
+      "dominio": "Esplendor",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Raio Luminoso",
+      "custo_recordacao": 1,
+      "descricao": "Teste de conjuração contra alvo distante. Sucesso + gaste 1 Esperança → d8+2 dano mágico com Proficiência. Alvo fica temporariamente Vulnerável e emite luz intensa até se recuperar."
+    },
+    {
+      "id": "esplendor-toque-reparador",
+      "dominio": "Esplendor",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Toque Reparador",
+      "custo_recordacao": 1,
+      "descricao": "Concentre-se alguns minutos + gaste 2 Esperança → alvo recupera 1 PV ou 1 PF. Uma vez por descanso longo: se descobrir algo novo sobre a criatura ou revelar algo sobre você, o alvo recupera 2 PV ou PF."
+    },
+    {
+      "id": "esplendor-validacao",
+      "dominio": "Esplendor",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Validação",
+      "custo_recordacao": 0,
+      "descricao": "Uma vez por descanso, após teste de aliado mas antes das consequências, auxilie-o com palavras de apoio → ele pode rolar os dados novamente."
+    },
+    {
+      "id": "sabedoria-rastreador-talentoso",
+      "dominio": "Sabedoria",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Rastreador Talentoso",
+      "custo_recordacao": 0,
+      "descricao": "Ao rastrear criaturas por sinais, gaste qualquer quantidade de Esperança e faça o mesmo número de perguntas ao mestre (direção, tempo, atividade, quantidade). Ao encontrar rastreados, +1 Evasão contra eles."
+    },
+    {
+      "id": "sabedoria-voz-natureza",
+      "dominio": "Sabedoria",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Voz da Natureza",
+      "custo_recordacao": 0,
+      "descricao": "Fale com plantas e animais ao redor. Teste de Instinto (12) → eles fornecem o que conhecem. No Medo, conhecimento pode ser limitado/ter custo. Antes de teste de conjuração em ambiente natural, gaste 1 Esperança → +2."
+    },
+    {
+      "id": "sabedoria-vinha-voraz",
+      "dominio": "Sabedoria",
+      "nivel": 1,
+      "tipo": "Feitiço",
+      "nome": "Vinha Voraz",
+      "custo_recordacao": 1,
+      "descricao": "Teste de conjuração contra alvo distante. Sucesso → 1d8+1 dano físico e alvo fica temporariamente Imobilizado. Gaste 1 Esperança → Imobilize também adversário muito próximo do primeiro."
+    },
+    {
+      "id": "valor-sou-seu-escudo",
+      "dominio": "Valor",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Sou Seu Escudo",
+      "custo_recordacao": 1,
+      "descricao": "Quando aliado muito próximo for sofrer dano, marque 1 PF → você vira o alvo do ataque. Ao sofrer o dano, pode marcar qualquer número de PA."
+    },
+    {
+      "id": "valor-imposicao",
+      "dominio": "Valor",
+      "nivel": 1,
+      "tipo": "Talento",
+      "nome": "Imposição",
+      "custo_recordacao": 0,
+      "descricao": "Ataque corpo a corpo com arma principal. Sucesso → dano e empurra para alcance próximo. Sucesso com Esperança → +1d6 ao dano. Gaste 1 Esperança → alvo fica temporariamente Vulnerável."
+    }
+  ]
+}

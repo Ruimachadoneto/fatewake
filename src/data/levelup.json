@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Fichas Editáveis - Jambô Editora 2025",
+    "descricao": "Opções de avanço por patamar. Mesmas opções em todos os patamares, exceto pelo nível máximo de carta de domínio acessível e por liberar Multiclasse/Subclasse Aprimorada a partir do patamar 3."
+  },
+  "patamares": {
+    "1": {
+      "niveis": "1",
+      "descricao": "Nível inicial — sem escolhas de avanço."
+    },
+    "2": {
+      "niveis": "2-4",
+      "obrigatorio": [
+        "No nível 2, crie uma nova Experiência com +2.",
+        "Aumente sua Proficiência em +1."
+      ],
+      "por_nivel": [
+        "A cada nível, atualize seu nível e ajuste seus limiares de dano de acordo.",
+        "A cada nível, escolha uma nova carta de domínio de nível igual ou inferior ao seu e que pertença a um domínio ao qual você tem acesso.",
+        "Escolha duas opções da lista abaixo e as marque."
+      ],
+      "opcoes": [
+        {"nome": "Atributos", "vagas": 3, "descricao": "Escolha dois atributos desmarcados, os marque e receba um bônus de +1 em cada."},
+        {"nome": "Aumentar PV", "vagas": 2, "descricao": "Aumente seus PV em 1 permanentemente."},
+        {"nome": "Aumentar PF", "vagas": 2, "descricao": "Aumente seus PF em 1 permanentemente."},
+        {"nome": "Aprimorar Experiências", "vagas": 1, "descricao": "Receba +1 em duas Experiências permanentemente."},
+        {"nome": "Nova Carta de Domínio", "vagas": 1, "descricao": "Escolha uma nova carta de domínio de um domínio ao qual você tem acesso e de nível igual ou menor que o seu (nível máx.: 4)."},
+        {"nome": "Aumentar Evasão", "vagas": 1, "descricao": "Aumente sua Evasão em +1 permanentemente."}
+      ]
+    },
+    "3": {
+      "niveis": "5-7",
+      "obrigatorio": [
+        "No nível 5, crie uma nova Experiência com +2 e remova todas as marcações nos atributos.",
+        "Aumente sua Proficiência em +1."
+      ],
+      "por_nivel": [
+        "A cada nível, atualize seu nível e ajuste seus limiares de dano de acordo.",
+        "A cada nível, escolha uma nova carta de domínio de nível igual ou inferior ao seu e que pertença a um domínio ao qual você tem acesso.",
+        "Escolha duas opções da lista abaixo, ou qualquer opção do patamar anterior, e as marque."
+      ],
+      "opcoes": [
+        {"nome": "Atributos", "vagas": 3, "descricao": "Escolha dois atributos desmarcados, os marque e receba um bônus de +1 em cada."},
+        {"nome": "Aumentar PV", "vagas": 2, "descricao": "Aumente seus PV em 1 permanentemente."},
+        {"nome": "Aumentar PF", "vagas": 2, "descricao": "Aumente seus PF em 1 permanentemente."},
+        {"nome": "Aprimorar Experiências", "vagas": 1, "descricao": "Receba +1 em duas Experiências permanentemente."},
+        {"nome": "Nova Carta de Domínio", "vagas": 1, "descricao": "Escolha uma nova carta de domínio de um domínio ao qual você tem acesso e de nível igual ou menor que o seu."},
+        {"nome": "Aumentar Evasão", "vagas": 1, "descricao": "Aumente sua Evasão em +1 permanentemente."},
+        {"nome": "Subclasse Aprimorada", "vagas": 1, "descricao": "Pegue sua carta de subclasse aprimorada. Em seguida, corte a opção de multiclasse deste patamar.", "exclui": "Multiclasse"},
+        {"nome": "Proficiência+1", "vagas": 2, "descricao": "Aumente sua Proficiência em +1."},
+        {"nome": "Multiclasse", "vagas": 2, "descricao": "Escolha uma classe adicional para o seu personagem. Em seguida, corte 'Pegue uma carta de subclasse aprimorada' e a outra opção de multiclasse nesta ficha.", "exclui": "Subclasse Aprimorada"}
+      ]
+    },
+    "4": {
+      "niveis": "8-10",
+      "obrigatorio": [
+        "No nível 8, crie uma nova Experiência com +2 e remova todas as marcações nos atributos.",
+        "Aumente sua Proficiência em +1."
+      ],
+      "por_nivel": [
+        "A cada nível, atualize seu nível e ajuste seus limiares de dano de acordo.",
+        "A cada nível, escolha uma nova carta de domínio de nível igual ou inferior ao seu e que pertença a um domínio ao qual você tem acesso.",
+        "Escolha duas opções da lista abaixo, ou qualquer opção do patamar anterior, e as marque."
+      ],
+      "opcoes": [
+        {"nome": "Atributos", "vagas": 3, "descricao": "Escolha dois atributos desmarcados, os marque e receba um bônus de +1 em cada."},
+        {"nome": "Aumentar PV", "vagas": 2, "descricao": "Aumente seus PV em 1 permanentemente."},
+        {"nome": "Aumentar PF", "vagas": 2, "descricao": "Aumente seus PF em 1 permanentemente."},
+        {"nome": "Aprimorar Experiências", "vagas": 1, "descricao": "Receba +1 em duas Experiências permanentemente."},
+        {"nome": "Nova Carta de Domínio", "vagas": 1, "descricao": "Escolha uma nova carta de domínio de um domínio ao qual você tem acesso e de nível igual ou menor que o seu (nível máx.: 7)."},
+        {"nome": "Aumentar Evasão", "vagas": 1, "descricao": "Aumente sua Evasão em +1 permanentemente."},
+        {"nome": "Subclasse Aprimorada", "vagas": 1, "descricao": "Pegue sua carta de subclasse aprimorada. Em seguida, corte a opção de multiclasse deste patamar.", "exclui": "Multiclasse"},
+        {"nome": "Proficiência+1", "vagas": 2, "descricao": "Aumente sua Proficiência em +1."},
+        {"nome": "Multiclasse", "vagas": 2, "descricao": "Escolha uma classe adicional para o seu personagem. Em seguida, corte 'Pegue uma carta de subclasse aprimorada' e a outra opção de multiclasse nesta ficha.", "exclui": "Subclasse Aprimorada"}
+      ]
+    }
+  }
+}

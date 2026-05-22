@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart - Livro Básico, Jambô Editora 2025",
+    "versao": "1.0"
+  },
+  "Aristocrática": {
+    "descricao": "Vida de elegância, opulência e prestígio na alta sociedade. Muito poder e influência, pouca mobilidade social.",
+    "habilidade": { "nome": "Privilégio", "descricao": "Vantagem em testes para se relacionar com nobres, negociar preços ou aproveitar sua reputação." }
+  },
+  "Disciplinada": {
+    "descricao": "Povo focado em disciplina ou fé. Defende um conjunto de princípios. Pode ser ordem militar, religiosa ou ofício compartilhado.",
+    "habilidade": { "nome": "Princípios", "descricao": "Anote 3 ditados/valores. Uma vez por descanso, ao incorporar um princípio na ação atual, role 1d20 como Dado de Esperança." }
+  },
+  "Erudita": {
+    "descricao": "Sociedade que favorece feitos acadêmicos e políticos. Valoriza conhecimento, história, ciência, tecnologia ou política.",
+    "habilidade": { "nome": "Culto", "descricao": "Vantagem em testes envolvendo cultura, história ou política de lugar ou pessoa importante." }
+  },
+  "Fora da Lei": {
+    "descricao": "Meio às margens da lei com criminosos, trapaceiros e vigaristas. Códigos de honra rígidos internamente.",
+    "habilidade": { "nome": "Malandro", "descricao": "Vantagem em testes para negociar com criminosos, perceber mentiras ou encontrar lugar seguro para se esconder." }
+  },
+  "Marítima": {
+    "descricao": "Comunidade construída em torno de água — portos, barcos ou navios. Ligados às marés e criaturas do oceano.",
+    "habilidade": { "nome": "Conhecer a Maré", "descricao": "Ao rolar com Medo, coloque 1 marcador (máx = nível). Antes de teste, gaste marcadores → +1 por marcador. Marcadores perdem-se ao fim de cada sessão." }
+  },
+  "Montanhesa": {
+    "descricao": "Pico e penhasco como lar. Adaptados a terrenos difíceis. Constroem em bordas de penhascos, castelos de pedra ou picos elevados.",
+    "habilidade": { "nome": "Firme", "descricao": "Vantagem em testes para cruzar abismos, orientar-se em ambientes inóspitos e usar conhecimentos de sobrevivência." }
+  },
+  "Nômade": {
+    "descricao": "Vida viajando, sem lar permanente. Valorizam informação, habilidades e vínculos mais do que bens materiais.",
+    "habilidade": { "nome": "Mochila de Nômade", "descricao": "Adicione mochila ao inventário. Uma vez por sessão, gaste 1 Esperança → retire item mundano útil. Colabore com o mestre." },
+    "item_inventario": "Mochila de Nômade"
+  },
+  "Silvestre": {
+    "descricao": "Profundezas da floresta como lar. Integram vilarejos ao ambiente natural, evitando perturbar flora e fauna.",
+    "habilidade": { "nome": "Pés Leves", "descricao": "Seu movimento é naturalmente silencioso. Vantagem em testes para se mover sem ser ouvido." }
+  },
+  "Subterrânea": {
+    "descricao": "Abaixo da superfície — de tocas a metrópoles em cavernas. Conhecidos pela bravura e grandes feitos de arquitetura.",
+    "habilidade": { "nome": "Habituado à Penumbra", "descricao": "Vantagem em testes para se esconder, investigar ou perceber detalhes em áreas de penumbra ou sombra forte." }
+  }
+}

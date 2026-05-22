@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 9,
+    "nota": "Cartas de nível 9. Presente nos domínios: Falange, Graça."
+  },
+  "cartas": [
+    { "id": "falange-quase-la", "dominio": "Falange", "nivel": 9, "tipo": "Talento", "nome": "Quase Lá", "custo_recordacao": 1, "descricao": "Se tiver 2 PV ou menos desmarcados, você não sofre dano menor." },
+    { "id": "falange-ataque-fragmentado", "dominio": "Falange", "nivel": 9, "tipo": "Talento", "nome": "Ataque Fragmentado", "custo_recordacao": 3, "descricao": "Gaste 1 Esp. + ataque contra todos adversários no alcance da arma. Uma vez/descanso longo, em sucesso: some todo dano e redistribua entre alvos atingidos. Role dado adicional de dano e some ao dano de cada alvo; o mesmo alvo não pode ser escolhido duas vezes." },
+
+    { "id": "graca-imitador", "dominio": "Graça", "nivel": 9, "tipo": "Feitiço", "nome": "Imitador", "custo_recordacao": 3, "descricao": "Uma vez/descanso longo, esta carta imita habilidade de outra carta de domínio de 8° nível ou menor na mão de outro jogador. Gaste Esp. = metade do nível da carta copiada. A cópia dura até próximo descanso ou o outro jogador colocar a carta original na reserva." }
+  ]
+}

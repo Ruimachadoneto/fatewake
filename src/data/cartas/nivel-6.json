@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart Baralho de Domínios, Jambô Editora 2025",
+    "versao": "1.0",
+    "nivel": 6,
+    "nota": "Cartas de nível 6. Presente nos domínios: Esplendor, Falange, Graça, Lâmina, Sabedoria."
+  },
+  "cartas": [
+    { "id": "esplendor-restauracao", "dominio": "Esplendor", "nivel": 6, "tipo": "Feitiço", "nome": "Restauração", "custo_recordacao": 2, "descricao": "Após descanso longo, marcadores = atributo de conjuração. Toque criatura e gaste marcadores → recupera 2 PV ou PF por marcador. Ou gaste 1 marcador → remove condição Vulnerável ou cura doença física/mágica (mestre pode exigir mais marcadores). Marcadores não usados perdem-se no descanso longo." },
+    { "id": "esplendor-zona-de-protecao", "dominio": "Esplendor", "nivel": 6, "tipo": "Feitiço", "nome": "Zona de Proteção", "custo_recordacao": 2, "descricao": "Teste de conjuração (16). Uma vez/descanso longo → zona em ponto em distante. Coloque 1d6 nesta carta (começa em 1). Dano a aliados dentro reduzido pelo valor atual do dado; após reduzir, aumente o dado em 1. Termina ao ultrapassar 6." },
+
+    { "id": "falange-contra-ataque-rapido", "dominio": "Falange", "nivel": 6, "tipo": "Talento", "nome": "Contra-ataque Rápido", "custo_recordacao": 0, "descricao": "Quando ataque de alcance corpo a corpo falha contra você, pode marcar 1 PF → cause imediatamente o dano de uma de suas armas ativas ao atacante." },
+    { "id": "falange-recuperacao", "dominio": "Falange", "nivel": 6, "tipo": "Talento", "nome": "Recuperação", "custo_recordacao": 1, "descricao": "Durante um descanso curto, pode escolher um movimento de repouso de descanso longo. Gaste 1 Esp. → permita que um aliado também faça isso." },
+
+    { "id": "graca-jamais-esquecido", "dominio": "Graça", "nivel": 6, "tipo": "Talento", "nome": "Jamais Esquecido", "custo_recordacao": 2, "descricao": "Ao marcar 1+ PV por ataque, pode marcar 1 PF → coloque marcadores = PV marcados. Cada marcador: +5 na rolagem de dano do próximo ataque que acertar. Em seguida, zere todos os marcadores." },
+    { "id": "graca-partilhar-o-fardo", "dominio": "Graça", "nivel": 6, "tipo": "Feitiço", "nome": "Partilhar o Fardo", "custo_recordacao": 0, "descricao": "Uma vez/descanso, absorva a Fadiga de criatura corpo a corpo voluntária. O alvo descreve conhecimentos ou emoções transferidos. Transfira qualquer número de PF do alvo para você e receba 1 Esp. para cada PF transferido." },
+
+    { "id": "lamina-calejado-pela-batalha", "dominio": "Lâmina", "nivel": 6, "tipo": "Talento", "nome": "Calejado pela Batalha", "custo_recordacao": 2, "descricao": "Uma vez/descanso longo, ao fazer movimento de morte, gaste 1 Esp. → recupera 1 PV em vez disso." },
+    { "id": "lamina-furia", "dominio": "Lâmina", "nivel": 6, "tipo": "Talento", "nome": "Fúria", "custo_recordacao": 1, "descricao": "Antes de atacar, marque 1 PF → bônus = dobro de sua Força na rolagem de dano. Pode ativar até 2 vezes por ataque." },
+
+    { "id": "sabedoria-coletor", "dominio": "Sabedoria", "nivel": 6, "tipo": "Talento", "nome": "Coletor", "custo_recordacao": 1, "descricao": "Movimento de repouso adicional: role 1d6 e adicione ao inventário um consumível (1=alimento/2PF; 2=relíquia/2Esp.; 3=runa/+2 teste conj.; 4=frasco/2PV; 5=talismã da sorte/re-role dado; 6=escolha uma). Grupo pode carregar máx. 5 coletados." },
+    { "id": "sabedoria-conjurar-montarias", "dominio": "Sabedoria", "nivel": 6, "tipo": "Feitiço", "nome": "Conjurar Montarias", "custo_recordacao": 0, "descricao": "Gaste X Esp. → conjure X montarias (cavalos, camelos, etc.) até próximo descanso longo ou sofrerem dano. Dobra velocidade de viagem; em perigo: mova para distante sem teste. Sobre montaria: –2 em testes de ataque, +2 em rolagens de dano." }
+  ]
+}

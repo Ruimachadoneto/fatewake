@@ -1,0 +1,384 @@
+{
+  "patamares": [
+    {
+      "patamar": 1,
+      "niveis": "1",
+      "ambientes": [
+        {
+          "nome": "Ascensão Íngreme",
+          "tipo": "Travessia",
+          "descricao": "Um penhasco rochoso e íngreme, alto o suficiente para oferecer perigo.",
+          "impulsos": ["atirar despreparados às rochas", "atrair pessoas com promessas do que pode haver no topo"],
+          "dificuldade": 12,
+          "adversarios": ["cobra-de-vidro", "construto", "defensor enraizado", "escorpião gigante"],
+          "habilidades": [
+            {
+              "nome": "Bastões Abandonados",
+              "tipo": "passivo",
+              "descricao": "Aventureiros anteriores deixaram bastões de metal para alpinistas. Quem os usa e falha num teste para escalar pode marcar 1 PF para evitar aumentar a Contagem."
+            },
+            {
+              "nome": "Escalada",
+              "tipo": "passivo",
+              "descricao": "Contagem de Progresso (12) para chegar ao topo. Sucesso crítico: −3 | Com Esperança: −2 | Com Medo: −1 | Falha com Esperança: não diminui | Falha com Medo: +1."
+            },
+            {
+              "nome": "Queda",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Um personagem perde a firmeza e despenca, acrescentando 2 à Contagem. Dano: contador 8–12 → 1d12 físico; 4–7 → 2d12; 3 ou menos → 3d12."
+            }
+          ]
+        },
+        {
+          "nome": "Bosque Esquecido",
+          "tipo": "Exploração",
+          "descricao": "Um antigo bosque druídico abandonado e retomado pela natureza.",
+          "impulsos": ["atrair os curiosos", "ecoar o passado"],
+          "dificuldade": 11,
+          "adversarios": ["feras (urso, lobo atroz, cobra-de-vidro)", "guardiões do bosque (ente menor, soldado silvestre, dríade jovem)"],
+          "habilidades": [
+            {
+              "nome": "Campo de Batalha Ermo",
+              "tipo": "passivo",
+              "descricao": "Teste de Instinto para identificar evidências de luta. Sucesso com Esperança revela as 3 informações; Com Medo revela 2; Falha: marque 1 PF para descobrir uma. Personagem com Experiências pode identificar detalhe extra."
+            },
+            {
+              "nome": "Profundador",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Invoca elemental menor do caos distante de um personagem à escolha; posto em foco imediatamente."
+            },
+            {
+              "nome": "Sem Boas-vindas",
+              "tipo": "ação",
+              "descricao": "Uma dríade jovem, dois soldados silvestres e entes menores (igual ao número de personagens) surgem para enfrentar o grupo."
+            },
+            {
+              "nome": "Vinhas com Espinhos",
+              "tipo": "ação",
+              "descricao": "Alvos muito próximos de um ponto do bosque: teste de reação de Agilidade ou 1d8+3 físico + Imobilizado. Libertado com teste de Acuidade/Força ou 6 pontos de dano às vinhas."
+            }
+          ]
+        },
+        {
+          "nome": "Emboscada",
+          "tipo": "Evento",
+          "descricao": "Uma emboscada feita pelo grupo a fim de surpreender um adversário.",
+          "impulsos": ["agrupar-se", "escapar", "proteger os mais vulneráveis"],
+          "dificuldade_especial": "igual ao adversário com Dificuldade mais alta",
+          "adversarios": ["quaisquer"],
+          "habilidades": [
+            {
+              "nome": "Força Relativa",
+              "tipo": "passivo",
+              "descricao": "A Dificuldade é igual à do adversário com a Dificuldade mais alta."
+            },
+            {
+              "nome": "De Onde Eles Vieram?",
+              "tipo": "reação",
+              "descricao": "Quando o grupo iniciar a emboscada com os adversários desprevenidos: perde 2 Pontos de Medo e o primeiro teste de ataque de um personagem recebe vantagem."
+            }
+          ]
+        },
+        {
+          "nome": "Emboscados",
+          "tipo": "Evento",
+          "descricao": "Uma emboscada feita para pegar o grupo desprevenido.",
+          "impulsos": ["dividir", "cercar", "subjugar"],
+          "dificuldade_especial": "igual ao adversário com Dificuldade mais alta",
+          "adversarios": ["quaisquer"],
+          "habilidades": [
+            {
+              "nome": "Força Relativa",
+              "tipo": "passivo",
+              "descricao": "A Dificuldade é igual à do adversário com a Dificuldade mais alta."
+            },
+            {
+              "nome": "Surpresa!",
+              "tipo": "ação",
+              "descricao": "Os responsáveis pela emboscada se revelam. Receba 2 Pontos de Medo e ponha um dos adversários em foco imediatamente."
+            }
+          ]
+        },
+        {
+          "nome": "Localidade Estratégica",
+          "tipo": "Social",
+          "descricao": "Uma pequena cidade na fronteira de uma nação ou região, próxima a uma masmorra, tumba ou outro destino típico de aventureiros.",
+          "impulsos": ["levar os desesperados à ruína", "lucrar com esperanças vãs"],
+          "dificuldade": 12,
+          "adversarios": ["bando do Punhal Escarpado (arqueiro, brigão, bruxo, chefe, covarde, ladrão)", "comerciante", "patife mascarado"],
+          "habilidades": [
+            {
+              "nome": "Aventureiros Rivais",
+              "tipo": "passivo",
+              "descricao": "Outro grupo está por aqui, buscando os mesmos tesouros ou pistas que os personagens."
+            },
+            {
+              "nome": "Boatos e Rumores",
+              "tipo": "passivo",
+              "descricao": "Teste de Presença. Crítico: dois eventos + resposta verdadeira sobre rumor | Com Esperança: dois eventos, um relevante à origem | Com Medo: rumor alarmante | Falha: 1 PF para boato relevante."
+            },
+            {
+              "nome": "Sociedade da Bússola Quebrada",
+              "tipo": "passivo",
+              "descricao": "Sede de sociedade de aventureiros na cidade — heróis trocam histórias e rumores."
+            },
+            {
+              "nome": "Seria Uma Pena Se Algo Acontecesse à Sua Loja",
+              "tipo": "ação",
+              "descricao": "O grupo presencia agentes criminosos intimidando o dono de uma loja."
+            },
+            {
+              "nome": "Lugar Errado, Hora Errada",
+              "tipo": "reação",
+              "custo": "1 Medo",
+              "descricao": "Durante a noite num beco: grupo de ladrões do Punhal Escarpado (brigão + 1 ladrão por personagem + chefe). Grupos maiores: acrescente bruxo e arqueiro."
+            }
+          ]
+        },
+        {
+          "nome": "Manancial Raivoso",
+          "tipo": "Travessia",
+          "descricao": "Um rio de águas velozes, sem ponte para travessia, e profundo o suficiente para arrastar a maioria das pessoas.",
+          "impulsos": ["arrastar desprevenidos", "cruzar bancos de areia", "dividir a terra"],
+          "dificuldade": 10,
+          "adversarios": ["feras (urso, cobra-de-vidro)", "bando do Punhal Escarpado (arqueiro, brigão, bruxo, chefe, covarde, ladrão)"],
+          "habilidades": [
+            {
+              "nome": "Travessia Arriscada",
+              "tipo": "passivo",
+              "descricao": "Contagem de Progresso (4) para atravessar. Falha com Medo em qualquer teste: sujeito à Corrente sem que o mestre precise gastar Medo."
+            },
+            {
+              "nome": "Corrente",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Personagem é pego pela correnteza: teste de reação de Agilidade. Falha: 1d6+1 físico + arrastado ao alcance Próximo + Vulnerável. Sucesso: marca 1 PF."
+            },
+            {
+              "nome": "Predador Paciente",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Invoca cobra-de-vidro próxima de um personagem, posta em foco para usar Serpente Giratória."
+            }
+          ]
+        },
+        {
+          "nome": "Mercado Movimentado",
+          "tipo": "Social",
+          "descricao": "O coração econômico de um assentamento, com artesãos locais, mercadores viajantes e gente de toda classe social.",
+          "impulsos": ["comprar barato e vender caro", "instigar e atrair com itens de todos os cantos"],
+          "dificuldade": 10,
+          "adversarios": ["comerciante", "guardas (guarda armado, guarda chefe)", "patife mascarado"],
+          "habilidades": [
+            {
+              "nome": "Inclinar a Balança",
+              "tipo": "passivo",
+              "descricao": "Personagens recebem vantagem em teste de Presença ao oferecer um punhado de ouro como suborno."
+            },
+            {
+              "nome": "Dedos Leves",
+              "tipo": "ação",
+              "descricao": "Ladrão tenta roubar um personagem. Teste de Instinto para perceber. Falha: perde item à escolha do mestre. Recuperar: Contagem de Progresso (6) antes que o ladrão complete Contagem de Consequência (4)."
+            },
+            {
+              "nome": "Descoberta Inesperada",
+              "tipo": "ação",
+              "descricao": "Um comerciante tem algo que o grupo deseja: comida da terra natal, livro raro, componentes mágicos, mapa do tesouro ou chave mágica."
+            },
+            {
+              "nome": "Levado pela multidão",
+              "tipo": "reação",
+              "descricao": "Quando um personagem se separar do grupo, a multidão se move e o isola dos companheiros."
+            }
+          ]
+        },
+        {
+          "nome": "Taverna Local",
+          "tipo": "Social",
+          "descricao": "Uma taverna muito animada que serve de local de encontro na cidade.",
+          "impulsos": ["dar oportunidades aos aventureiros", "juntar a comunidade"],
+          "dificuldade": 10,
+          "adversarios": ["comerciante", "guardas (guarda armado, guarda chefe)", "mercenários (saqueador, mercenário, guerreiro arcano, mestre de armas)"],
+          "habilidades": [
+            {
+              "nome": "Cantar pela Refeição",
+              "tipo": "passivo",
+              "descricao": "Teste de Presença para performance. Sucesso: 1d6 punhados de ouro (2d4 em crítico). Falha: marca 1 PF."
+            },
+            {
+              "nome": "Quais os Boatos da Cidade?",
+              "tipo": "passivo",
+              "descricao": "Teste de Presença. Sucesso: 2 detalhes à escolha (rumor de origem, trabalho promissor, lendas locais, boatos da comunidade). Crítico: 3. Falha: 1 detalhe + 1 PF."
+            },
+            {
+              "nome": "Briga de Bar!",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Inicia uma briga. Quem se mover durante a briga: teste de Agilidade ou Presença para não sofrer 1d6+2 físico."
+            },
+            {
+              "nome": "Figura Misteriosa",
+              "tipo": "ação",
+              "descricao": "Revele um estranho que esconde sua identidade, oculto em alguma mesa nas sombras."
+            },
+            {
+              "nome": "Gente Nova no Pedaço",
+              "tipo": "ação",
+              "descricao": "Apresente NPC importante que deseja contratar os aventureiros para algo relacionado à origem de um dos personagens."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "patamar": 2,
+      "niveis": "2 a 4",
+      "ambientes": [
+        {
+          "nome": "Cidade Assombrada",
+          "tipo": "Exploração",
+          "descricao": "Uma cidade abandonada e assombrada por espíritos de eras passadas.",
+          "impulsos": ["desorientar e confundir", "replicar calamidades públicas e pessoais"],
+          "dificuldade": 14,
+          "adversarios": ["espectro arqueiro", "espectro capitão", "espectro guardião", "versões fantasmagóricas de outros adversários"],
+          "habilidades": [
+            {
+              "nome": "Conhecimento Oculto",
+              "tipo": "passivo",
+              "descricao": "Teste de Instinto ou Conhecimento para descobrir a cidade. Crítico: informações valiosas + item útil | Com Esperança: informações valiosas | Com Medo: informações vagas | Falha: 1 PF para pista."
+            },
+            {
+              "nome": "Forma Fantasmagórica",
+              "tipo": "passivo",
+              "descricao": "Adversários têm resistência a dano físico e podem marcar 1 PF para se moverem até alcance Médio passando por objetos sólidos."
+            },
+            {
+              "nome": "Antiga Calamidade",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Manifesta eco de desastre passado. Contagem de Progresso (5) enquanto o desastre é repetido. O grupo deve superar incêndios, multidões, queda de estruturas e encontrar pistas."
+            },
+            {
+              "nome": "Sem Saída",
+              "tipo": "ação",
+              "descricao": "Fantasmas manifestam cenas do passado, bloqueando o caminho atrás dos personagens e forçando desvios ou impondo desafios."
+            }
+          ]
+        },
+        {
+          "nome": "Passagem Montanhosa",
+          "tipo": "Travessia",
+          "descricao": "Picos rochosos que atravessam as nuvens com caminhos e passagens tortuosas.",
+          "impulsos": ["cobrar um preço alto em energia e suprimentos", "revelar alterações mágicas", "tornar a viagem vagarosa"],
+          "dificuldade": 15,
+          "adversarios": ["criança do caos", "feras (urso, águia gigante, cobra-de-vidro)", "minotauro arrasador", "predador mortal"],
+          "habilidades": [
+            {
+              "nome": "Símbolos Místicos",
+              "tipo": "passivo",
+              "descricao": "Personagem com origem/Experiências relevantes: teste de Conhecimento para identificar magia climática e aprender a dispersá-la. Crítico: reconhece estilo de encantos montanheses + vantagem para dispersar."
+            },
+            {
+              "nome": "Avalanche",
+              "tipo": "ação",
+              "custo": "1 Medo",
+              "descricao": "Torrente gelada provoca avalanche. Todos no caminho: teste de reação de Agilidade ou Força. Falha: empurrado ao alcance distante + 2d20 físico + 1 PF. Sucesso: marca 1 PF."
+            },
+            {
+              "nome": "Ninho de Aves de Rapina",
+              "tipo": "reação",
+              "descricao": "Ao adentrar o território das aves de rapina, duas águias-gigantes surgem muito distantes de um personagem identificado como provável presa."
+            },
+            {
+              "nome": "Ventos Gélidos",
+              "tipo": "reação",
+              "descricao": "Contagem (ciclo 4). Ao terminar, todos na passagem: teste de reação de Força ou marque 1 PF. Roupas inadequadas ao frio: desvantagem."
+            }
+          ]
+        },
+        {
+          "nome": "Ritual de Cultistas",
+          "tipo": "Evento",
+          "descricao": "Um culto dos Deuses Caídos se reúne ao redor do símbolo de deuses derrotados e uma fogueira de chamas verdes.",
+          "impulsos": ["profanar a terra", "unir o Plano Mortal aos Círculos Inferiores"],
+          "dificuldade": 14,
+          "adversarios": ["cultista adepto", "cultista sicário", "cultista iniciado", "portador dos segredos"],
+          "habilidades": [
+            {
+              "nome": "Solo Profano",
+              "tipo": "passivo",
+              "descricao": "Reduz o Dado de Esperança dos personagens para 1d10 neste ambiente. A profanação pode ser removida com Contagem de Progresso (6)."
+            },
+            {
+              "nome": "Poder Blasfemo",
+              "tipo": "ação",
+              "descricao": "Um adversário fica Imbuído com magia terrível até o fim da cena ou ser derrotado: vantagem em ataques, +1d10 dano, ou Inclemente (2) — posto em foco até 2×/turno. Com 1 Medo: aplica três benefícios."
+            },
+            {
+              "nome": "Completar o Ritual",
+              "tipo": "reação",
+              "descricao": "Se o líder for alvo de ataque ou feitiço, um aliado próximo pode marcar 1 PF para se tornar a vítima em seu lugar."
+            },
+            {
+              "nome": "Invocação",
+              "tipo": "ação",
+              "descricao": "Contagem (6). Diminui sempre que um personagem fizer rolagem com Medo. Ao terminar: invoca demônio menor próximo do líder. Se o líder for derrotado, a contagem é encerrada e o ritual falha."
+            }
+          ]
+        },
+        {
+          "nome": "Templo Exaltado",
+          "tipo": "Social",
+          "descricao": "Um templo movimentado e bem-cuidado, que oferece curas e solidariedades. É supervisionado por um sacerdote ou serafim.",
+          "impulsos": ["ajudar e socorrer os fiéis", "conectar o Plano Mortal às Graças Superiores", "demonstrar o poder do divino"],
+          "dificuldade": 13,
+          "adversarios": ["guarda arqueiro", "guarda armado", "guarda chefe"],
+          "habilidades": [
+            {
+              "nome": "Local de Cura",
+              "tipo": "passivo",
+              "descricao": "Personagem que descanse no templo recupera automaticamente todos os Pontos de Vida."
+            },
+            {
+              "nome": "Orientação Divina",
+              "tipo": "passivo",
+              "descricao": "Teste de Instinto para receber respostas de uma divindade. Crítico: informações claras + 1d4 Esperança dividível | Com Esperança: informações claras | Com Medo: vislumbres rápidos | Falha: visões vagas (1 PF para imagem clara)."
+            },
+            {
+              "nome": "Esperança Inquebrantável",
+              "tipo": "ação",
+              "descricao": "Uma vez por cena: personagem marca 1 PF para transformar rolagem com Medo em rolagem com Esperança."
+            },
+            {
+              "nome": "Reprovação Divina",
+              "tipo": "reação",
+              "custo": "1 Medo",
+              "descricao": "Se os personagens forem intrusos ou blasfemaram: invoca serafim aprimorado + 1d4 guardas armados Próximos do sacerdote superior."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "patamar": 3,
+      "niveis": "5 a 7",
+      "ambientes": [
+        { "nome": "Batalha Campal", "tipo": "Evento", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] },
+        { "nome": "Cerco ao Castelo", "tipo": "Evento", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] },
+        { "nome": "Coração Ardente da Floresta", "tipo": "Exploração", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] }
+      ]
+    },
+    {
+      "patamar": 4,
+      "niveis": "8 a 10",
+      "ambientes": [
+        { "nome": "Corte Imperial", "tipo": "Social", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] },
+        { "nome": "Ossuário do Necromante", "tipo": "Exploração", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] },
+        { "nome": "Reino do Caos", "tipo": "Travessia", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] },
+        { "nome": "Usurpação Divina", "tipo": "Evento", "descricao": "Fichas completas disponíveis no Capítulo 4 do livro.", "dificuldade": null, "adversarios": [], "habilidades": [] }
+      ]
+    }
+  ]
+}

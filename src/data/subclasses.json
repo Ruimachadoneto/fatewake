@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "fonte": "Daggerheart - Livro Básico, Jambô Editora 2025",
+    "versao": "1.0",
+    "nota": "Cada classe tem 2 subclasses. Subclasse Aprimorada (Especialização/Maestria) é desbloqueada via avanço de patamar 3-4."
+  },
+  "classes": {
+    "Bardo": [
+      {
+        "nome": "Beletrista",
+        "atributo_conjuracao": "Presença",
+        "fundamental": [
+          { "nome": "Discurso Inspirador", "descricao": "Uma vez por descanso longo, todos os aliados até alcance distante recuperam 2 PF." },
+          { "nome": "Alma de Poeta", "descricao": "Após teste para impressionar/persuadir/ofender, gaste 1 Esperança para somar 1d4." }
+        ],
+        "especializacao": { "nome": "Eloquente", "descricao": "Ao encorajar aliado, ajude sem gastar Esperança, dê movimento de repouso extra ou permita que ele encontre objeto mundano." },
+        "maestria": { "nome": "Poesia Épica", "descricao": "Dado de Inspiração sobe para d10. Ao ajudar, role 1d10 como dado de vantagem." }
+      },
+      {
+        "nome": "Trovador",
+        "atributo_conjuracao": "Presença",
+        "fundamental": [
+          { "nome": "Artista Talentoso", "descricao": "Uma vez por descanso longo por canção: Comovente (+1 Esperança a todos próximos), Épica (alvo próximo Vulnerável), Relaxante (+1 PV a todos próximos)." }
+        ],
+        "especializacao": { "nome": "Maestro", "descricao": "Ao conceder Dado de Inspiração, aliado pode receber +1 Esperança ou recuperar 1 PF." },
+        "maestria": { "nome": "Virtuoso", "descricao": "Cada canção pode ser usada duas vezes por descanso longo." }
+      }
+    ],
+    "Druida": [
+      {
+        "nome": "Protetor dos Elementos",
+        "atributo_conjuracao": "Instinto",
+        "fundamental": [
+          { "nome": "Encarnação Elemental", "descricao": "Marque 1 PF para Canalizar um elemento (Água/Ar/Fogo/Terra) até dano grave ou próximo descanso. Cada elemento tem efeito distinto no combate." }
+        ],
+        "especializacao": { "nome": "Aura Elemental", "descricao": "Uma vez por descanso, manifeste aura do elemento que afeta alvos próximos." },
+        "maestria": { "nome": "Soberania Elemental", "descricao": "Bônus adicional enquanto Canaliza (varia por elemento)." }
+      },
+      {
+        "nome": "Protetor da Renovação",
+        "atributo_conjuracao": "Instinto",
+        "fundamental": [
+          { "nome": "Serenidade da Natureza", "descricao": "Uma vez por descanso longo, crie espaço de serenidade e recupere PF do grupo igual ao seu Instinto." },
+          { "nome": "Regeneração", "descricao": "Toque uma criatura e gaste 3 Esperança → ela recupera 1d4 PV." }
+        ],
+        "especializacao": { "nome": "Presença Curativa", "descricao": "Use Regeneração em criaturas Muito Próximas. Proteção Druídica: gaste 2 Esperança → 2 PV a 1d4 aliados próximos." },
+        "maestria": { "nome": "Defensor", "descricao": "Em Forma de Fera, quando aliado próximo marca 2+ PV, marque 1 PF para reduzir em −1." }
+      }
+    ],
+    "Feiticeiro": [
+      {
+        "nome": "Elementalista",
+        "atributo_conjuracao": "Instinto",
+        "fundamental": [
+          { "nome": "Elementalismo", "descricao": "Escolha um elemento (Água/Ar/Fogo/Relâmpago/Terra) na criação. Molde-o para efeitos inofensivos. Gaste 1 Esperança e descreva como ajuda → +2 no teste ou +3 no dano." }
+        ],
+        "especializacao": { "nome": "Evasão Natural", "descricao": "Ao sofrer ataque, marque 1 PF → role 1d6 e some à Evasão." },
+        "maestria": { "nome": "Transcendência", "descricao": "Uma vez por descanso longo, transforme-se no elemento. Escolha 2 de: +4 limiar grave / +1 atributo / +1 Proficiência / +2 Evasão." }
+      },
+      {
+        "nome": "Primordialista",
+        "atributo_conjuracao": "Instinto",
+        "fundamental": [
+          { "nome": "Manipular Magia", "descricao": "Após feitiço ou ataque mágico, marque 1 PF para: estender alcance 1 passo / +2 no resultado / dobrar um dado de dano / acertar alvo adicional." }
+        ],
+        "especializacao": { "nome": "Auxílio Encantado", "descricao": "Ao ajudar aliado em conjuração, role 1d8 como dado de vantagem. Uma vez por descanso longo, troque resultados dos Dados de Dualidade." },
+        "maestria": { "nome": "Carga Arcana", "descricao": "Ao sofrer dano mágico (ou gastar 2 Esperança), fique Carregado. Ao acertar ataque mágico: zere a Carga → +10 no dano ou +3 na Dificuldade do alvo." }
+      }
+    ],
+    "Guardião": [
+      {
+        "nome": "Baluarte",
+        "fundamental": [
+          { "nome": "Resoluto", "descricao": "+1 permanente nos limiares de dano." },
+          { "nome": "Vontade de Ferro", "descricao": "Ao sofrer dano físico, marque 1 PA adicional para reduzir gravidade." }
+        ],
+        "especializacao": { "nome": "Irrefreável", "descricao": "+2 permanente nos limiares. Irmãos de Armas: quando aliado muito próximo sofre dano físico, marque 1 PA para reduzir gravidade." },
+        "maestria": { "nome": "Impávido", "descricao": "+3 permanente nos limiares. Protetor Leal: quando aliado próximo com 2 PV ou menos for sofrer dano, marque 1 PF para sofrer no lugar dele." }
+      },
+      {
+        "nome": "Vingador",
+        "fundamental": [
+          { "nome": "Vem Tranquilo", "descricao": "+1 PF adicional permanente." },
+          { "nome": "Revanche", "descricao": "Quando adversário corpo a corpo acerta você, marque 2 PF → force-o a marcar 1 PV." }
+        ],
+        "especializacao": { "nome": "Represália", "descricao": "Quando adversário fere aliado corpo a corpo, +1 Proficiência no próximo ataque contra ele." },
+        "maestria": { "nome": "Nêmesis", "descricao": "Gaste 2 Esperança → Priorize adversário até próximo descanso. Ao atacá-lo, troque resultados dos Dados de Esperança e Medo." }
+      }
+    ],
+    "Guerreiro": [
+      {
+        "nome": "Escolhido da Bravura",
+        "fundamental": [
+          { "nome": "Coragem", "descricao": "Ao falhar com Medo, receba 1 Esperança." },
+          { "nome": "Ritual de Batalha", "descricao": "Uma vez por descanso longo, antes de algo muito perigoso, descreva sua preparação → recupere 2 PF e +2 Esperança." }
+        ],
+        "especializacao": { "nome": "Enfrentar o Desafio", "descricao": "Enquanto tiver 2 PV ou menos desmarcados, use 1d20 como Dado de Esperança." },
+        "maestria": { "nome": "Camaradagem", "descricao": "Inicie teste em dupla adicional por sessão. Aliados gastam apenas 2 Esperança para testar em dupla com você." }
+      },
+      {
+        "nome": "Escolhido da Matança",
+        "fundamental": [
+          { "nome": "Matança", "descricao": "Ao rolar com Esperança, coloque 1d6 como Dado de Matança (máx = Proficiência) em vez de receber Esperança. Gaste-os em ataques/dano. Dados não usados viram 1 Esperança cada ao fim da sessão." }
+        ],
+        "especializacao": { "nome": "Especialista em Armas", "descricao": "Ao acertar, gaste 1 Esperança → some dado de dano da arma secundária. Uma vez por descanso longo, role novamente os 1 nos Dados de Matança." },
+        "maestria": { "nome": "Preparação Marcial", "descricao": "Em descanso, você e aliados que fizerem este movimento recebem 1d6 como Dado de Matança." }
+      }
+    ],
+    "Ladino": [
+      {
+        "nome": "Gatuno",
+        "atributo_conjuracao": "Acuidade",
+        "fundamental": [
+          { "nome": "Passo Sombrio", "descricao": "Ao entrar em área de escuridão ou sombra, marque 1 PF → desapareça e reapareça em outra sombra distante (você fica Oculto ao reaparecer)." }
+        ],
+        "especializacao": { "nome": "Nuvem de Escuridão", "descricao": "Teste de conjuração (15) → nuvem de escuridão na área próxima. Adrenalina: enquanto Vulnerável, some seu nível às rolagens de dano." },
+        "maestria": { "nome": "Sombra Fugaz", "descricao": "+1 Evasão permanente. Passo Sombrio agora alcança sombra muito distante. Desaparecimento: marque 1 PF para ficar Oculto a qualquer momento." }
+      },
+      {
+        "nome": "Mafioso",
+        "atributo_conjuracao": "Acuidade",
+        "fundamental": [
+          { "nome": "Conexões", "descricao": "Ao chegar em cidade/lugar importante, você conhece alguém lá. Escolha um fato: deve favor (difícil de encontrar) / pedirá algo em troca / sempre em apuros / ex-parceiro / separação ruim." }
+        ],
+        "especializacao": { "nome": "Contatos", "descricao": "Uma vez por sessão, convoque contato escuso → 1 punhado de ouro/ferramenta / +3 no próximo dado / +2d8 ao próximo dano." },
+        "maestria": { "nome": "Reforços Confiáveis", "descricao": "Contatos 3x por sessão. Novas opções: reduz PV marcados em −1 / ao testar Presença em conversa, use 1d20 como Dado de Esperança." }
+      }
+    ],
+    "Mago": [
+      {
+        "nome": "Discípulo do Conhecimento",
+        "atributo_conjuracao": "Conhecimento",
+        "fundamental": [
+          { "nome": "Promissor", "descricao": "Pegue uma carta de domínio adicional de nível igual ou inferior ao seu na criação." },
+          { "nome": "Adepto", "descricao": "Ao usar Experiência, marque 1 PF em vez de gastar 1 Esperança → dobre o modificador da Experiência." }
+        ],
+        "especializacao": { "nome": "Talentoso", "descricao": "Pegue outra carta de domínio adicional. Troca Perfeita: uma vez por descanso, reduza custo de troca de carta em −1." },
+        "maestria": { "nome": "Brilhante", "descricao": "Mais uma carta de domínio adicional. Bem Vivido: ao usar Experiência, role 1d6 — no 5+, use sem gastar Esperança." }
+      },
+      {
+        "nome": "Discípulo da Guerra",
+        "atributo_conjuracao": "Conhecimento",
+        "fundamental": [
+          { "nome": "Mago de Batalha", "descricao": "Receba 1 PV adicional." },
+          { "nome": "Encare o Medo", "descricao": "Ao ter sucesso com Medo em ataque, cause 1d10 de dano mágico adicional (depois 2d10, depois 3d10)." }
+        ],
+        "especializacao": { "nome": "Conjurar Escudo", "descricao": "Com 2+ Esperança, some Proficiência à Evasão. Movido a Medo: dano extra sobe para 2d10." },
+        "maestria": { "nome": "Triunfo do Caos", "descricao": "Ao acertar, marque 1 PF após dano → alvo marca 1 PV adicional. Não Tenha Medo: dano extra sobe para 3d10." }
+      }
+    ],
+    "Patrulheiro": [
+      {
+        "nome": "Rastreador",
+        "atributo_conjuracao": "Agilidade",
+        "fundamental": [
+          { "nome": "Predador Implacável", "descricao": "Ao rolar dano, marque 1 PF → +1 Proficiência. Ao causar dano grave a adversário, ele marca 1 PF." },
+          { "nome": "Avante", "descricao": "Ao viajar para lugar já visitado (ou com objeto do lugar), identifique o caminho mais curto." }
+        ],
+        "especializacao": { "nome": "Predador Veloz", "descricao": "Quando adversário Marcado ataca você, +2 Evasão contra esse ataque." },
+        "maestria": { "nome": "Predador Apex", "descricao": "Antes de atacar alvo Marcado, gaste 1 Esperança. Em sucesso, mestre perde 1 Ponto de Medo." }
+      },
+      {
+        "nome": "Treinador",
+        "atributo_conjuracao": "Agilidade",
+        "fundamental": [
+          { "nome": "Companheiro Animal", "descricao": "Você tem um animal companheiro (ficha própria). A cada nível, escolha um aumento de nível para ele também." }
+        ],
+        "especializacao": { "nome": "Treinamento Especializado", "descricao": "+1 aumento de nível adicional para o companheiro. Unidos na Batalha: se adversário está corpo a corpo do companheiro e ataca você, +2 Evasão." },
+        "maestria": { "nome": "Treinamento Avançado", "descricao": "+2 aumentos adicionais para o companheiro. Amigo Leal: uma vez por descanso longo, você ou o companheiro podem sofrer dano no lugar do outro." }
+      }
+    ],
+    "Serafim": [
+      {
+        "nome": "Portador Divino",
+        "atributo_conjuracao": "Força",
+        "fundamental": [
+          { "nome": "Arma Espiritual", "descricao": "Arma corpo a corpo/muito próximo pode voar para atacar adversário próximo e retornar. Marque 1 PF para acrescentar alvo adicional." },
+          { "nome": "Toque Piedoso", "descricao": "Uma vez por descanso longo, toque criatura → recupera 2 PV ou 2 PF." }
+        ],
+        "especializacao": { "nome": "Devoção", "descricao": "Ao rolar Dados de Oração, role dado adicional e descarte o menor. Toque Piedoso passa a 2x por descanso longo." },
+        "maestria": { "nome": "Ressonância Sagrada", "descricao": "Ao rolar dano da Arma Espiritual, se 2+ dados saírem iguais, dobre o valor de cada um deles." }
+      },
+      {
+        "nome": "Sentinela Alada",
+        "atributo_conjuracao": "Força",
+        "fundamental": [
+          { "nome": "Asas de Luz", "descricao": "Você pode voar. Enquanto voa: marque 1 PF para carregar criatura voluntária / gaste 1 Esperança para +1d8 de dano em ataque bem-sucedido." }
+        ],
+        "especializacao": { "nome": "Visagem Etérea", "descricao": "Voando, vantagem em testes de Presença. Em sucesso com Esperança nesses testes, mestre perde 1 Medo." },
+        "maestria": { "nome": "Ascensão", "descricao": "+4 permanente no limiar de dano grave. Poder dos Deuses: voando, +1d12 de dano em vez de +1d8." }
+      }
+    ]
+  }
+}
